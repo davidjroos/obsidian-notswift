@@ -1,3 +1,59 @@
+
+.mod-macos.is-hidden-frameless:not(.is-popout-window) .sidebar-toggle-button.mod-right,
+.mod-root .sidebar-toggle-button.mod-right {
+	z-index: 0 !important;
+	background: none !important;
+	padding: 0px;
+	margin-top: 8px;
+	margin-right: 8px;
+	margin-bottom: 7px;
+}
+.mod-macos.is-hidden-frameless:not(.is-popout-window) .sidebar-toggle-button.mod-left,
+.mod-root .sidebar-toggle-button.mod-left {
+	z-index: 0 !important;
+	background: none !important;
+}
+
+.mod-macos.is-hidden-frameless:not(.is-popout-window) .workspace .workspace-tabs.mod-top-right-space .workspace-tab-header-container,
+.mod-root .workspace-tabs.mod-top-right-space .workspace-tab-header-container{
+	padding-right: 0px !important;
+}
+
+/*
+.mod-macos.is-hidden-frameless:not(.is-popout-window) .sidebar-toggle-button.mod-left,
+.mod-root .sidebar-toggle-button.mod-left {
+	height: auto;
+	width: auto;
+	margin-right: 0px;
+	padding: 8px;
+	justify-content: center;
+	left: 80px;
+	top: 4px;
+	position:absolute;
+	z-index: 0 !important;
+}
+
+
+
+.mod-macos.is-hidden-frameless:not(.is-popout-window) .sidebar-toggle-button.mod-right .clickable-icon:hover,
+.mod-root .sidebar-toggle-button.mod-right .clickable-icon:hover,
+.mod-macos.is-hidden-frameless:not(.is-popout-window) .sidebar-toggle-button.left-right .clickable-icon:hover,
+.mod-root .sidebar-toggle-button.mod-left .clickable-icon:hover  {
+	background-color: var(--color-base-30);
+}
+	
+
+*/
+.is-flashing {
+	background: none !important;
+}
+.is-flashing .tree-item-inner.nav-folder-title-content {
+	content: "HEY!";
+	transition: all 0.25s ease-in-out;
+	color: var(--color-base-highlight);
+	mix-blend-mode:none;
+  }
+
 body {
 	
 /* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
@@ -32,6 +88,8 @@ body {
 
 	--text-faint: var(--color-base-70);
 	--vault-name-color: var(--color-base-70);
+	color: var(--tab-text-color-focused-active-current); #ff
+	/*--nav-item-color-hover: */
 
 /* ================================================================================================= */
 /* 	Variables (Global) - Sizes */
@@ -44,623 +102,13 @@ body {
 	/*--frame-left-space: 0px; <- BREAKS */
 
 
-/* ---------------------------------------------------------------------------------- */
-/* 	Variables (Global) - Sizes - Radius */
-
-	--radius-none: 0px;
-	--radius-xs: 1px;
-	--radius-s: 2px;
-	--radius-m: 5px;
-	--radius-l: 8px;
-	--radius-xl: 13px;
-	--radius-round: 50%;
-
-	--codeblock-radius: var(--radius-s);
-
-/* ---------------------------------------------------------------------------------- */
-/* 	Variables (Global) - Sizes - x */
-
-/* ---------------------------------------------------------------------------------- */
-/* 	Variables (Global) - Sizes - x */
-
-/* ---------------------------------------------------------------------------------- */
-/* 	Variables (Global) - Sizes - x */
-
-/* ---------------------------------------------------------------------------------- */
-/* 	Variables (Global) - Sizes - x */
-
-
-/* ================================================================================================= */
-/* 	Variables (Global) - Colours */
-
-
-/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
-/* 	Editor Frame */
-
-/* ================================================================================================= */
-/* 	Editor Frame - Sizing */
-
-/* ---------------------------------------------------------------------------------- */
-/* 	Editor Frame - Sizing - Max-width */
-/* SS */
-	.markdown-source-view.mod-cm6.is-readable-line-width .cm-sizer {
-		max-width: 700px;
-	}
-
-/* ---------------------------------------------------------------------------------- */
-/* 	Editor Frame - Sizing - Padding */
-
-	.view-content > .markdown-source-view.mod-cm6 > .cm-editor > .cm-scroller {
-		padding: 50px;
-	}
-
-/* ================================================================================================= */
-/* 	Editor Frame - Search and Replace */
-
-/* ---------------------------------------------------------------------------------- */
-/* 	Editor Frame - Search and Replace  - Search/Replace Pane */
-
-	.cm-s-obsidian .document-search-container {
-		margin-left: 0px;
-		margin-right: 0px;
-		background-color: var(--color-base-verylowlight);
-	}
-
-	.cm-s-obsidian .document-replace-buttons,
-	.cm-s-obsidian .document-search-buttons {
-		width: 170px;
-	}
-
-	.cm-s-obsidian .document-search-buttons .document-search-button {
-		width: 40px;
-	}
-
-	.cm-s-obsidian .document-replace-buttons .document-search-button {
-		width: 80px;
-	};
-
-/* ---------------------------------------------------------------------------------- */
-/* 	Editor Frame - Search and Replace  - Inline Highliting */
-
-	.cm-s-obsidian span.obsidian-search-match-highlight,
-	.cm-s-obsidian span.obsidian-search-match-highlight .cm-inline-code,
-	.cm-s-obsidian span.obsidian-search-match-highlight > * {
-		box-shadow: 0 0 0px 1px var(--text-accent);
-		border-radius: var(--radius-xs);
-		background-color: var(--color-base-highlight) !important;
-		color: var(--color-base-00);
-	}
-
-/* ================================================================================================= */
-/* 	Editor Content - YAML */
-
-/* ================================================================================================= */
-/* 	Editor Content - Embed (General) */
-
-/* ---------------------------------------------------------------------------------- */
-/* 	Editor Content - Embed (General) - Remove ugly border shadow */
-
-	.markdown-source-view.mod-cm6 .cm-embed-block:hover {
-		box-shadow: none;
-		border: none;
-		border-radius: 0px;
-	}
-
-/* ---------------------------------------------------------------------------------- */
-/* 	Editor Content - Embed (General) - Move edit button to left margin and stretch content to full (remaining) width*/
-
-	.markdown-source-view.mod-cm6 .cm-embed-block {
-		display: flex;
-		padding-left: 10px;
-		left: -40px;
-		width: calc(100% + 40px);
-	}
-
-	.markdown-source-view.mod-cm6 .edit-block-button{
-		order: -1;
-		align-items: center;
-		height: 30px;
-		top:0px;
-		position:relative;
-		padding-top: 0px;
-	}
-
-/* ================================================================================================= */
-/* 	Editor Content - Embed (Admonitions) */
-
-/* ================================================================================================= */
-/* 	Editor Content - Embed (Tables) */
-
-/* ---------------------------------------------------------------------------------- */
-/* 	Editor Content - Embed (Tables) - Source Spacing */
-
-	.markdown-source-view.mod-cm6 .cm-table-widget table {
-		margin: 0px;
-	}
-
-/* ---------------------------------------------------------------------------------- */
-/* 	Editor Content - Embed (Tables) - Rendered Spacing */
-
-	.markdown-rendered table {
-		margin-block-start: 0px;
-		margin-block-end: 0px;
-	}
-
-	.markdown-rendered td,
-	.markdown-rendered th {
-		border-top: none;
-		border-left: none;
-		border-right: none;
-	}
-
-
-/* ---------------------------------------------------------------------------------- */
-/* 	Editor Content - Embed -  */
-
-/* ================================================================================================= */
-/* 	Editor Content - Codeblocks */
-
-/* ---------------------------------------------------------------------------------- */
-/* 	Editor Content - Codeblocks - sizing */
-
-	.markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock {
-		width:fit-content;
-		min-width: 100%;
-	}
-
-/* ---------------------------------------------------------------------------------- */
-/* 	Editor Content - Codeblocks - Scroll text in reader mode */
-
-	/*.HyperMD-codeblock {
-		white-space: nowrap;
-	}*/
-
-/* ---------------------------------------------------------------------------------- */
-/* 	Editor Content - Codeblocks - Code Styling */
-
-	.cm-comment, .cm-meta {
-		color: var(--code-comment);
-		font-size: 0.9em;
-		font-style: italic;
-	}
-
-	.cm-def {
-		color: var(--color-base-highlight);
-	}
-
-/* ---------------------------------------------------------------------------------- */
-/* 	Editor Content - Codeblocks - highlight opening/closing block */
-
-
-	.markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock-begin .cm-hmd-codeblock,
-	.markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock-end .cm-hmd-codeblock {
-		color: var(--color-base-highlight);
-	}
-
-/* ---------------------------------------------------------------------------------- */
-/* 	Editor Content - Codeblocks - Borders */
-
-	.markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock-begin {
-		border-top-color: var(--color-base-lowlight);
-		border-top-width: 1px;
-		border-top-style: solid;
-		border-top-left-radius: var(--codeblock-radius);
-		border-top-right-radius: var(--codeblock-radius);
-	}
-
-	.markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock-end {
-		border-bottom-color: var(--color-base-lowlight);
-		border-bottom-width: 1px;
-		border-bottom-style: solid;
-		border-bottom-right-radius: var(--codeblock-radius);
-		border-bottom-left-radius: var(--codeblock-radius);
-	}
-
-	.markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock {
-		border-left-color: var(--color-base-lowlight);
-		border-left-width: 1px;
-		border-left-style: solid;
-		border-right-color: var(--color-base-lowlight);
-		border-right-width: 1px;
-		border-right-style: solid;
-	}
-
-/* ---------------------------------------------------------------------------------- */
-/* 	Editor Content - Codeblocks - Language Flair/Copy block */
-
-	.markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock .code-block-flair {
-		top: 0px;
-		right: 0px;
-		font-size: 8px;
-		color: var(--color-base-highlight);
-	}
-
-	.markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock .code-block-flair svg {
-		height: 12px;
-		width: 12px;
-	}
-
-
-
-
-
-
-/* ================================================================================================= */
-/* 	Editor Content - Checkbox */
-
-/* ---------------------------------------------------------------------------------- */
-/* 	Editor Content - Checkbox - Variables */
-
-	--checkbox-size: 18px;
-	--checkbox-border-color: var(--color-base-50);
-	--checkbox-border-color-hover: var(--color-base-50);
-
-/* ---------------------------------------------------------------------------------- */
-/* 	Editor Content - Checkbox - Styling */
-	.markdown-source-view.mod-cm6 .HyperMD-task-line[data-task="x"],
-	.markdown-source-view.mod-cm6 .HyperMD-task-line[data-task="X"] {
-		text-decoration: none;
-	}
-
-	.markdown-source-view.mod-cm6 .task-list-item-checkbox{
-		border-radius: 50%;
-	}
-
-	.checkbox-container:focus-within {
-		outline: none;
-	}
-
-/* ================================================================================================= */
-/* 	Editor Content - Bullets/list-ul */
-
-/* ---------------------------------------------------------------------------------- */
-/* 	Editor Content - Bullets/list-ul - Size */
-	--list-bullet-size: 0.4em;
-
-/* ---------------------------------------------------------------------------------- */
-/* 	Editor Content - Bullets/list-ul - Colours */
-
-	--list-marker-color: var(--color-base-80);
-	--list-marker-color-hover: var(--color-base-highlight);
-	--list-marker-color-collapsed: var(--color-base-highlight);
-
-/* ---------------------------------------------------------------------------------- */
-/* 	Editor Content - Bullets/list-ul - Styling */
-
-	.markdown-source-view.mod-cm6 .cm-formatting-list-ul {
-		padding-right: 3px;
-	}
-
-/* ================================================================================================= */
-/* 	Editor Content - Number list/list-ol */
-
-/* ---------------------------------------------------------------------------------- */
-/* 	Editor Content - Number list/list-ol - Styling */
-
-	.markdown-source-view.mod-cm6 .cm-formatting-list-ol {
-		padding-right: 3px;
-	}
-
-
-/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
-/* 	Graph */
-
-/* ================================================================================================= */
-/* 	Graph - Controls */
-
-/* ---------------------------------------------------------------------------------- */
-/* 	Graph - Controls - Styling */
-
-	.graph-controls:not(.is-close) {
-		box-shadow: none;
-		border: 1px solid var(--divider-color);
-	}
-
-/* ================================================================================================= */
-/* 	Graph - Lines */
-
-/* ---------------------------------------------------------------------------------- */
-/* 	Graph - Lines - Styling */
-
-	.graph-view.color-line {
-		color: var(--divider-color);
-	}
-
-/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
-/* 	Scrollbars */
-
-/* ================================================================================================= */
-/* 	Scrollbars - Editor Panes */
-
-/* ---------------------------------------------------------------------------------- */
-/* 	Scrollbars - Editor Panes - Styling */
-
-	::-webkit-scrollbar
-	{
-		background-color: none;
-		width: 13px;
-		height: 0px; /* no horizontal scrollbars eep!*/
-	}
-
-	::-webkit-scrollbar:horizontal {
-		display: none;
-	}
-
-
-	::-webkit-scrollbar-thumb
-	{
-		background-color: var(--color-scrollbar-1);
-		min-height: 45px;
-		background-clip: padding-box;
-		border-radius: 7px;
-		border: 3px solid transparent;
-		position: absolute;
-	}
-
-
-/* ================================================================================================= */
-/* 	Scrollbars - Sidebar Leafs */
-
-/* ---------------------------------------------------------------------------------- */
-/* 	Scrollbars - Sidebar Leafs - Styling */
-
-	.cm-scroller::-webkit-scrollbar-thumb {
-		background-color: var(--color-scrollbar-3);
-	}
-
-	.nav-files-container::-webkit-scrollbar-thumb
-	{
-		background-color: var(--color-scrollbar-2);
-	}
-
-	.nav-files-container::-webkit-scrollbar-thumb
-	{
-		background-color: var(--color-scrollbar-2);
-	}
-
-/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
-/* 	GUI Elements */
-
-/* ================================================================================================= */
-/* 	GUI Elements - Ribbon */
-
-/* ---------------------------------------------------------------------------------- */
-/* 	GUI Elements - Ribbon - Hide */
-
-	--ribbon-width: 0px;
-
-/* ---------------------------------------------------------------------------------- */
-/* 	GUI Elements - Ribbon - Colour */
-
-	--ribbon-background: var(--color-base-20);
-
-/* ================================================================================================= */
-/* 	GUI Elements - Status Bar */
-
-/* ---------------------------------------------------------------------------------- */
-/* 	GUI Elements - Status Bar - Hide */
-
-	.status-bar {
-		visibility: collapse;
-		width: 0px;
-		height: 0px;
-		padding: 0px;
-		margin: 0px;
-		min-height: unset;
-	}
-
-/* ================================================================================================= */
-/* 	GUI Elements - Command Pallete/Quick Switcher */
-
-/* ---------------------------------------------------------------------------------- */
-/* 	GUI Elements - Command Pallete/Quick Switcher - Styling */
-
-	.prompt {
-		border-radius: var(--radius-m);
-		background-color: var(--color-base-15);
-		
-	}
-
-	.prompt-input {
-		background-color: var(--color-base-15);
-	}
-
-	.prompt-input:active {
-		box-shadow: none;
-		border-bottom: 1px solid var(--divider-color);
-	}
-
-	.prompt-instructions {
-		border-top: 1px solid var(--divider-color);
-	}
-
-	.suggestion-item {
-		border-radius: var(--radius-m);
-		padding-left: 8px;
-		padding-right: 8px;
-	}
-
-	.suggestion-item.is-selected {
-		background-color: var(--color-base-20);
-
-	}
-
-/* ================================================================================================= */
-/* 	GUI Elements - Input (text) */
-
-/* ---------------------------------------------------------------------------------- */
-/* 	GUI Elements - Input (text) - Styling */
-
-	.cm-s-obsidian input[type='text'] {
-		border: 0.5px solid var(--color-base-50);
-		height: 24px;
-	}
-
-/* ================================================================================================= */
-/* 	GUI Elements - Button */
-
-/* ---------------------------------------------------------------------------------- */
-/* 	GUI Elements - Button - Styling */
-
-	.cm-s-obsidian button:not(.clickable-icon) {
-		height: 24px;
-		border-radius: 4px;
-		box-shadow: none;
-		border: 0.5px solid var(--color-base-50);
-		font-size: var(--font-ui-teeny);
-		background-color: var(--color-base-00);
-	}
-
-
-
-
-/* ================================================================================================= */
-/* 	GUI Elements - Toggles */
-
-/* ---------------------------------------------------------------------------------- */
-/* 	GUI Elements - Toggles - Dimensions (Normal) */
-
-	--toggle-width: 25px;
-	--toggle-radius: 13px;
-	--toggle-thumb-radius: 13px;
-	--toggle-thumb-height: 13px;
-	--toggle-thumb-width: 13px;
-	
-/* ---------------------------------------------------------------------------------- */
-/* 	GUI Elements - Toggles - Dimensions (Small) */
-	--toggle-s-width: 25px;
-	--toggle-s-thumb-height: 13px;
-	--toggle-s-thumb-width: 13px;
-
-/* ---------------------------------------------------------------------------------- */
-/* 	GUI Elements - Toggles - Styling */
-
-	--toggle-thumb-color: var(--color-base-00);
-	--toggle-s-border-width: 1px;
-	--toggle-border-width: 1px;
-	
-/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
-/* 	Interface Leafs */
-
-/* ================================================================================================= */
-/* 	Interface Leafs - Search */
-
-/* ---------------------------------------------------------------------------------- */
-/* 	Interface Leafs - Search - Search Pop out */
-	.suggestion-container.mod-search-suggestion .suggestion {
-		background-color: var(--color-base-17);
-	}
-
-	.suggestion-item.is-selected {
-		background-color: var(--color-base-30);
-	}
-
-/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
-/* 	Plugins */
-
-/* ================================================================================================= */
-/* 	Plugins - Dataview */
-
-/* ---------------------------------------------------------------------------------- */
-/* 	Plugins - Dataview - Embed: Tables  */
-
-	.dataview .table-view-table {
-		margin: 0px;
-	}
-
-	.block-language-dataview.node-insert-event:has(.dataview.table-view-table) {
-		/*width:100%;*/
-		width: fit-content;
-		border: 1px dashed var(--color-base-lowlight);
-		padding-block-start: 12px;
-		padding-block-end: 12px;
-		padding-inline-start: 12px;
-		padding-inline-end: 12px;
-	}
-
-	.table-view-table > thead > tr > th {
-		font-size: 14px;
-		border-bottom-width: 1px;
-		font-weight: 600;
-	}
-
-	.table-view-table > tbody > tr > td {
-
-		border-bottom-width: 1px;
-		border-bottom-style: solid;
-	}
-
-/* ---------------------------------------------------------------------------------- */
-/* 	Plugins - Dataview - Embed: List  */
-
-	.block-language-dataview.node-insert-event:has(.dataview.list-view-ul) {
-		/*width:100%;*/
-		width: fit-content;
-		border: 1px dashed var(--color-base-lowlight);
-		padding-block-start: 12px;
-		padding-block-end: 12px;
-		padding-inline-start: 0px;
-		padding-inline-end: 12px;
-	}
-
-	.dataview.list-view-ul {
-				margin: 0px;
-	}
-
-/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
-/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
-/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
-
-/* UNSORTED GOES BELOW HERE */
-
-/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
-/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
-/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
-
-
-
-/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
-/* TRASHCAN */
-/*
-	--titlebar-background: unset;
-	--titlebar-background-focused: unset;
-
-	.HyperMD-codeblock.HyperMD-codeblock-begin.cm-line {
-		padding-top: 0px;
-		padding-bottom: 0px;
-		border-top-width: 0px;
-		border-top-style: solid;
-		border-top-color: var(--color-base-verylowlight);
-		border-top-left-radius: 0px;
-		border-top-right-radius: 0px;
-	}
-	.HyperMD-codeblock.HyperMD-codeblock-end.cm-line {
-		padding-top: 0px;
-		border-bottom-width: 0px;
-		border-bottom-style: solid;
-		border-bottom-color: var(--color-base-verylowlight);
-		border-bottom-left-radius: 0px;
-		border-bottom-right-radius: 0px;
-
-	}
-
-	.HyperMD-codeblock.cm-line {
-		border-left-width: 1px;
-		border-left-style: solid;
-		border-left-color: var(--color-base-highlight);
-		
-	}
-	*/
-/* TRASHCAN */
-
 	--background-modifier-border-focus: var(--color-base-lowlight);
 
 	--icon-color-active: var(--color-base-highlight);
 
 	--divider-color-hover: var(--divider-color);
 
-	--background-modifier-hover: #00000000;
-	--background-modifier-active-hover: #00000000;
+
 
 
 	--interactive-accent: var(--color-base-highlight);
@@ -671,350 +119,79 @@ body {
 	--collapse-icon-color-collapsed: var(--color-base-highlight);
 
 
+/* ---------------------------------------------------------------------------------- */
+/* 	Variables (Global) - Sizes - Radius */
 
+	--radius-none: 0px;
+	--radius-xs: 1px;
+	--radius-s: 2px;
+	--radius-m: 4px;
+	--radius-l: 8px;
+	--radius-xl: 13px;
+	--radius-round: 50%;
 
-	
+	--button-radius: var(--radius-m);
+	--tab-radius: var(--radius-m);
+	--clickable-icon-radius: var(--radius-m);
+	--codeblock-radius: var(--radius-m);
 
+/* ---------------------------------------------------------------------------------- */
+/* 	Variables - Checkbox - Size */
 
+	--checkbox-size: 18px;
 
+/* ---------------------------------------------------------------------------------- */
+/* 	Variables - Checkbox - Colour */
+	--checkbox-border-color: var(--color-base-50);
+	--checkbox-border-color-hover: var(--color-base-50);
 
 
+/* ---------------------------------------------------------------------------------- */
+/* 	Variables - Toggles - Dimensions (Large) */
 
+	--toggle-width: 25px;
+	--toggle-radius: 13px;
+	--toggle-thumb-radius: 13px;
+	--toggle-thumb-height: 13px;
+	--toggle-thumb-width: 13px;
 
+/* ---------------------------------------------------------------------------------- */
+/* 	Variables - Toggles - Dimensions (Small) */
+	--toggle-s-width: 25px;
+	--toggle-s-thumb-height: 13px;
+	--toggle-s-thumb-width: 13px;
 
+/* ---------------------------------------------------------------------------------- */
+/* 	Variables - Toggles - Styling */
 
+	--toggle-thumb-color: var(--color-base-10);
+	--toggle-s-border-width: 1px;
+	--toggle-border-width: 1px;
 
 
+/* ---------------------------------------------------------------------------------- */
+/* 	Variables - Bullets/list-ul - Size */
+	--list-bullet-size: 0.4em;
 
+/* ---------------------------------------------------------------------------------- */
+/* 	Variables - Bullets/list-ul - Colours */
 
+	--list-marker-color: var(--color-base-80);
+	--list-marker-color-hover: var(--color-base-highlight);
+	--list-marker-color-collapsed: var(--color-base-highlight);
+/* ================================================================================================= */
+/* 	Variables (Global) - Colours */
+	--titlebar-background: var(--color-base-17);
+	--tab-container-background: var(--color-base-17);
 
+/* ---------------------------------------------------------------------------------- */
+/* 	Variables - Ribbon - Hide */
 
+	--ribbon-width: 0px;
 
-	/* 	
-	.markdown-source-view.mod-cm6 .cm-preview-code-block.cm-embed-block.markdown-rendered {
-		margin-top: 12px !important;
-		margin-bottom: 12px !important;
+/* ---------------------------------------------------------------------------------- */
+/* 	Variables - Ribbon - Colour */
 
-	}
-
-
-
-
-	.cm-s-obsidian .HyperMD-table-row {
-		font-size: var(--font-ui-teeny);
-	}
-
-	.cm-s-obsidian .HyperMD-table-row-0 {
-		font-weight: bold;
-	  }
-		
-	.cm-s-obsidian .HyperMD-table-row span.cm-hmd-table-sep,
-	.cm-s-obsidian .HyperMD-table-row-1 {
-		color: var(--color-base-lowlight);
-	}
-
-	/* ↑↑↑↑↑↑↑↑↑↑ Tables [Shape, Size, Position] */
-
-
-	/* ↓↓↓↓↓↓↓↓↓↓ PANES [Shape, Size, Position] */
-
-	.mod-left-split .workspace-tab-header-container-inner,
-	.mod-right-split .workspace-tab-header-container-inner {
-		padding-left: 12px;
-		padding-right: 12px;
-		padding-top: 4px;
-		padding-bottom: 4px;
-		margin-top: 10px;
-		margin-left: 0px;
-		margin-right: 0px;
-		/*border-bottom: 1px solid #CDC7C7;*/
-		border-radius: 0px;
-		width: 100%;
-		height: 38px;
-		display: flex;
-	}
-
-
-	/* ↓↓↓↓↓↓↓↓↓↓ PANES: Left [Shape, Size, Position] */
-
-	.workspace-ribbon.mod-left.is-collapsed {
-		transition: background-color 250ms 200ms ease-in-out;
-	}
-
-	.workspace-ribbon.mod-left.is-collapsed:before{
-		transition: background-color 250ms 200ms ease-in-out;
-	}
-
-	.sidebar-toggle-button.mod-left .clickable-icon {
-		padding: 0px;
-		width: 34px;
-		height: 30px;
-	}
-
-	.sidebar-toggle-button.mod-right .clickable-icon {
-		width: 34px;
-		height: 34px;
-	}
-
-	.workspace-tabs.mod-top.mod-top-left-space .sidebar-toggle-button.mod-left {
-		width: 34px;
-		height: 30px;
-		position: absolute;
-		left: 90px;
-		top: 10px;
-		padding: 0px;
-	}
-
-	/* ↓↓↓↓↓↓↓↓↓↓ PANES: Left: Header Icons  [Shape, Size, Position] */
-
-	.mod-top-left-space .workspace-tab-header-container {
-		border-right: 0px solid var(--divider-color)
-	}
-
-	/* ↑↑↑↑↑↑↑↑↑↑ PANES: Left [Shape, Size, Position] */
-
-	/* ↓↓↓↓↓↓↓↓↓↓ PANES: Ribbon [Shape, Size, Position] */
-
-	.workspace-ribbon {
-		border: none;
-		padding: 0px;
-	}
-
-	.workspace-ribbon.mod-left:before {
-		border: 0px;
-		height: calc(var(--header-height) - var(--tab-outline-width) + 1px);
-	}
-
-	.mod-horizontal .workspace-tab-header-container {
-		border-bottom: 0px;
-	}
-	
-	/* ↑↑↑↑↑↑↑↑↑↑ PANES: Ribbon [Shape, Size, Position] */
-
-	/* ↓↓↓↓↓↓↓↓↓↓ PANES: Middle [Shape, Size, Position] */
-
-	.mod-root .workspace-tab-header-container {
-
-	}
-
-	/* ↓↓↓↓↓↓↓↓↓↓ PANES: Middle: Sidebar Show buttons [Shape, Size, Position] */
-
-	.mod-macos.is-hidden-frameless:not(.is-popout-window) .sidebar-toggle-button.mod-left,
-	.mod-root .sidebar-toggle-button.mod-left {
-		height: auto;
-		width: auto;
-		margin-right: 0px;
-		padding: 8px;
-		justify-content: center;
-		left: 80px;
-		top: 4px;
-		position:absolute;
-		z-index: 0 !important;
-	}
-
-	.mod-macos.is-hidden-frameless:not(.is-popout-window) .sidebar-toggle-button.mod-right,
-	.mod-root .sidebar-toggle-button.mod-right {
-		z-index: 0 !important;
-	}
-
-	.mod-macos.is-hidden-frameless:not(.is-popout-window) .workspace .workspace-tabs.mod-top-right-space .workspace-tab-header-container,
-	.mod-root .workspace-tabs.mod-top-right-space .workspace-tab-header-container{
-		padding-right: 0px !important;
-	}
-
-
-	.sidebar-toggle-button  {
-		transition: position 250ms;
-	}
-
-	/* ↑↑↑↑↑↑↑↑↑↑ PANES: Middle: Sidebar Show buttons [Shape, Size, Position] */
-
-	/* ↑↑↑↑↑↑↑↑↑↑ PANES: Middle [Shape, Size, Position] */
-
-	/* ↓↓↓↓↓↓↓↓↓↓ PANES: Right [Shape, Size, Position] */
-
-	.workspace.is-right-sidedock-open .workspace-split.mod-horizontal.mod-right-split .mod-top-right-space .workspace-tab-header-container {
-		height: 87px;
-		padding: 0px;
-	}
-
-	.workspace.is-right-sidedock-open .workspace-split.mod-horizontal.mod-right-split .mod-top-right-space .workspace-tab-header-container-inner {
-		background-color: none;
-		margin-top: 49px;
-		width:100%;
-		padding-left: 12px;
-		padding-right: 12px;
-		padding-top: 4px;
-		padding-bottom: 4px;
-		margin-left: 0px;
-		margin-right: 0px;
-		/*border-bottom: 1px solid #CDC7C7;*/
-		border-radius: 0px;
-		width: 100%;
-		height: 38px;
-		display: flex;
-	}
-
-
-
-	/* ↑↑↑↑↑↑↑↑↑↑ PANES: Right [Shape, Size, Position] */
-
-	/* ↑↑↑↑↑↑↑↑↑↑ PANES [Shape, Size, Position] */
-
-
-	/* ↓↓↓↓↓↓↓↓↓↓ CALLOUT [Shape, Size, Position] */
-	.cm-embed-block.cm-callout {
-		width: calc(100%);
-	}
-	.cm-embed-block.cm-callout .markdown-rendered.show-indentation-guide {
-		/*width: fit-content;*/
-		width: 100%;
-    	min-width: 150px;
-	}
-
-
-	.callout {
-		border-width: 1px;
-		border-radius: 4px;
-		padding: 12px;
-	}
-	.callout-icon svg.svg-icon {
-		height: 14px;
-		width: 14px;
-	}
-
-	.callout-content p {
-		margin-top: 0px;
-		margin-bottom:0px;
-		padding-right: 0px;
-		font-size: 80%;
-	}
-
-	.callout-content p a {
-		color: var(--text-normal);
-		background-image: none;
-		text-decoration:underline;
-		text-decoration-color: var(--link-external-decoration-color);
-	}
-
-	.callout-title {
-		margin-bottom: 4px;
-	}
-
-	.cm-s-obsidian span.cm-formatting-quote {
-		color: var(--color-base-highlight);
-	}
-
-	/* ↓↓↓↓↓↓↓↓↓↓ CALLOUT: Custom (metadata) [Shape, Size, Position] */
-	.callout[data-callout="metadata"] {
-		--callout-icon: package;
-		
-	}
-
-	.markdown-source-view.mod-cm6 .callout {
-		transition: all 250ms 0ms;
-	}
-
-	.callout.is-collapsible.is-collapsed {
-		padding: 6px;
-		width:fit-content;
-		font-size: var(--font-ui-smaller);
-
-	}
-
-	.callout.is-collapsible.is-collapsed .callout-title {
-		margin-bottom: 0px;
-
-	}
-
-	.callout.is-collapsible.is-collapsed .callout-fold {
-		padding-right: 0px;
-
-	}
-
-	.callout-fold .svg-icon {
-		margin-top: -1px;
-		height: 1.2em;
-	}
-
-	
-	/* ↑↑↑↑↑↑↑↑↑↑ CALLOUT [Shape, Size, Position] */
-	
-	
-	/* CODE BLOCK */
-
-
-
-
-	/* ↓↓↓↓↓↓↓↓↓↓ Headings: H1 [ALL] */
-	.HyperMD-header .cm-header-1 {
-		font-size: 32px !important;
-		font-weight: 800;
-	}
-
-	.HyperMD-header .cm-header-2 {
-		font-size: 24px !important;
-		font-weight: 700;
-	}
-
-	.HyperMD-header .cm-header-3 {
-		font-size: 18px !important;
-		font-weight: 600;
-	}
-
-	.HyperMD-header .cm-header-4 {
-		font-size: 14px !important;
-		font-weight: 600;
-	}
-
-	.HyperMD-header .cm-header-5 {
-		font-size: 14px !important;
-		font-weight: 600;
-		font-style: italic;
-	}
-
-
-	/* tags */
-	.cm-hashtag.cm-hashtag-begin {
-		border-top-left-radius: 4px;
-		border-bottom-left-radius: 4px;
-		border-right: none;
-		border-left: 1px solid var(--color-base-lowlight);
-		padding-left: 4px;
-	}
-
-	.cm-hashtag.cm-hashtag-end {
-		border-top-right-radius: 4px;
-		border-bottom-right-radius: 4px;
-		border-left: none;
-		border-right: 1px solid var(--color-base-lowlight);
-		padding-right: 4px;
-	}
-
-	.cm-hashtag {
-		color: var(--tag-color);
-		background-color: var(--color-base-verylowlight);
-		border: 1px solid var(--color-base-lowlight);
-		font-size: var(--tag-size);
-		vertical-align: baseline;
-		border-left: none;
-		border-right: none;
-		padding-top: var(--tag-padding-y);
-		padding-bottom: var(--tag-padding-y);
-	}
-
-	.callout-content > p > a.tag {
-		border-radius: 4px;
-		color: var(--tag-color);
-		background-color: var(--color-base-verylowlight);
-		border: 1px solid var(--color-base-lowlight);
-				padding-left: 2px;
-				padding-bottom: 1px;
-				padding-top: 1px;
-				padding-right: 2px;
-				vertical-align: baseline;
-				text-decoration: none;
-	}
 
 }
 
@@ -1031,8 +208,8 @@ body {
 /* 	Variables (theme-light) - Colours - Foundations */
 
 	--color-base-00: #FFFFFF;
-	--color-base-05: #FDFDFD;
-	--color-base-10: #F8F8F8;
+	--color-base-05: #FAFAFA;
+	--color-base-10: #FFFFFF;
 	--color-base-15: #F8F2F1;
 	--color-base-17: #F0E8E6;
 	--color-base-20: #ECE6E5;
@@ -1045,7 +222,7 @@ body {
 	--color-base-60: #B8B2B1;
 	--color-base-70: #6E6966;
 	--color-base-80: #464545ff;
-	--color-base-90: #F4ECEA;
+	--color-base-90: #D5D5D5;
 	--color-base-100: #4C4949;
 	--color-base-101: #000000;
 	
@@ -1058,6 +235,7 @@ body {
 
 	--code-normal: var(--color-base-100);
 	--code-comment: var(--color-base-60);
+	--code-background: var(--color-base-05);
 
 	--color-scrollbar-1: #C2C2C2;
 	--color-scrollbar-2: #B4AFAE;
@@ -1079,7 +257,13 @@ body {
     --link-unresolved-decoration-style: solid;
     --link-unresolved-decoration-color: hsla(var(--color-base-warn), 0.3);
 	
+	--ribbon-background: var(--color-base-17);	
 
+    --background-modifier-border: var(--color-base-30);
+    --background-modifier-border-hover: var(--color-base-35);
+    --background-modifier-border-focus: var(--color-base-highlight);
+    --interactive-normal: var(--color-base-00);
+    --interactive-hover: var(--color-base-05);
 
 
 
@@ -1094,1482 +278,2697 @@ body {
 	--color-base-verylowlight:  hsl(var(--accent-h), var(--accent-s), calc(var(--accent-l) + 28%));
 	--color-base-darklight: hsl(var(--accent-h), var(--accent-s), calc(var(--accent-l) - 40%));
 
+/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+/* 	Colour Specific (theme-light) */
 
-	
 
-
-	/* ↓↓↓↓↓↓↓↓↓↓ PANES: Left [Colour Light] */
-
-	.mod-left-split .workspace-tab-header-container,
-	.workspace-ribbon.mod-left.is-collapsed,
-	.workspace-ribbon.mod-left:before,
-	.workspace-ribbon.mod-left.is-collapsed:before,
-	.workspace-tabs .workspace-leaf	 {
-		background-color: var(--color-base-17);
-	}
-
-	.workspace-ribbon.mod-left{
-		background-color: var(--color-base-20);
-	}
-
-	
-	/* ↑↑↑↑↑↑↑↑↑↑ PANES: Left [Colour Light] */
-
-	/* ↓↓↓↓↓↓↓↓↓↓ PANES: Ribbon [Colour Light] */
-
-	.workspace-ribbon .clickable-icon {
-		color: var(--color-base-highlight);
-	}
-
-	/* ↑↑↑↑↑↑↑↑↑↑ PANES: Ribbon [Colour Light] */
-
-
-	/* ↓↓↓↓↓↓↓↓↓↓ PANES: Middle [Colour Light] */
-
-	.mod-root .workspace-tab-header-container {
-		background-color: var(--color-base-15);
-
-
-	}
-
-	/* ↓↓↓↓↓↓↓↓↓↓ PANES: Middle: Sidebar Show buttons [Colour Light] */
-
-	.mod-macos.is-hidden-frameless:not(.is-popout-window) .sidebar-toggle-button.mod-right,
-	.mod-root .sidebar-toggle-button.mod-right {
-		background-color: var(--color-base-15) !important;
-	}
-
-	.mod-macos.is-hidden-frameless:not(.is-popout-window) .sidebar-toggle-button.mod-right .clickable-icon:hover,
-	.mod-root .sidebar-toggle-button.mod-right .clickable-icon:hover,
-	.mod-macos.is-hidden-frameless:not(.is-popout-window) .sidebar-toggle-button.left-right .clickable-icon:hover,
-	.mod-root .sidebar-toggle-button.mod-left .clickable-icon:hover  {
-		background-color: var(--color-base-30);
-	}
-
-	.mod-macos.is-hidden-frameless:not(.is-popout-window) .sidebar-toggle-button.mod-left,
-	.mod-root .sidebar-toggle-button.mod-left {
-		height: 30px;
-		width: 30px;
-		margin-right: 0px;
-		padding: 8px;
-		justify-content: center;
-		left: 90px;
-		top: 10px;
-		position:absolute;
-		z-index: 0 !important;
-	}
-
-	/* ↑↑↑↑↑↑↑↑↑↑ PANES: Middle: Sidebar Show buttons [Colour Light] */
-
-	/* ↑↑↑↑↑↑↑↑↑↑ PANES: Middle [Colour Light] */
-
-
-
-
-
-
-	/* ↓↓↓↓↓↓↓↓↓↓ PANES: Right [Colour Light] */
-	.mod-right-split .workspace-tab-header-container {
-		background-color: var(--color-base-17);
-	}
-
-	.sidebar-toggle-button, .workspace-tabs.mod-top {
-		
-	}
-
-	/* ↑↑↑↑↑↑↑↑↑↑ PANES: Right [Colour Light] */
-
-	/* ↑↑↑↑↑↑↑↑↑↑ PANES [Colour Light] */
-
-	/* ↓↓↓↓↓↓↓↓↓↓ Workspace Leaf [Colour Light] */
-	
-	/* ↓↓↓↓↓↓↓↓↓↓ Workspace Leafs: Advanced Tables [ALL] */
-
-	.advanced-tables-buttons .nav-buttons-container {
-		margin: 0px;
-		padding-left: 0px;
-		padding-right: 0px;
-	}
-
-	.advanced-tables-buttons .nav-header {
-		margin-top: -17px;
-	}
-
-	.advanced-tables-row-label {
-		font-size: var(--font-ui-small);
-		color: var(--nav-item-color);
-	}
-
-	.advanced-tables-buttons div:has(.title) {
-		visibility: collapse;
-		display: none;
-	}
-
-	.advanced-tables-button.nav-action-button .widget-icon:hover {
-		fill: var(--color-base-highlight);
-	}
-
-	/* ↑↑↑↑↑↑↑↑↑↑ Workspace Leafs: Advanced Tables [ALL] */
-
-	/* ↓↓↓↓↓↓↓↓↓↓ Workspace Leafs: Bookmarks [ALL] */
-
-
-
-
-	/* ↑↑↑↑↑↑↑↑↑↑ Workspace Leafs: Bookmarks [ALL] */
-
-	/* ↓↓↓↓↓↓↓↓↓↓ Workspace Leafs: Files [ALL] */
-	/* vault name */
-
-	.tree-item.nav-folder .nav-folder-title[data-path$="/"] {
-		padding-left: 8px;
-	}
-
-	.tree-item.nav-folder .nav-folder-title[data-path$="/"] .tree-item-inner.nav-folder-title-content {
-		color: var(--color-base-0);
-		font-size: var(--font-ui-smaller);
-		font-weight: bold;
-
-	}
-
-	.tree-item.nav-folder .nav-folder-title[data-path$="/"] .tree-item-inner.nav-folder-title-content:before {
-		content: none;
-	}
-
-	/*
-	.tree-item.nav-file:has(.nav-file-title.is-active) {
-		background-color: var(--color-base-30) !important;
-	}
-	*/
-
-	/* Folder General */
-	.tree-item.nav-folder .nav-folder-title .tree-item-inner.nav-folder-title-content {
-		padding-left: 8px;
-		margin-left: -4px;
-		padding-top: 2px !important;
-	}
-
-	/* Folder Notes */
-
-	.tree-item.nav-folder .nav-folder-title.has-folder-note .tree-item-inner.nav-folder-title-content {
-		text-decoration-thickness: 1px;
-		text-decoration-color: var(--color-base-highlight);
-	}
-
-	.tree-item.nav-folder .nav-folder-title.has-folder-note .tree-item-inner.nav-folder-title-content:before {
-		background-size: contain;
-		background-repeat: no-repeat;
-		background-position: center center;
-		background-image: url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='rgb(110, 105, 102)' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' class='lucide lucide-folder-edit'%3E%3Cpath d='M8.42 10.61a2.1 2.1 0 1 1 2.97 2.97L5.95 19 2 20l.99-3.95 5.43-5.44Z'/%3E%3Cpath d='M2 11.5V5c0-1.1.9-2 2-2h3.93a2 2 0 0 1 1.66.9l.82 1.2a2 2 0 0 0 1.66.9H20a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-9.5'/%3E%3C/svg%3E");
-		content: " ";
-		position: relative;
-		display: inline-block;
-		top: 3px;
-		margin-right: 4px;
-		height: 16px;
-		width: 16px;
-	}
-	/* Highlight active folder-note */
-	.nav-folder-title.has-folder-note.is-active .tree-item-inner.nav-folder-title-content {
-		border-radius: var(--radius-m);
-		width:100%;
-		background-color: var(--color-base-30) !important;
-		position: relative;
-		
-	}
-	/* END Highlight active folder-note */
-
-	/* Folder Notes Overviews */
-
-	.markdown-source-view.mod-cm6 .cm-embed-block .block-language-folder-overview .folder-overview {
-		width: fit-content;
-		border: 1px dashed var(--color-base-lowlight);
-		padding-block-start: 12px;
-		padding-block-end: 12px;
-		padding-inline-start: 12px;
-		padding-inline-end: 12px;
-	}
-
-	.markdown-rendered h1.folder-overview-title {
-		margin-top: 0px;
-	}
-		
-
-	/* end folder notes */
-
-	/* Note general */
-	.tree-item.nav-folder .nav-file-title .tree-item-inner.nav-file-title-content {
-		padding-left: 8px;
-		margin-left: -4px;
-	}
-
-	/* Highlight active note */
-
-	.nav-file-title.is-active .tree-item-inner.nav-file-title-content{
-
-		padding-bottom: 4px;
-		margin-bottom: -4px;
-		padding-top: 2px;
-		margin-top: -2px;
-		border-radius: var(--radius-m);
-		width:100%;
-		background-color: var(--color-base-30);
-	}
-	/* END Highlight active note */
-
-	/* folder or note HOVER  */
-
-	.tree-item-children.nav-folder-children .tree-item.nav-file .nav-file-title:hover,
-	.nav-folder-title:hover {
-		color: var(--nav-item-color-hover);
-		font-weight:400;
-	}
-
-	.nav-folder-title[data-path$="/"]:hover {
-		color: var(--vault-name-color)
-	}
-
-	.workspace-leaf.mod-active .tree-item-self.has-focus {
-		box-shadow: none;
-	}
-
-	.workspace-leaf.mod-active .tree-item-self.has-focus .tree-item-inner.nav-file-title-content {
-		left: -4px;
-		position: relative;
-		padding-left: 4px;
-		padding-bottom: 4px;
-		margin-bottom: -4px;
-		padding-top: 2px;
-		margin-top: -2px;
-		border-radius: 4px;
-		width:100%;
-		box-shadow: 0 0 0 2px var(--color-base-highlight);
-	}
-
-	/* Folder: collapsed */
-	.nav-folder .nav-folder-title-content:before,
-	.nav-folder.is-collapsed .nav-folder-title-content:before {
-		background-size: contain;
-		background-repeat: no-repeat;
-		background-position: center center;
-		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(110, 105, 102)' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' class='lucide lucide-folder-closed'%3E%3Cpath d='M4 20h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.93a2 2 0 0 1-1.66-.9l-.82-1.2A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13c0 1.1.9 2 2 2Z'/%3E%3Cpath d='M2 10h20'/%3E%3C/svg%3E");
-		content: " ";
-		position: relative;
-		display: inline-block;
-		top: 3px;
-		margin-right: 4px;
-		height: 16px;
-		width: 16px;
-	}
-
-		
-	/* files */
-	/* little label for filetypes */
-	.nav-file-tag {
-		margin: 0px;
-		vertical-align: baseline;
-		margin-top:0px;
-		font-size: var(--font-ui-unreadable);
-		font-family: var(--font-monospace-default);
-		text-transform: lowercase;
-		letter-spacing: -0.2px;
-		color: var(--color-base-60);
-	}
-
-	.nav-file-title-content:before {
-		/*content: url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%234C4949' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' class='lucide lucide-file'%3E%3Cpath d='M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z'/%3E%3Cpolyline points='14 2 14 8 20 8'/%3E%3C/svg%3E");*/
-		background-size: contain;
-		background-repeat: no-repeat;
-		background-position: center center;
-		background-image: url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(110, 105, 102)' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' class='lucide lucide-file'%3E%3Cpath d='M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z'/%3E%3Cpolyline points='14 2 14 8 20 8'/%3E%3C/svg%3E");
-		content: " ";
-		position: relative;
-		display: inline-block;
-		top: 3px;
-		margin-right: 4px;
-		height: 16px;
-		width: 16px;
-	}
-
-
-
-	.nav-file-title[data-path$="png"] .nav-file-title-content:before,
-	.nav-file-title[data-path$="jpg"] .nav-file-title-content:before,
-	.nav-file-title[data-path$="jpeg"] .nav-file-title-content:before {
-		background-size: contain;
-		background-repeat: no-repeat;
-		background-position: center center;
-		background-image: url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='rgb(110, 105, 102)' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' class='lucide lucide-file-image'%3E%3Cpath d='M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z'/%3E%3Cpolyline points='14 2 14 8 20 8'/%3E%3Ccircle cx='10' cy='13' r='2'/%3E%3Cpath d='m20 17-1.09-1.09a2 2 0 0 0-2.82 0L10 22'/%3E%3C/svg%3E");
-		content: " ";
-		position: relative;
-		display: inline-block;
-		top: 3px;
-		margin-right: 4px;
-		height: 16px;
-		width: 16px;
-	}
-
-	.nav-file-title[data-path$="docx"] .nav-file-title-content:before,
-	.nav-file-title[data-path$="pdf"] .nav-file-title-content:before,
-	.nav-file-title[data-path$="doc"] .nav-file-title-content:before {
-		background-size: contain;
-		background-repeat: no-repeat;
-		background-position: center center;
-		background-image: url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='rgb(110, 105, 102)' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' class='lucide lucide-file-text'%3E%3Cpath d='M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z'/%3E%3Cpolyline points='14 2 14 8 20 8'/%3E%3Cline x1='16' x2='8' y1='13' y2='13'/%3E%3Cline x1='16' x2='8' y1='17' y2='17'/%3E%3Cline x1='10' x2='8' y1='9' y2='9'/%3E%3C/svg%3E");
-		content: " ";
-		position: relative;
-		display: inline-block;
-		top: 3px;
-		margin-right: 4px;
-		height: 16px;
-		width: 16px;
-	}
-
-
-	/* ↑↑↑↑↑↑↑↑↑↑ Workspace Leafs: Files [ALL] */
-
-	/* ↓↓↓↓↓↓↓↓↓↓ Workspace Leafs: Search [ALL] */
-	.workspace-leaf-content:has(.search-row) {
-		position: relative;
-		top: 8px;
-		border-top: 1px solid var(--divider-color);
-	}
-	/* ↑↑↑↑↑↑↑↑↑↑ Workspace Leafs: Search [ALL] */
-	
-
-	/* ↓↓↓↓↓↓↓↓↓↓ Workspace Advanced Tables: Outline [ALL] */
-	.view-content:has(.advanced-tables-buttons) {
-		position: relative;
-		top: 8px;
-		border-top: 1px solid var(--divider-color);
-	}
-	/* ↑↑↑↑↑↑↑↑↑↑ Workspace Leafs: Outline [ALL] */
-
-	/* ↓↓↓↓↓↓↓↓↓↓ Workspace Leafs: Outline [ALL] */
-	.view-content:has(.outline) {
-		position: relative;
-		top: 8px;
-		border-top: 1px solid var(--divider-color);
-	}
-	/* ↑↑↑↑↑↑↑↑↑↑ Workspace Leafs: Outline [ALL] */
-	
-	/* ↓↓↓↓↓↓↓↓↓↓ Workspace Leafs: Navigation Pane [Colour Light] */
-
-	.nav-header {
-		padding-left: 0px;
-		padding-right: 0px;
-		margin-top: 8px;
-		padding-top: 0px;
-		border-top: 1px solid var(--divider-color);
-	}
-
-	.nav-buttons-container {
-		justify-content: left;
-		margin-left: 0px;
-		
-		border-bottom: 1px solid var(--divider-color);
-		margin-left: 12px;
-		margin-right: 12px;
-		border-radius: 0px;
-		padding: 5px;
-	}
-
-	/* ↓↓↓↓↓↓↓↓↓↓ Workspace Leaf: Navigation Pane: Icons [Colour Light] */
-
-	.clickable-icon.nav-action-button.is-active,
-	.clickable-icon.nav-action-button:hover {
-		background-color: var(--background-modifier-hover);
-		color: var(--color-base-highlight)
-	}
-
-	/* ↑↑↑↑↑↑↑↑↑↑ Workspace Leaf: Navigation Pane: Icons [Colour Light] */
-
-	/* ↑↑↑↑↑↑↑↑↑↑ Workspace Leaf: Navigation Pane [Colour Light] */
-
-	/* ↑↑↑↑↑↑↑↑↑↑ Workspace Leaf [Colour Light] */
-	
-
-	/* START file tabs! */
-
-
-
-	/* TOP TABS */
-
-	.workspace-split.mod-vertical.mod-root .workspace-tab-header-container-inner {
-		flex-grow: 1;
-	}
-
-	.workspace-split.mod-vertical.mod-root .workspace-tabs.mod-top-left-space .workspace-tab-header-container,
-	.workspace-split.mod-vertical.mod-root .workspace-tabs.mod-top .workspace-tab-header-container {
-		height: 81px;
-		transition: height 250ms 0ms;
-		padding-right: 0px;
-		padding-left: 0px;
-		border-bottom: none;
-	}
-
-	.workspace-split.mod-vertical.mod-root .workspace-tabs.mod-top-left-space .workspace-tab-header-container .workspace-tab-header-container-inner,
-	.workspace-split.mod-vertical.mod-root .workspace-tabs.mod-top .workspace-tab-header-container .workspace-tab-header-container-inner {
-		padding-top: 50px;
-		margin-top: 0px;
-		
-		padding-left:0px;
-		padding-right:0px;
-		margin-left: 0px;
-		margin-right: 0px;
-
-		transition: padding-top 250ms 0ms;
-	}
-
-	.workspace-split.mod-vertical.mod-root .workspace-tabs .workspace-tab-header-container {
-		height: 31px;
-		padding-right: 0px;
-	}
-
-	.workspace-split.mod-vertical.mod-root .workspace-tabs .workspace-tab-header-spacer {
-		visibility: collapse;
-		width: 0px;
-		display: none;
-	}
-
-	.workspace-split.mod-vertical.mod-root .workspace-tabs .workspace-tab-header-container .workspace-tab-header-container-inner {
-		padding-top: 0px;
-		margin-top: 0px;
-
-		padding-left:0px;
-		padding-right:0px;
-		margin-left: 0px;
-		margin-right: 0px;
-
-		transition: padding-top 250ms 0ms;
-	}
-	.workspace-split.mod-vertical.mod-root .workspace-tabs.mod-active .workspace-tab-header-container .workspace-tab-header-container-inner .workspace-tab-header.is-active,
-	.workspace-split.mod-vertical.mod-root .workspace-tabs.mod-top-left-space.mod-active .workspace-tab-header-container .workspace-tab-header-container-inner .workspace-tab-header.is-active,
-	.workspace-split.mod-vertical.mod-root .workspace-tabs.mod-top.mod-active .workspace-tab-header-container .workspace-tab-header-container-inner .workspace-tab-header.is-active {
-		background-color: var(--color-base-15);
-		border-top: 0px;
-		font-style: normal;
-	}
-
-	.workspace-split.mod-vertical.mod-root .workspace-tabs .workspace-tab-header-container .workspace-tab-header-container-inner .workspace-tab-header.is-active,
-	.workspace-split.mod-vertical.mod-root .workspace-tabs.mod-top-left-space .workspace-tab-header-container .workspace-tab-header-container-inner .workspace-tab-header.is-active,
-	.workspace-split.mod-vertical.mod-root .workspace-tabs.mod-top .workspace-tab-header-container .workspace-tab-header-container-inner .workspace-tab-header.is-active {
-		background-color: var(--color-base-15);
-		border-top: 0px;
-		color: var(--color-base-60);
-		font-style: italic;
-	}
-
-	.workspace-split.mod-vertical.mod-root .workspace-tabs.mod-top-left-space .workspace-tab-header-container .workspace-tab-header-container-inner .workspace-tab-header,
-	.workspace-split.mod-vertical.mod-root .workspace-tabs.mod-top .workspace-tab-header-container .workspace-tab-header-container-inner .workspace-tab-header {
-		background-color: var(--color-base-25);
-		
-		border-bottom: 1px solid var(--divider-color);
-		border-top: 1px solid var(--divider-color);
-		border-left: 1px solid var(--divider-color);
-		border-radius: 0%;
-		box-shadow: none;
-		padding: 0px;
-	}
-
-	.workspace-split.mod-vertical.mod-root .workspace-tabs .workspace-tab-header-container .workspace-tab-header-container-inner .workspace-tab-header {
-		background-color: var(--color-base-25);
-		color: var(--tab-text-color);
-		border-bottom: 1px solid var(--divider-color);
-		border-top: none;
-		border-left: 1px solid var(--divider-color);
-		border-radius: 0%;
-		box-shadow: none;
-		padding: 0px;
-	}
-
-	.workspace-split.mod-vertical.mod-root .workspace-tabs.mod-active .workspace-leaf .workspace-leaf-content .cm-editor.ͼ1.ͼ2 .cm-scroller::-webkit-scrollbar-thumb,
-	.workspace-split.mod-vertical.mod-root .workspace-tabs.mod-top-left-space.mod-active .workspace-leaf .workspace-leaf-content .cm-editor.ͼ1.ͼ2 .cm-scroller::-webkit-scrollbar-thumb,
-	.workspace-split.mod-vertical.mod-root .workspace-tabs.mod-top.mod-active .workspace-leaf .workspace-leaf-content .cm-editor.ͼ1.ͼ2 .cm-scroller::-webkit-scrollbar-thumb {
-		background-color: var(--color-scrollbar-1);;
-		border: 3px solid transparent;
-	}
-	
-	.workspace-split.mod-vertical.mod-root .workspace-tabs .workspace-leaf .workspace-leaf-content .cm-editor.ͼ1.ͼ2:hover .cm-scroller::-webkit-scrollbar-thumb {
-		
-	}
-
-	.workspace-split.mod-vertical.mod-root .workspace-tabs .workspace-leaf .workspace-leaf-content .cm-editor.ͼ1.ͼ2 .cm-scroller::-webkit-scrollbar-thumb {
-		
-		background-color: var(--color-scrollbar-3);
-		border: 4px solid transparent;
-		
-	}
-
-	.workspace-split.mod-vertical.mod-root .workspace-tabs .workspace-tab-header-container .workspace-tab-header-container-inner .workspace-tab-header-inner {
-		padding-left: 8px;
-		padding-right: 8px;
-		
-	}
-	
-	/* top and non-top tabs */
-	.workspace-split.mod-vertical.mod-root .workspace-tabs .workspace-tab-header-container .workspace-tab-header-new-tab,
-	.workspace-split.mod-vertical.mod-root .workspace-tabs .workspace-tab-header-container .workspace-tab-header-tab-list {
-		margin-top: 0px;
-		background-color: var(--color-base-25);
-		justify-content: center;
-		width: 30px;
-		margin-right: 0px;
-		border-bottom: 1px solid var(--divider-color);
-		padding-right: 0px;
-		padding-left: 0px;
-	}
-
-	/* top tabs specifically */
-	.workspace-split.mod-vertical.mod-root .workspace-tabs.mod-top-left-space .workspace-tab-header-container .workspace-tab-header-new-tab,
-	.workspace-split.mod-vertical.mod-root .workspace-tabs.mod-top-left-space .workspace-tab-header-container .workspace-tab-header-tab-list,
-	.workspace-split.mod-vertical.mod-root .workspace-tabs.mod-top .workspace-tab-header-container .workspace-tab-header-new-tab,
-	.workspace-split.mod-vertical.mod-root .workspace-tabs.mod-top .workspace-tab-header-container .workspace-tab-header-tab-list {
-		margin-top: 50px;
-		border-top: 1px solid var(--divider-color);
-
-	}
-
-	.workspace-tab-header-tab-list {
-		
-		order: -1;
-	}
-
-	.workspace-tab-header-new-tab {
-		border-left: 1px solid var(--divider-color);
-		border-right: 0px;
-		margin-left: 0px;
-
-	}
-
-	.workspace-tab-header::before, .workspace-tab-header::after {
-		border-radius: 0px;
-		width: 0px;
-		height: 0xp;
-		visibility: collapse;
-		display: none;
-	}
-
-	.workspace-tab-header::before, .workspace-tab-header::after {
-		
-	}
-
-	/* show close button on tab hover */
-	.workspace-tab-header.is-active .workspace-tab-header-inner:hover .workspace-tab-header-inner-close-button, 
-	.workspace-tab-header .workspace-tab-header-inner:hover .workspace-tab-header-inner-close-button {
-		visibility: visible;
-	}
-
-	.workspace .mod-root .workspace-tab-header {
-		width: 100%;
-		min-width: 42px;
-		max-width: 100%;
-		padding: 0px;
-		height: 31px;
-	}
-
-	.workspace-tab-header:not(.is-active):hover .workspace-tab-header {
-		background-color: var(--color-base-40);
-	}
-
-	.workspace-tab-header .workspace-tab-header-inner-close-button {
-		--icon-size: 12px;
-		padding-top: 3px;
-		order: -1;
-		visibility:hidden;
-	}
-
-	.mod-root .workspace-tab-header.is-active.mod-active .workspace-tab-header-inner-close-button:hover {
-		background-color: var(--color-base-50);
-	}
-
-
-	.workspace-tab-header-new-tab:hover,
-	.workspace-tab-header-tab-list:hover {
-		background-color: var(--color-base-30);
-	}
-
-	.workspace-tab-header-tab-list .clickable-icon,
-	.workspace-tab-header-new-tab .clickable-icon
-	{
-		--icon-size: 15px;
-		width: 30px;
-		height: 30px;
-		margin-top: -1px;
-	}
-
-
-	.workspace-tab-header-tab-list:hover .clickable-icon:hover,
-	.workspace-tab-header-new-tab:hover .clickable-icon:hover	{
-		background: none;
-		border-radius: 40px;
-	}
-
-	.workspace .mod-root .workspace-tab-header-inner::after {
-		width: 0px;
-		visibility: collapse;
-	}
-
-	.mod-root .workspace-tab-header.mod-active {
-		border-radius: 0px;
-		border-bottom: 1px solid var(--divider-color);
-		border-top: none;
-		padding-bottom: 0px;
-		padding-top: 1px;
-	}
-
-	.mod-root .workspace-tab-header-inner-title {
-		text-align: center
-	}
-
-	.mod-root .workspace-tab-header-inner {
-		padding-right: 6px;
-		height: 30px;
-		border-radius: 0px;
-	}
-
-	/* Stacked tabs */
-
-	.view-header-title-container:not(.mod-at-end):after {
-		background: none;
-	}
-
-	.workspace .mod-root .workspace-tabs.mod-stacked .workspace-tab-container .workspace-leaf {
-		border-left: 1px solid var(--divider-color);
-	}
-
-	.workspace-split.mod-vertical.mod-root .workspace-tabs.mod-stacked .workspace-tab-header-container .workspace-tab-header-new-tab {
-		order: 99;
-	}
-	
-	.workspace-split.mod-vertical.mod-root .workspace-tabs.mod-stacked .workspace-tab-header-container .workspace-tab-header-tab-list {
-		order: 98;
-	}
-
-	.workspace-split.mod-vertical.mod-root .workspace-tabs.mod-stacked.mod-top .workspace-tab-header-container .workspace-tab-header-new-tab,
-	.workspace-split.mod-vertical.mod-root .workspace-tabs.mod-stacked.mod-top .workspace-tab-header-container .workspace-tab-header-tab-list {
-		margin-top: 12px;
-
-	}
-
-	.workspace-split.mod-vertical.mod-root .workspace-tabs.mod-stacked .workspace-tab-header-container .workspace-tab-header-new-tab,
-	.workspace-split.mod-vertical.mod-root .workspace-tabs.mod-stacked .workspace-tab-header-container .workspace-tab-header-tab-list {
-		background-color: var(--color-base-15);
-		justify-content: center;
-		width: 30px;
-		margin-top: 0px;
-		margin-right: 0px;
-		border: none;
-		padding-right: 0px;
-		padding-left: 0px;
-	}
-
-
-
-	.workspace .mod-root .workspace-tabs.mod-stacked .workspace-tab-container .workspace-tab-header {
-		min-width: 34px;
-		max-width: unset;
-		height: unset;
-		width: 34px;
-		writing-mode: var(--tab-stacked-text-writing-mode);
-		text-orientation: sideways;
-		background-color: none;
-		padding: 0;
-		border-radius: 0;
-		--no-tooltip: true;
-		height: 100%;
-		border-bottom: none;
-		box-shadow: -1px 0 0 0 var(--tab-outline-color)
-	}
-
-
-
-	.workspace .mod-root .workspace-tabs.mod-stacked .workspace-tab-header-container .workspace-tab-header-container-inner {
-		width: 100%;
-	}
-
-	.workspace .mod-root .workspace-tabs.mod-stacked.mod-top .workspace-tab-header-container {
-		height: 50px;		
-	}
-
-	.workspace .mod-root .workspace-tabs.mod-stacked.mod-top .workspace-tab-header-container .workspace-tab-header-container-inner {
-		padding-top: 0px;
-	}
-
-
-
-
-	.workspace .mod-root .workspace-tabs.mod-stacked .workspace-tab-container .workspace-tab-header:hover {
-		background-color: var(--color-base-30);
-	}
-
-	.workspace .mod-root .workspace-tabs.mod-stacked .workspace-tab-container .workspace-tab-header.mod-active.is-active:hover {
-		background-color: var(--color-base-15);
-	}
-
-	.workspace .mod-root .workspace-tabs.mod-stacked .workspace-tab-container .workspace-tab-header-inner {
-		border-bottom: 1px solid var(--divider-color);
-		border-top: 1px solid var(--divider-color);
-		padding: 0px;
-		height: 100%;
-		background-color: var(--color-base-25);
-		vertical-align: middle;
-		border-bottom: none;
-	}
-
-	.workspace .mod-root .workspace-tabs.mod-stacked .workspace-tab-container .workspace-tab-header.mod-active.is-active .workspace-tab-header-inner {
-		background-color: var(--color-base-15);
-		border-top: none;
-	}
-
-	.workspace .mod-root .workspace-tabs.mod-stacked .workspace-tab-container .workspace-tab-header-inner .workspace-tab-header-inner-icon{
-		visibility: collapse;
-		width: 0px;
-		height: 0px;
-		padding: 0px;
-		margin: 0px;
-	}
-
-	.workspace .mod-root .workspace-tabs.mod-stacked .workspace-tab-container .workspace-tab-header-inner .workspace-tab-header-inner-close-button {
-		--icon-size: 12px;
-		padding-top: 2px;
-		visibility: visible;
-		top: 7px;
-		margin-bottom: 12px;
-	}
-
-
-	.workspace .mod-root .workspace-tabs.mod-stacked .workspace-tab-container .workspace-leaf .workspace-leaf-content .view-header {
-		border-top: 1px solid var(--divider-color);
-		height: 32px !important;
-		padding-bottom: 0px;
-	}
-
-	.workspace .mod-root .workspace-tabs.mod-stacked .workspace-tab-container .workspace-leaf .workspace-leaf-content .view-header .view-header-nav-buttons {
-		
-	}
-
-
-
-
-
-	/* END file tabs! */
-
-/*
-	.is-left-sidedock-open .mod-root .workspace-tab-header-container {
-		height: 70px;
-		background-color: var(--color-base-15);
-		transition: height 250ms 0ms;
-	}
-*/
-
-	/* resize draggers */
-
-	/* Resize handles */
-
-	
-	.workspace-leaf-resize-handle:hover {
-	background-color: var(--color-base-lowlight);
-	border-color: var(--color-base-lowlight);
-	
-	}
-	
-
-	/* top nav bar icon hover (inactive) */
-
-	.workspace-tab-header:not(.is-active):hover .workspace-tab-header-inner {
-		background-color: var(--color-base-30);
-		transition: all 100ms 0ms;
-	}
-
-	.workspace-tab-header:not(.is-active):hover .workspace-tab-header-inner-icon {
-		color: var(--color-base-highlight);
-		transition: all 100ms 0ms;
-	}
-
-	/* top nav bar icon hover (active) */
-
-	.mod-left-split .workspace-tab-header.has-active-menu,
-	.mod-right-split .workspace-tab-header.has-active-menu,
-	.mod-left-split .workspace-tab-header.is-active,
-	.mod-right-split .workspace-tab-header.is-active {
-		background-color: var(--color-base-highlight);
-		border-radius: 4px;
-
-	}
-	/* top nav bar icon color (active) */
-	/* just uses default */
-
-	/* top nav bar icon color (active) */
-
-	.mod-left-split .workspace-tab-header.has-active-menu .workspace-tab-header-inner-icon,
-	.mod-right-split .workspace-tab-header.has-active-menu .workspace-tab-header-inner-icon,
-	.mod-left-split .workspace-tab-header.is-active .workspace-tab-header-inner-icon,
-	.mod-right-split .workspace-tab-header.is-active .workspace-tab-header-inner-icon {
-		color: var(--color-base-00);
-	}
-
-	/*limit to just the sidebars NOTE: needs a fix to get the show left/right panel buttons when the panels are hidden*/
-	
-	.mod-horizontal .clickable-icon:hover {
-		background-color: var(--color-base-30);
-	}
-
-	/* shift the first set of module 'tabs' down (left side) */
-	.workspace.is-left-sidedock-open .workspace-tabs.mod-top.mod-top-left-space .workspace-tab-header-container {
-		height: 87px;
-		padding: 0px;
-	}
-
-	.workspace.is-left-sidedock-open .workspace-tabs.mod-top.mod-top-left-space .workspace-tab-header-container-inner {
-		background-color: none;
-		margin-top: 49px;
-		width:100%;
-
-	}
-
-
-
-
-	/* EDITOR PANE *
-	/* header bit */
-	.workspace-split.mod-vertical.mod-root .view-header {
-		border-bottom: 1px solid var(--divider-color);
-		height: 32px;
-	}
-
-	.workspace-split.mod-vertical.mod-root .view-header-title-container {
-		justify-content: left;
-
-	}
-
-	.workspace-split.mod-vertical.mod-root .view-header-title-parent,
-	.workspace-split.mod-vertical.mod-root .view-header-breadcrumb-separator,
-	.workspace-split.mod-vertical.mod-root .view-header-title {
-		font-size: var(--font-ui-teeny);
-	}
-
-	.workspace-split.mod-vertical.mod-root .view-header-title-parent .view-header-breadcrumb {
-		text-decoration-line: none;
-	}
-
-	.workspace-split.mod-vertical.mod-root .view-header-title-parent .view-header-breadcrumb:hover {
-		background-color: none;
-		text-decoration-line: none;
-		color: var(--text-normal);
-		font-weight: normal;
-	}
-
-	/* replace slashes with chevrons in breadcrumbs */
-
-	.view-header-breadcrumb {
-		top: 2px;
-		padding-left: 2px;
-		padding-right: 2px;
-		position: relative;
-		display: inline-block;		
-	}
-
-	.view-header-title-container .view-header-title-parent .view-header-breadcrumb.has-folder-note {
-		/* color: #016FF6; need a better way */ 
-	}
-
-	.view-header-title-container .view-header-title {
-		color: var(--text-muted);
-	}
-
-
-	.view-header-breadcrumb-separator {
-		visibility: hidden;
-		font-size: 0px;
-	}
-
-	.view-header-breadcrumb-separator:after {
-		content: " ";
-		position: relative;
-		display: inline-block;
-		background-size: contain;
-		background-repeat: no-repeat;
-		background-position: center center;
-		background-image: url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(110, 105, 102)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='lucide lucide-chevron-right'%3E%3Cpath d='m9 18 6-6-6-6'/%3E%3C/svg%3E");
-		visibility: visible;
-		top: 2px;
-		height: 14px;
-		width: 14px;
-		color: var(--text-faint);
-		opacity: 0.5;
-
-
-	}
-
-	/* Blank Page*/	
-	.empty-state {
-		justify-content: flex-start;
-	}
-
-	.empty-state-container {
-		margin-top: 150px;
-	}
-
-	.empty-state-action {
-		color: var(--color-base-highlight);
-		line-height: 18px;
-		margin-top: 8px;
-		
-	}
-
-	.empty-state-action:hover{
-		text-decoration: underline;
-		cursor: pointer;
-	}
-
-	/* highlight active page */
-	
-	.cm-editor.ͼ1.ͼ2 .inline-title{
-		color: var(--color-base-70);
-		transition: all 250ms 0ms;
-	}
-	.mod-active .cm-editor.ͼ1.ͼ2 .inline-title{
-		color: var(--color-base-highlight);
-		transition: all 250ms 0ms;
-	}
-
-
-	/*
-	.cm-editor.cm-focused.ͼ1.ͼ2:before {
-	
-		visibility: visible;
-		content: "\25cb";
-		color: var(--color-base-highlight);
-		position: absolute;
-		top: 6px;
-		left: 10px;
-		display:block;
-		transition: all 250ms 0ms;
-
-	}
-	*/
-	/* Content Text and Formatting */
-	.inline-title {
-		color: var(--color-base-highlight);
-		font-weight: 900;
-		font-size: 3em;
-		margin-bottom: 0px;
-	}
-	/* FRONTMATTER */
-
-	.cm-def.cm-hmd-frontmatter,
-	.cm-atom.cm-hmd-frontmatter {
-		padding-left: 0px;
-	}
-
-	.cm-line:has(.cm-hmd-frontmatter) {
-		
-		
-	}
-		
-	.cm-line:has(.cm-def):has(.cm-hmd-frontmatter) {
-
-	}
-
-	.cm-line:has(.cm-fold-indicator):has(.cm-def.cm-hmd-frontmatter) {
-		/*margin-top: 12px !important;
-		border-top: 1px solid #EDEDED;
-		margin-bottom: 0px;
-		border-bottom: none;
-		border-top-left-radius: 8px;
-		border-top-right-radius: 8px;
-		border-bottom-left-radius: 0px;
-		border-bottom-right-radius: 0px;*/
-		border: none;
-		border-bottom: none;
-		background-color: var(--color-base-00);
-	}
-
-	.cm-active.cm-line .cm-def.cm-hmd-frontmatter {
-		visibility: visible;
-	}
-
-	.cm-line .cm-def.cm-hmd-frontmatter {
-		visibility: collapse;
-		font-size: 12px;
-		color: var(--color-base-highlight);
-	}
-
-	.cm-active.cm-line	.cm-atom.cm-hmd-frontmatter,
-	.cm-active.cm-line .cm-hmd-frontmatter.cm-meta {
-
-		color: var(--color-base-highlight);
-	}
-
-	.cm-line .cm-atom.cm-hmd-frontmatter,
-	.cm-line .cm-hmd-frontmatter.cm-meta {
-		font-weight: bold;
-
-	}
-
-	.cm-line .cm-hmd-frontmatter {
-		color: var(--text-normal);
-		font-size: var(--font-ui-teeny);
-		line-height: 10px;
-	}
-
-	/* text basic*/
-
-
-	/* bullets */
-
-
-	.cm-s-obsidian .is-collapsed ~ .cm-formatting-list {
-		color: var(--color-base-highlight);
-	}
-
-	.cm-indent::before {
-		border-right: 1px solid var(--color-base-verylowlight);
-	}
-
-
-	/* numbers */
-	.cm-formatting-list-ol {
-
-	}
-
-	/* inline code */
-	.cm-s-obsidian span.cm-inline-code{
-		color: var(--text-normal);
-    	font-size: 0.82em;
-	}
-
-	/*Headings*/
-
-
-	.markdown-source-view.mod-cm6 .cm-foldPlaceholder{
-		color: var(--color-base-highlight);
-		margin-left: 0px;
-		font-weight: bold;
-	  }
-	  
-	.cm-formatting.cm-formatting-header {
-		color: var(--color-base-highlight);
-		
-	}
-
-	.HyperMD-header:has(.cm-fold-indicator.is-collapsed) .cm-header {
-		text-decoration: underline;
-		text-decoration-color: var(--color-base-highlight);
-	}
-
-
-	/* Tables */
-	/* Tables: Edit button*/
-	.markdown-source-view.mod-cm6 .cm-embed-block:hover .edit-block-button:hover {
-		color: var(--color-base-highlight);
-	}
-	
-	.markdown-source-view.mod-cm6 .edit-block-button{
-		color: var(--color-base-lowlight);
-	}
-
-	.markdown-source-view.mod-cm6 .block-language-dataview + .edit-block-button:after {
-		color: var(--color-base-lowlight);
-	}
-	
-	/* Table: pretty view */
-
-	.markdown-rendered table{
-		font-size: var(--font-smaller);
-	}
-
-	.markdown-rendered thead {
-		background-color: var(--color-base-verylowlight);
-	}
-
-	.markdown-rendered thead tr > th {
-		border-bottom-style: solid;
-		border-bottom-width: 1px;
-		border-bottom-color: var(--color-base-lowlight);
-	}
-
-	.markdown-rendered td,
-	.markdown-rendered th {
-		border-color: var(--color-base-lowlight);
-	}
-
-	.markdown-rendered th {
-		color: var(--color-base-highlight);
-	}
-
-	/* Table: Dataview [Colors Light] */
-	.table-view-table > tbody > tr:hover {
-		background-color: var(--color-base-00) !important;
-	}
-
-	.table-view-table > tbody > tr > td {
-		border-bottom-color: var(--color-base-lowlight);
-	}
-
-
-
-	/* Table: Edit Mode */
-	.cm-s-obsidian .HyperMD-table-row span.cm-hmd-table-sep,
-	.cm-s-obsidian .HyperMD-table-row-1 {
-		color: var(--color-base-lowlight);
-	}
-
-	/* ↓↓↓↓↓↓↓↓↓↓ Hierarchy Browsers [Colours Light] */
-	
-	/* ↑↑↑↑↑↑↑↑↑↑ Hierarchy Browsers: tree lines [Colours Light] */
-
-	/* ↓↓↓↓↓↓↓↓↓↓ Hierarchy Browsers: items [Colours Light] */
-	.collapse-icon.is-collapsed svg.svg-icon {
-		color: var(--color-base-highlight);
-	}
-
-
-	/* ↑↑↑↑↑↑↑↑↑↑ Hierarchy Browsers: items [Colours Light] */	
-
-	/* ↑↑↑↑↑↑↑↑↑↑ Hierarchy Browsers [Colours Light] */
-
-
-
-	/* ↓↓↓↓↓↓↓↓↓↓ CALLOUT [Colours Light]] */
-
-	/* ↓↓↓↓↓↓↓↓↓↓ CALLOUT: Custom (metadata) [Colours Light]] */
-	.callout[data-callout="metadata"] {
-		--callout-color: 200, 200, 200;
-	}
-	/* ↑↑↑↑↑↑↑↑↑↑ CALLOUT: Custom (metadata) [Colours Light]] */
-	
-	/* ↑↑↑↑↑↑↑↑↑↑ CALLOUT [Colours Light]] */
-
-	/* ↓↓↓↓↓↓↓↓↓↓ EMBEDS [ALL]*/
-	.markdown-embed {
-		border: 1px dashed var(--color-base-lowlight);
-		padding-top: 12px;
-		padding-bottom: 12px;
-	}
-	/* ↓↓↓↓↓↓↓↓↓↓ EMBEDS: Pictures [ALL]*/
-	.image-embed {
-		display: flex;
-		width:fit-content;
-		padding-right:5px;
-	}
-
-	.image-embed img {
-		max-width:var(--line-width);
-		max-height: 100vh;
-		border: 0.5px solid var(--color-base-50);
-		
-	}
-
-	/* ↓↓↓↓↓↓↓↓↓↓ LINKS [Colours Light]] */
-
-	.markdown-source-view.mod-cm6 .cm-link .cm-underline,
-	.markdown-source-view.mod-cm6 .cm-url .cm-underline {
-		color: var(--text-normal);
-		text-decoration:underline;
-		text-decoration-color: var(--link-external-decoration-color);
-	}
-
-	.markdown-rendered .external-link:after,
-	.markdown-source-view.mod-cm6 .cm-link .cm-underline:after,
-	.markdown-source-view.mod-cm6 .cm-url .cm-underline:after {
-		content: '\2197';
-		visibility: visible;
-		color: var(--link-external-decoration-color);
-	}
-
-	.cm-s-obsidian span.cm-formatting-link.cm-url,
-	.cm-s-obsidian span.cm-url,
-	.cm-string.cm-url {
-		color: var(--link-external-decoration-color);
-	}
-
-	/* Image amd Embed Links */
-	/*
-	.cm-s-obsidian span.cm-hmd-internal-link {
-		color: #35B649ff;
-	}
-	*/
-	.cm-s-obsidian span.cm-hmd-internal-link.cm-link-alias {
-		color: var(--text-normal);
-	}
-	/* Image Link */
-
-	.cm-s-obsidian .markdown-source-view.mod-cm6 .cm-link {
-		color: var(--text-normal);
-		text-decoration: none;
-	}
-
-	/* Link - Unresolved */
-	.cm-s-obsidian span.cm-hmd-internal-link .is-unresolved .cm-underline {
-		color: var(--link-unresolved-color);
-	}
-	
-	/* Link - Internal */
-	
-	.cm-s-obsidian .cm-hmd-internal-link.cm-link-alias-pipe {
-		color: var(--text-faint);
-	}
-
-	.cm-s-obsidian .cm-hmd-internal-link.cm-link-alias {
-		color: var(--text-normal);
-	}
-
-	.cm-s-obsidian.span .cm-hmd-internal-link {
-		color: var(--color-base-highlight);
-	}
-
-	.cm-s-obsidian span.cm-hmd-internal-link:hover {
-		text-decoration: none;
-	}
-
-	.cm-hmd-internal-link.cm-link-alias:hover {
-		color: var(--text-normal);
-		text-decoration: none;
-	}
-
-	.cm-formatting.cm-formatting-link-string.cm-string.cm-url {
-		color: var(--text-faint);
-	}
-
-	.cm-formatting.cm-formatting-link.cm-link {
-		color: var(--text-faint);
-	}
-
-	.cm-s-obsidian span.cm-link {
-		text-decoration: none;
-	}
-	.cm-s-obsidian span.cm-link:hover {
-		text-decoration: none;
-	}
-
-	.external-link:hover,
-	.markdown-source-view.mod-cm6 .cm-link .cm-underline:hover,
-	.markdown-source-view.mod-cm6 .cm-url .cm-underline:hover {
-		color: var(--text-normal);
-		text-decoration: underline;
-		text-decoration-color: var(--link-external-decoration-color);
-	}
-
-	.cm-link ~ .cm-url.external-link {
-		visibility: collapse;
-		width:0px;
-		height:0px;
-		padding: 0px;
-	}
-
-	.markdown-rendered .internal-link,
-	.cm-hmd-internal-link .cm-underline {
-		color: var(--text-normal);
-		text-decoration-color: var(--color-base-highlight);
-	}
-
-	.markdown-rendered .internal-link:hover,
-	.cm-hmd-internal-link .cm-underline:hover {
-		color: var(--text-normal);
-		text-decoration-color: var(--color-base-highlight);
-	}
-
-	.external-link, a {
-		background-image: none;
-		padding-right: 0px;
-	}
-
-	/* ↑↑↑↑↑↑↑↑↑↑ LINKS [Colours Light]] */
-
-	/* ↓↓↓↓↓↓↓↓↓↓ Settings [Colours Light] */
-
-	/* ↓↓↓↓↓↓↓↓↓↓ Settings [Position etc.] */
-	.modal-close-button {
-		left: var(--size-2-3);
-	}
-
-	.modal-close-button:after {
-		content: '\25cf';
-		font-size: 13.5px;
-		color: var(--color-fakeclose-inner);
-		margin-left: -13.6px;
-		top: -1.4px;
-		position: relative;
-	}
-
-	.modal-close-button:before {
-		content: '\25cf';
-		font-size: 16.5px;
-		color: var(--color-fakeclose-outer);
-		top: 0px;
-		left: 0.25px;
-		position: relative;
-	}
-
-	/* ↓↓↓↓↓↓↓↓↓↓ Settings: Background Dim [Colours Light] */
-	.modal-bg {
-		background-color: rgb(0 0 0 / 50%);
-	}
-	/* ↑↑↑↑↑↑↑↑↑↑ Settings: Background Dim [Colours Light] */
-
-	/* ↓↓↓↓↓↓↓↓↓↓ Settings: Left Pane [Colours Light] */
-	.vertical-tab-header {
-		background-color: var(--color-base-17);
-		padding-top:34px;
-	}
-
-	/* ↓↓↓↓↓↓↓↓↓↓ Settings: Right Pane [Colours Light] */
-	.vertical-tab-content {
-		background-color: var(--color-base-15);
-		padding-top:60px;
-		padding-bottom:35px;
-	}
-
-	
-
-	.modal {
-		background-color: var(--color-base-15);
-	}
-
-	.modal-sidebar {
-		padding-top:34px;
-	}
-
-	/* Folder Notes */
-	.modal-container.mod-dim .vertical-tab-content .setting-item .setting-item-info[style] {
-		color: var(--color-base-warn) !important;
-		font-size: var(--font-ui-smaller) !important; 
-	}
-
-
-	.modal-title {
-		margin-top: 20px;
-	}
-
-
-
-
-	/* dropdown selector */
-	.search-results-info .dropdown {
-	
-	}
-
-	.setting-item-control select {
-		min-width: 200px;
-		width:fit-content;
-	}
-
-	.dropdown {
-		background-image: url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='lucide lucide-chevrons-up-down'%3E%3Cpath d='m7 15 5 5 5-5'/%3E%3Cpath d='m7 9 5-5 5 5'/%3E%3C/svg%3E");
-		height: 24px;
-		box-shadow: none;
-		border: 0.5px solid var(--color-base-50);
-		background-color: var(--color-base-00);
-		background-size: 12px;
-	}
-
-
-
-	/* buttons */
-	.setting-item-control button {
-		height: 22px;
-		border-radius: 4px;
-		box-shadow: none;
-		border: 0.5px solid var(--color-base-50);
-		font-size: var(--font-ui-teeny);
-		background-color: var(--color-base-00);
-	}
-	
-	.setting-item-control button .svg-icon {
-			height: 14px;
-	}
-
-	.setting-item-control button:active {
-		background-color: var(--color-base-20);
-	}
-
-	.setting-item-control button.mod-cta {
-		background-color: var(--color-base-highlight) !important;
-		color: var(--color-base-00);
-	}
-
-	.setting-item-control button.mod-cta:active {
-		background-color: var(--color-base-darklight) !important;
-	}
-
-	.setting-item-control button.mod-warning {
-		background-color: var(--color-base-warn) !important;
-		color: var(--color-base-00);
-	}
-
-
-	.setting-item-control .clickable-icon {
-		border-radius: 4px;
-		height: auto;
-		width: auto;
-		box-shadow: none;
-		border: 0px solid var(--color-base-50);
-		font-size: 12px;
-		background-color: var(--color-base-15);
-	}
-
-	.setting-item-control .clickable-icon:hover {
-		color: var(--color-base-highlight);
-	}
-
-
-
-
-	/* ↓↓↓↓↓↓↓↓↓↓ Settings: Left Bar [Position etc.] */
-	.setting-item-info,
-	.vertical-tab-header-group-title {
-		font-size: var(--font-ui-teeny);
-		font-style: normal;
-	}
-
-	.setting-item-info {
-		color: var(--text-normal) !important;
-		font-style: italic;
-	}
-
-	.vertical-tab-nav-item {
-		font-size: 13px;
-	}
-
-	.vertical-tab-content {
-		font-size: var(--font-ui-teeny);
-		font-style: normal;
-	}
-
-	.vertical-tab-content .setting-item-info,
-	.vertical-tab-content h3,
-	.vertical-tab-content h2,
-	.vertical-tab-content h1 {
-		font-size: 16px;
-	}
-
-	.setting-item-name {
-		font-size: 13px;
-		font-style: normal;
-	}
-
-	.setting-item-description {
-		font-style: normal;
-	}
-	/* ↑↑↑↑↑↑↑↑↑↑ Settings: Background Dim [Position etc.] */
-
-		/*Caret [Colour Light]*/
-		.markdown-source-view.mod-cm6 .cm-content {
-			caret-color: var(--color-base-highlight);
-		}
-		/*Caret [Colour Light]*/
-		.markdown-source-view.mod-cm6 .cm-content > * {
-
-		}
 
 }
 
 .theme-dark {
+	color-scheme: dark;
+	--color-base-00: #1D1E1E;
+	--color-base-05: #231A16;
+	--color-base-10: #CFCCCB;
+	--color-base-17: #302926;
+	--color-base-15: #332721;
+	--color-base-20: #3C2E27;
+	--color-base-25: #241E1D;
+	--color-base-30: #4C4641;
+	--color-base-35: #312928;
+	--color-base-40: #605852;
+	--color-base-50: #4C4641;
+	--color-base-51: #6E665F;
+	--color-base-60: #B8B2B1;
+	--color-base-70: #B1A89E;
+	--color-base-80: #464545ff;
+	--color-base-90: #414141;
+	--color-base-100: #E4E4E4;
+	--color-base-101: #000000;
+
+	--divider-color: var(--color-base-101);
+	--divider-color-tabv: #524845;
+
+	--color-base-warn: #EA5A47;
+
+
+	
+	--color-fakeclose-inner: #FE5F57;
+	--color-fakeclose-outer: #DF544C;
+
+	--code-normal: var(--color-base-100);
+	--code-comment: var(--color-base-60);
+	--code-background: #171818;
+
+	--color-base-icons: #95908E; /*???*/
+
+	--color-scrollbar-1: #6B6A6A;
+	--color-scrollbar-2: #857773;
+	--color-scrollbar-3: #4A4949;
+
+	--color-base-highlight:  hsl(var(--accent-h), 80%, 55%); /*var(--color-accent);*/
+	--color-base-lowlight: hsl(var(--accent-h), 50%, 50%);
+	--color-base-verylowlight:  hsl(var(--accent-h), 50%, 20%);
+	--color-base-darklight: hsl(var(--accent-h), var(--accent-s), calc(var(--accent-l) + 40%));
+
+    --link-color: var(--color-base-lowlight);
+    --link-color-hover: var(--color-base-100);
+    --link-decoration: underline;
+	--link-decoration-color: var(--color-base-lowlight);
+    --link-decoration-hover: underline;
+    --link-decoration-thickness: auto;
+    --link-external-color: var(--color-base-100);
+    --link-external-color-hover: var(--color-base-100);
+	--link-external-decoration-color: #288133;
+    --link-external-decoration: underline;
+    --link-external-decoration-hover: underline;
+    --link-unresolved-color: var(--color-base-warn);
+    --link-unresolved-opacity: 0.7;
+    --link-unresolved-decoration-style: solid;
+    --link-unresolved-decoration-color: hsla(var(--color-base-warn), 0.3);
+	
+	--ribbon-background: var(--color-base-17);	
+
+    --background-modifier-border: var(--color-base-30);
+    --background-modifier-border-hover: var(--color-base-35);
+    --background-modifier-border-focus: var(--color-base-highlight);
+    --interactive-normal: var(--color-base-00);
+    --interactive-hover: var(--color-base-05);
+
+/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+/* 	Colour Specific (theme-dark) */
+
+
+/*
+rgb(218, 221, 220)
+*/
+
 
 }
 
+
+
+/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+/* 	Editor Frame */
+
+/* ================================================================================================= */
+/* 	Editor Frame - Sizing */
+
+/* ---------------------------------------------------------------------------------- */
+/* 	Editor Frame - Sizing - Max-width */
+/* SS */
+.markdown-source-view.mod-cm6.is-readable-line-width .cm-sizer {
+	max-width: 700px;
+}
+
+/* ---------------------------------------------------------------------------------- */
+/* 	Editor Frame - Sizing - Padding */
+
+.view-content > .markdown-source-view.mod-cm6 > .cm-editor > .cm-scroller {
+	padding: 50px;
+}
+
+/* ================================================================================================= */
+/* 	Editor Frame - Search and Replace */
+
+/* ---------------------------------------------------------------------------------- */
+/* 	Editor Frame - Search and Replace  - Search/Replace Pane */
+
+.cm-s-obsidian .document-search-container {
+	margin-left: 0px;
+	margin-right: 0px;
+	background-color: var(--color-base-verylowlight);
+}
+
+.cm-s-obsidian .document-replace-buttons,
+.cm-s-obsidian .document-search-buttons {
+	width: 170px;
+}
+
+.cm-s-obsidian .document-search-buttons .document-search-button {
+	width: 40px;
+}
+
+.cm-s-obsidian .document-replace-buttons .document-search-button {
+	width: 80px;
+};
+
+/* ---------------------------------------------------------------------------------- */
+/* 	Editor Frame - Search and Replace  - Inline Highliting */
+
+.cm-s-obsidian span.obsidian-search-match-highlight,
+.cm-s-obsidian span.obsidian-search-match-highlight .cm-inline-code,
+.cm-s-obsidian span.obsidian-search-match-highlight > * {
+	box-shadow: 0 0 0px 1px var(--text-accent);
+	border-radius: var(--radius-xs);
+	background-color: var(--color-base-highlight) !important;
+	color: var(--color-base-00);
+}
+
+/* ================================================================================================= */
+/* 	Editor Content - YAML */
+
+/* ---------------------------------------------------------------------------------- */
+/* 	Editor Content - YAML - opening/closing lines (cm-def) */
+
+.cm-line .cm-def.cm-hmd-frontmatter {
+	visibility: collapse;
+	font-size: 12px;
+	color: var(--color-base-highlight);
+}
+
+.cm-def.cm-hmd-frontmatter {
+	padding-left: 0px;
+}
+
+/* visible only when line is active */
+
+.cm-active.cm-line .cm-def.cm-hmd-frontmatter {
+	visibility: visible;
+}
+
+/* ---------------------------------------------------------------------------------- */
+/* 	Editor Content - YAML - key (cm-atom) */
+
+.cm-atom.cm-hmd-frontmatter {
+	padding-left: 0px;
+}
+
+.cm-active.cm-line	.cm-atom.cm-hmd-frontmatter,
+.cm-active.cm-line .cm-hmd-frontmatter.cm-meta {
+	color: var(--color-base-highlight);
+}
+
+.cm-line .cm-atom.cm-hmd-frontmatter,
+.cm-line .cm-hmd-frontmatter.cm-meta {
+	font-weight: bold;
+	font-style: normal;
+}
+
+.cm-line .cm-hmd-frontmatter {
+	color: var(--text-normal);
+	font-size: var(--font-ui-teeny);
+	line-height: 10px;
+}
+
+
+
+
+/* ================================================================================================= */
+/* 	Editor Content - Embed (General) */
+
+/* ---------------------------------------------------------------------------------- */
+/* 	Editor Content - Embed (General) - Remove ugly border shadow */
+
+.markdown-source-view.mod-cm6 .cm-embed-block:hover {
+	box-shadow: none;
+	border: none;
+	border-radius: var(--radius-none);
+}
+
+/* ---------------------------------------------------------------------------------- */
+/* 	Editor Content - Embed (General) - Move edit button to left margin and stretch content to full (remaining) width*/
+
+.markdown-source-view.mod-cm6 .cm-embed-block {
+	display: flex;
+	padding-left: 10px;
+	left: -40px;
+	width: calc(100% + 40px);
+}
+
+.markdown-source-view.mod-cm6 .edit-block-button{
+	order: -1;
+	align-items: center;
+	height: 30px;
+	top:0px;
+	position:relative;
+	padding-top: 0px;
+}
+
+/* ================================================================================================= */
+/* 	Editor Content - Embed (Admonitions) */
+
+/* ================================================================================================= */
+/* 	Editor Content - Embed (Tables) */
+
+/* ---------------------------------------------------------------------------------- */
+/* 	Editor Content - Embed (Tables) - Source Spacing */
+
+.markdown-source-view.mod-cm6 .cm-table-widget table {
+	margin: 0px;
+}
+
+/* ---------------------------------------------------------------------------------- */
+/* 	Editor Content - Embed (Tables) - Rendered Spacing */
+
+.markdown-rendered table {
+	margin-block-start: 0px;
+	margin-block-end: 0px;
+}
+
+.markdown-rendered td,
+.markdown-rendered th {
+	border-top: none;
+	border-left: none;
+	border-right: none;
+}
+
+
+/* ---------------------------------------------------------------------------------- */
+/* 	Editor Content - Embed -  */
+
+/* ================================================================================================= */
+/* 	Editor Content - Codeblocks */
+
+/* ---------------------------------------------------------------------------------- */
+/* 	Editor Content - Codeblocks - sizing */
+
+.markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock {
+	width:fit-content;
+	min-width: 100%;
+}
+
+/* ---------------------------------------------------------------------------------- */
+/* 	Editor Content - Codeblocks - Scroll text in reader mode */
+
+/*.HyperMD-codeblock {
+	white-space: nowrap;
+}*/
+
+/* ---------------------------------------------------------------------------------- */
+/* 	Editor Content - Codeblocks - Code Styling */
+
+.cm-comment {
+	color: var(--code-comment);
+	font-size: 0.9em;
+	font-style: italic;
+}
+
+.cm-def {
+	color: var(--color-base-highlight);
+}
+
+/* ---------------------------------------------------------------------------------- */
+/* 	Editor Content - Codeblocks - highlight opening/closing block */
+
+
+.markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock-begin .cm-hmd-codeblock,
+.markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock-end .cm-hmd-codeblock {
+	color: var(--color-base-highlight);
+}
+
+/* ---------------------------------------------------------------------------------- */
+/* 	Editor Content - Codeblocks - Borders */
+
+.markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock-begin {
+	border-top-color: var(--color-base-30);
+	border-top-width: 1px;
+	border-top-style: solid;
+	border-top-left-radius: var(--codeblock-radius);
+	border-top-right-radius: var(--codeblock-radius);
+}
+
+.markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock-end {
+	border-bottom-color: var(--color-base-30);
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-right-radius: var(--codeblock-radius);
+	border-bottom-left-radius: var(--codeblock-radius);
+}
+
+.markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock {
+	border-left-color: var(--color-base-30);
+	border-left-width: 1px;
+	border-left-style: solid;
+	border-right-color: var(--color-base-30);
+	border-right-width: 1px;
+	border-right-style: solid;
+}
+
+/* ---------------------------------------------------------------------------------- */
+/* 	Editor Content - Codeblocks - Language Flair/Copy block */
+
+.markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock .code-block-flair {
+	top: 0px;
+	right: 0px;
+	font-size: 8px;
+	color: var(--color-base-highlight);
+}
+
+.markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock .code-block-flair svg {
+	height: 12px;
+	width: 12px;
+}
+
+
+
+
+
+
+/* ================================================================================================= */
+/* 	Editor Content - Toggle */
+
+.checkbox-container {
+	background-color: var(--color-base-90);
+	transition: all 150ms 0ms;
+	box-shadow: none;
+}
+
+.checkbox-container.is-enabled {
+	background-color: var(--color-base-highlight);
+	transition: all 150ms 0ms;
+}
+
+.theme-light .checkbox-container,
+.theme-light .checkbox-container.is-enabled {
+	border:1px solid rgba(0, 0, 0, .04);
+}
+
+.theme-dark .checkbox-container,
+.theme-dark .checkbox-container.is-enabled {
+	border:1px solid rgba(255, 255, 255, .04);
+}
+
+.checkbox-container:after {
+	top: -1px;
+    left: -1px;
+}
+
+@media (hover: hover) {
+	.checkbox-container:hover {
+	  box-shadow: none;
+	}
+  }
+
+
+
+/* ---------------------------------------------------------------------------------- */
+/* 	Editor Content - Checkbox - Styling */
+.markdown-source-view.mod-cm6 .HyperMD-task-line[data-task="x"],
+.markdown-source-view.mod-cm6 .HyperMD-task-line[data-task="X"] {
+	text-decoration: none;
+}
+
+.markdown-source-view.mod-cm6 .task-list-item-checkbox{
+	border-radius: 50%;
+}
+
+.checkbox-container:focus-within {
+	outline: none;
+}
+
+input[type=checkbox]:checked:after {
+	left: -1.5px;
+	-webkit-mask-size: 80%;
+	-webkit-mask-image: url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cg transform='matrix(0.931139,-0.364664,0.364664,0.931139,-3.36731,5.16787)'%3E%3Cpath d='M19.493,8.908L9,17L6.388,10.798'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+input[type=checkbox]:checked {
+	font-family: var(--font-monospace-default);
+}
+
+@media (hover: hover) {
+	input[type=checkbox]:checked:hover {
+		background: var(--color-base-highlight);
+		border-color: var(--color-base-highlight);
+	}
+}
+
+/* ================================================================================================= */
+/* 	Editor Content - Bullets/list-ul */
+
+
+
+/* ---------------------------------------------------------------------------------- */
+/* 	Editor Content - Bullets/list-ul - Styling */
+
+.markdown-source-view.mod-cm6 .cm-formatting-list-ul {
+	padding-right: 3px;
+}
+
+/* ================================================================================================= */
+/* 	Editor Content - Number list/list-ol */
+
+/* ---------------------------------------------------------------------------------- */
+/* 	Editor Content - Number list/list-ol - Styling */
+
+.markdown-source-view.mod-cm6 .cm-formatting-list-ol {
+	padding-right: 3px;
+}
+
+
+
+.workspace-leaf-content[data-type="outgoing-link"] .view-content {
+	position:relative;
+	top: 8px;
+	border-top: 1px solid var(--divider-color);
+}
+
+
+/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+/* 	Graph */
+
+/* ================================================================================================= */
+/* 	Graph - Controls */
+
+/* ---------------------------------------------------------------------------------- */
+/* 	Graph - Controls - Styling */
+
+.workspace-leaf-content[data-type="localgraph"] .view-content {
+	top: 8px;
+	border-top: 1px solid var(--divider-color);
+	background-color: var(--color-base-05);
+}
+
+.workspace-split:not(.mod-root) .graph-controls.is-close {
+	background-color: var(--color-base-17);
+	padding: 0px;
+	right: 6px;
+	top: 6px;
+}
+
+
+.graph-controls:not(.is-close) {
+	box-shadow: none;
+	border: 1px solid var(--divider-color);
+	margin-top: -1px;
+	background-color: var(--color-base-17);
+	
+}
+
+.mod-horizontal .graph-controls:not(.is-close) {
+	width: 100%;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	border-radius: var(--radius-none);
+}
+
+/* ================================================================================================= */
+/* 	Graph - Lines */
+
+/* ---------------------------------------------------------------------------------- */
+/* 	Graph - Lines - Styling */
+
+.graph-view.color-line {
+	color: var(--divider-color);
+}
+
+/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+/* 	Scrollbars */
+
+/* ================================================================================================= */
+/* 	Scrollbars - Editor Panes */
+
+/* ---------------------------------------------------------------------------------- */
+/* 	Scrollbars - Editor Panes - Styling */
+
+::-webkit-scrollbar
+{
+	background-color: none;
+	width: 13px;
+	height: 0px; /* no horizontal scrollbars eep!*/
+}
+
+::-webkit-scrollbar:horizontal {
+	display: none;
+}
+
+
+::-webkit-scrollbar-thumb
+{
+	background-color: var(--color-scrollbar-1);
+	min-height: 45px;
+	background-clip: padding-box;
+	border-radius: 7px;
+	border: 3px solid transparent;
+	position: absolute;
+}
+
+
+/* ================================================================================================= */
+/* 	Scrollbars - Sidebar Leafs */
+
+/* ---------------------------------------------------------------------------------- */
+/* 	Scrollbars - Sidebar Leafs - Styling */
+
+.cm-scroller::-webkit-scrollbar-thumb {
+	background-color: var(--color-scrollbar-3);
+}
+
+.nav-files-container::-webkit-scrollbar-thumb
+{
+	background-color: var(--color-scrollbar-2);
+}
+
+.nav-files-container::-webkit-scrollbar-thumb
+{
+	background-color: var(--color-scrollbar-2);
+}
+
+/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+/* 	GUI Elements */
+
+/* ================================================================================================= */
+/* 	GUI Elements - Ribbon */
+
+body.is-focused .workspace-ribbon.mod-left,
+.workspace-ribbon {
+--titlebar-background: var(--color-base-17);
+border: none;
+padding: 0px;
+}
+
+
+.workspace-ribbon.mod-left.is-collapsed,
+.workspace-ribbon.mod-left:before,
+.workspace-ribbon.mod-left.is-collapsed:before,
+.workspace-ribbon.mod-left{
+background-color: var(--color-base-17);
+}
+
+
+.workspace-ribbon.mod-left:before {
+border: 0px;
+height: calc(var(--header-height) - var(--tab-outline-width) + 1px);
+}
+
+/* ================================================================================================= */
+/* 	GUI Elements - Status Bar */
+
+/* ---------------------------------------------------------------------------------- */
+/* 	GUI Elements - Status Bar - Hide */
+
+.status-bar {
+	visibility: collapse;
+	width: 0px;
+	height: 0px;
+	padding: 0px;
+	margin: 0px;
+	min-height: unset;
+}
+
+/* ================================================================================================= */
+/* 	GUI Elements - Command Pallete/Quick Switcher */
+
+/* ---------------------------------------------------------------------------------- */
+/* 	GUI Elements - Command Pallete/Quick Switcher - Styling */
+
+.prompt {
+	border-radius: var(--radius-m);
+	background-color: var(--color-base-15);
+	
+}
+
+.prompt-input {
+	background-color: var(--color-base-15);
+}
+
+.prompt-input:active {
+	box-shadow: none;
+	border-bottom: 1px solid var(--divider-color);
+}
+
+.prompt-instructions {
+	border-top: 1px solid var(--divider-color);
+}
+
+.suggestion-item {
+	border-radius: var(--radius-m);
+	padding-left: 8px;
+	padding-right: 8px;
+}
+
+.suggestion-item.is-selected {
+	background-color: var(--color-base-20);
+
+}
+
+/* ================================================================================================= */
+/* 	GUI Elements - Input (text) */
+
+/* ---------------------------------------------------------------------------------- */
+/* 	GUI Elements - Input (text) - Styling */
+
+.cm-s-obsidian input[type='text'] {
+	border: 0.5px solid var(--color-base-50);
+	height: 24px;
+}
+
+/* ================================================================================================= */
+/* 	GUI Elements - Button */
+
+/* ---------------------------------------------------------------------------------- */
+/* 	GUI Elements - Button - Styling */
+
+.cm-s-obsidian button:not(.clickable-icon) {
+	height: 24px;
+	border-radius: var(--button-radius);
+	box-shadow: none;
+	border: 0.5px solid var(--color-base-50);
+	font-size: var(--font-ui-teeny);
+	background-color: var(--color-base-00);
+}
+
+
+/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+/* 	Interface Leafs */
+
+/* ================================================================================================= */
+/* 	Interface Leafs - Search */
+
+/* ---------------------------------------------------------------------------------- */
+/* 	Interface Leafs - Search - Search Pop out */
+.suggestion-container.mod-search-suggestion .suggestion {
+	background-color: var(--color-base-17);
+}
+
+.suggestion-item.is-selected {
+	background-color: var(--color-base-30);
+}
+
+/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+/* 	Plugins */
+
+/* ================================================================================================= */
+/* 	Plugins - Dataview */
+
+/* ---------------------------------------------------------------------------------- */
+/* 	Plugins - Dataview - Embeds */
+
+.block-language-dataview.node-insert-event:has(.dataview.list-view-ul),
+.block-language-dataview.node-insert-event:has(.dataview.table-view-table) {
+	/*width:100%; SS*/ 
+	width: fit-content;
+	border: 1px dashed var(--color-base-verylowlight);
+	border-radius: var(--radius-m);
+	padding-block-start: 6px;
+	padding-block-end: 6px;
+	padding-inline-start: 6px;
+	padding-inline-end: 6px;
+}
+
+/* ---------------------------------------------------------------------------------- */
+/* 	Plugins - Dataview - Tables  */
+
+.dataview .table-view-table {
+	margin: 0px;
+}
+
+.table-view-table > thead > tr > th {
+	font-size: 14px;
+	border-bottom-width: 1px;
+	font-weight: 600;
+}
+
+.table-view-table > tbody > tr > td {
+
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+/* ---------------------------------------------------------------------------------- */
+/* 	Plugins - Dataview - List  */
+
+.dataview.list-view-ul {
+	margin: 0px;
+}
+
+/* ================================================================================================= */
+/* 	Plugins - Tempalter */
+
+.cm-s-obsidian .templater-inline .cm-templater-command,
+.templater-command-bg.cm-line {
+	background: none;
+}
+
+/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+
+/* UNSORTED GOES BELOW HERE */
+
+/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+
+
+
+/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+/* TRASHCAN */
+/*
+--titlebar-background: unset;
+--titlebar-background-focused: unset;
+
+.HyperMD-codeblock.HyperMD-codeblock-begin.cm-line {
+	padding-top: 0px;
+	padding-bottom: 0px;
+	border-top-width: 0px;
+	border-top-style: solid;
+	border-top-color: var(--color-base-verylowlight);
+	border-top-left-radius: var(--radius-none);
+	border-top-right-radius: var(--radius-none);
+}
+.HyperMD-codeblock.HyperMD-codeblock-end.cm-line {
+	padding-top: 0px;
+	border-bottom-width: 0px;
+	border-bottom-style: solid;
+	border-bottom-color: var(--color-base-verylowlight);
+	border-bottom-left-radius: var(--radius-none);
+	border-bottom-right-radius: var(--radius-none);
+
+}
+
+.HyperMD-codeblock.cm-line {
+	border-left-width: 1px;
+	border-left-style: solid;
+	border-left-color: var(--color-base-highlight);
+	
+}
+
+.cm-line:has(.cm-fold-indicator):has(.cm-def.cm-hmd-frontmatter) {
+	border: none;
+	border-bottom: none;
+	background-color: var(--color-base-00);
+}
+
+
+
+.workspace-ribbon.mod-left.is-collapsed {
+	transition: background-color 250ms 200ms ease-in-out;
+}
+
+.workspace-ribbon.mod-left.is-collapsed:before{
+	transition: background-color 250ms 200ms ease-in-out;
+}
+
+--background-modifier-hover: #00000000;
+--background-modifier-active-hover: #00000000;
+
+/* TRASHCAN */
+
+
+
+/* 	
+.markdown-source-view.mod-cm6 .cm-preview-code-block.cm-embed-block.markdown-rendered {
+	margin-top: 12px !important;
+	margin-bottom: 12px !important;
+
+}
+
+
+
+
+.cm-s-obsidian .HyperMD-table-row {
+	font-size: var(--font-ui-teeny);
+}
+
+.cm-s-obsidian .HyperMD-table-row-0 {
+	font-weight: bold;
+	}
+	
+.cm-s-obsidian .HyperMD-table-row span.cm-hmd-table-sep,
+.cm-s-obsidian .HyperMD-table-row-1 {
+	color: var(--color-base-lowlight);
+}
+
+/* ↑↑↑↑↑↑↑↑↑↑ Tables [Shape, Size, Position] */
+
+
+/* ↓↓↓↓↓↓↓↓↓↓ PANES [Shape, Size, Position] */
+
+.mod-left-split .workspace-tab-header-container,
+.mod-right-split .workspace-tab-header-container {
+	height: auto;
+}
+
+.mod-left-split .workspace-tab-header-container-inner,
+.mod-right-split .workspace-tab-header-container-inner {
+	padding-left: 12px;
+	padding-right: 12px;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	margin-top: 10px;
+	margin-left: 0px;
+	margin-right: 0px;
+	/*border-bottom: 1px solid #CDC7C7;*/
+	border-radius: var(--radius-none);
+	width: 100%;
+	height: 38px;
+	display: flex;
+}
+
+
+/* ↓↓↓↓↓↓↓↓↓↓ PANES: Left [Shape, Size, Position] */
+
+
+
+.sidebar-toggle-button.mod-left .clickable-icon {
+	padding: 0px;
+	width: 34px;
+	height: 30px;
+}
+
+.sidebar-toggle-button.mod-right .clickable-icon {
+	width: 34px;
+	height: 34px;
+}
+
+.workspace-tabs.mod-top.mod-top-left-space .sidebar-toggle-button.mod-left {
+	width: 34px;
+	height: 30px;
+	position: absolute;
+	left: 90px;
+	top: 10px;
+	padding: 0px;
+}
+
+/* ↓↓↓↓↓↓↓↓↓↓ PANES: Left: Header Icons  [Shape, Size, Position] */
+
+.mod-top-left-space .workspace-tab-header-container {
+	border-right: 0px solid var(--divider-color)
+}
+
+/* ↑↑↑↑↑↑↑↑↑↑ PANES: Left [Shape, Size, Position] */
+
+/* ↓↓↓↓↓↓↓↓↓↓ PANES: Ribbon [Shape, Size, Position] */
+
+
+
+.mod-horizontal .workspace-tab-header-container {
+	border-bottom: 0px;
+}
+
+/* ↑↑↑↑↑↑↑↑↑↑ PANES: Ribbon [Shape, Size, Position] */
+
+/* ↓↓↓↓↓↓↓↓↓↓ PANES: Middle [Shape, Size, Position] */
+
+
+/* ↓↓↓↓↓↓↓↓↓↓ PANES: Middle: Sidebar Show buttons [Shape, Size, Position] */
+
+
+.sidebar-toggle-button  {
+	transition: position 250ms;
+}
+
+/* ↑↑↑↑↑↑↑↑↑↑ PANES: Middle: Sidebar Show buttons [Shape, Size, Position] */
+
+/* ↑↑↑↑↑↑↑↑↑↑ PANES: Middle [Shape, Size, Position] */
+
+/* ↓↓↓↓↓↓↓↓↓↓ PANES: Right [Shape, Size, Position] */
+
+.workspace.is-right-sidedock-open .workspace-split.mod-horizontal.mod-right-split .mod-top-right-space .workspace-tab-header-container {
+	height: 87px;
+	padding: 0px;
+}
+
+.workspace.is-right-sidedock-open .workspace-split.mod-horizontal.mod-right-split .mod-top-right-space .workspace-tab-header-container-inner {
+	background-color: none;
+	margin-top: 49px;
+	width:100%;
+	padding-left: 12px;
+	padding-right: 12px;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	margin-left: 0px;
+	margin-right: 0px;
+	/*border-bottom: 1px solid #CDC7C7;*/
+	border-radius: var(--radius-none);
+	width: 100%;
+	height: 38px;
+	display: flex;
+}
+
+
+
+/* ↑↑↑↑↑↑↑↑↑↑ PANES: Right [Shape, Size, Position] */
+
+/* ↑↑↑↑↑↑↑↑↑↑ PANES [Shape, Size, Position] */
+
+
+/* ↓↓↓↓↓↓↓↓↓↓ CALLOUT [Shape, Size, Position] */
+.cm-embed-block.cm-callout {
+	width: calc(100%);
+}
+.cm-embed-block.cm-callout .markdown-rendered.show-indentation-guide {
+	/*width: fit-content;*/
+	width: 100%;
+	min-width: 150px;
+}
+
+
+.callout {
+	border-width: 1px;
+	border-radius: var(--radius-m);
+	padding: 12px;
+}
+.callout-icon svg.svg-icon {
+	height: 14px;
+	width: 14px;
+}
+
+.callout-content p {
+	margin-top: 0px;
+	margin-bottom:0px;
+	padding-right: 0px;
+	font-size: 80%;
+}
+
+.callout-content p a {
+	color: var(--text-normal);
+	background-image: none;
+	text-decoration:underline;
+	text-decoration-color: var(--link-external-decoration-color);
+}
+
+.callout-title {
+	margin-bottom: 4px;
+}
+
+.cm-s-obsidian span.cm-formatting-quote {
+	color: var(--color-base-highlight);
+}
+
+/* ↓↓↓↓↓↓↓↓↓↓ CALLOUT: Custom (metadata) [Shape, Size, Position] */
+.callout[data-callout="metadata"] {
+	--callout-icon: package;
+	
+}
+
+.markdown-source-view.mod-cm6 .callout {
+	transition: all 250ms 0ms;
+}
+
+.callout.is-collapsible.is-collapsed {
+	padding: 6px;
+	width:fit-content;
+	font-size: var(--font-ui-smaller);
+
+}
+
+.callout.is-collapsible.is-collapsed .callout-title {
+	margin-bottom: 0px;
+
+}
+
+.callout.is-collapsible.is-collapsed .callout-fold {
+	padding-right: 0px;
+
+}
+
+.callout-fold .svg-icon {
+	margin-top: -1px;
+	height: 1.2em;
+}
+
+
+/* ↑↑↑↑↑↑↑↑↑↑ CALLOUT [Shape, Size, Position] */
+
+
+/* CODE BLOCK */
+
+
+
+
+/* ↓↓↓↓↓↓↓↓↓↓ Headings: H1 [ALL] */
+.HyperMD-header .cm-header-1 {
+	font-size: 32px !important;
+	font-weight: 800;
+}
+
+.HyperMD-header .cm-header-2 {
+	font-size: 24px !important;
+	font-weight: 700;
+}
+
+.HyperMD-header .cm-header-3 {
+	font-size: 18px !important;
+	font-weight: 600;
+}
+
+.HyperMD-header .cm-header-4 {
+	font-size: 14px !important;
+	font-weight: 600;
+}
+
+.HyperMD-header .cm-header-5 {
+	font-size: 14px !important;
+	font-weight: 600;
+	font-style: italic;
+}
+
+
+/* tags */
+.cm-hashtag.cm-hashtag-begin {
+	border-top-left-radius: var(--radius-m);
+	border-bottom-left-radius: var(--radius-m);
+	border-right: none;
+	border-left: 1px solid var(--color-base-lowlight);
+	padding-left: 4px;
+}
+
+.cm-hashtag.cm-hashtag-end {
+	border-top-right-radius: var(--radius-m);
+	border-bottom-right-radius: var(--radius-m);
+	border-left: none;
+	border-right: 1px solid var(--color-base-lowlight);
+	padding-right: 4px;
+}
+
+.cm-hashtag {
+	color: var(--tag-color);
+	background-color: var(--color-base-verylowlight);
+	border: 1px solid var(--color-base-lowlight);
+	font-size: var(--tag-size);
+	vertical-align: baseline;
+	border-left: none;
+	border-right: none;
+	padding-top: var(--tag-padding-y);
+	padding-bottom: var(--tag-padding-y);
+}
+
+.callout-content > p > a.tag {
+	border-radius: var(--radius-m);
+	color: var(--tag-color);
+	background-color: var(--color-base-verylowlight);
+	border: 1px solid var(--color-base-lowlight);
+	padding-left: 2px;
+	padding-bottom: 1px;
+	padding-top: 1px;
+	padding-right: 2px;
+	vertical-align: baseline;
+	text-decoration: none;
+}
+
+}
+
+	/* Panes */
+	/* override some stupid focus colour changing */
+
+	.workspace-tab-header-container {
+		background: none;
+	}
+
+body.is-focused .sidebar-toggle-button,
+body.is-focused .workspace-tabs.mod-top,
+.sidebar-toggle-button,
+.workspace-tabs.mod-top {
+--tab-container-background: var(--color-base-17);
+}
+
+
+
+/* ↓↓↓↓↓↓↓↓↓↓ PANES: Left [Colour Light] */
+
+.mod-left-split .workspace-tab-header-container,
+.workspace-tabs .workspace-leaf	 {
+	background-color: var(--color-base-17);
+}
+
+
+/* ↑↑↑↑↑↑↑↑↑↑ PANES: Left [Colour Light] */
+
+/* ↓↓↓↓↓↓↓↓↓↓ PANES: Ribbon [Colour Light] */
+
+.workspace-ribbon .clickable-icon {
+	color: var(--color-base-highlight);
+}
+
+/* ↑↑↑↑↑↑↑↑↑↑ PANES: Ribbon [Colour Light] */
+
+
+/* ↓↓↓↓↓↓↓↓↓↓ PANES: Middle [Colour Light] */
+
+.mod-root .workspace-tab-header-container {
+	background-color: var(--color-base-15);
+}
+
+/* ↓↓↓↓↓↓↓↓↓↓ PANES: Middle: Sidebar Show buttons [Colour Light] */
+
+
+
+
+
+/* ↑↑↑↑↑↑↑↑↑↑ PANES: Middle: Sidebar Show buttons [Colour Light] */
+
+/* ↑↑↑↑↑↑↑↑↑↑ PANES: Middle [Colour Light] */
+
+
+
+
+
+
+/* ↓↓↓↓↓↓↓↓↓↓ PANES: Right [Colour Light] */
+.mod-right-split .workspace-tab-header-container {
+	background-color: var(--color-base-17);
+}
+
+.sidebar-toggle-button, .workspace-tabs.mod-top {
+	
+}
+
+/* ↑↑↑↑↑↑↑↑↑↑ PANES: Right [Colour Light] */
+
+/* ↑↑↑↑↑↑↑↑↑↑ PANES [Colour Light] */
+
+/* ↓↓↓↓↓↓↓↓↓↓ Workspace Leaf [Colour Light] */
+
+/* ↓↓↓↓↓↓↓↓↓↓ Workspace Leafs: Advanced Tables [ALL] */
+
+.advanced-tables-buttons .nav-buttons-container {
+	margin: 0px;
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+.advanced-tables-buttons .nav-header {
+	margin-top: -17px;
+}
+
+.advanced-tables-row-label {
+	font-size: var(--font-ui-small);
+	color: var(--nav-item-color);
+}
+
+.advanced-tables-buttons div:has(.title) {
+	visibility: collapse;
+	display: none;
+}
+
+.advanced-tables-button.nav-action-button .widget-icon:hover {
+	fill: var(--color-base-highlight);
+}
+
+/* ↑↑↑↑↑↑↑↑↑↑ Workspace Leafs: Advanced Tables [ALL] */
+
+/* ↓↓↓↓↓↓↓↓↓↓ Workspace Leafs: Bookmarks [ALL] */
+
+
+
+
+/* ↑↑↑↑↑↑↑↑↑↑ Workspace Leafs: Bookmarks [ALL] */
+
+/* ↓↓↓↓↓↓↓↓↓↓ Workspace Leafs: Files [ALL] */
+/* vault name */
+
+.tree-item.nav-folder .nav-folder-title[data-path$="/"] {
+	padding-left: 8px;
+}
+
+.tree-item.nav-folder .nav-folder-title[data-path$="/"] .tree-item-inner.nav-folder-title-content {
+	color: var(--color-base-0);
+	font-size: var(--font-ui-smaller);
+	font-weight: bold;
+
+}
+
+.tree-item.nav-folder .nav-folder-title[data-path$="/"] .tree-item-inner.nav-folder-title-content:before {
+	content: none;
+}
+
+/*
+.tree-item.nav-file:has(.nav-file-title.is-active) {
+	background-color: var(--color-base-30) !important;
+}
+*/
+
+/* Folder General */
+.tree-item.nav-folder .nav-folder-title .tree-item-inner.nav-folder-title-content {
+	padding-left: 8px;
+	margin-left: -4px;
+	padding-top: 2px !important;
+}
+
+/* Folder Notes */
+
+.tree-item.nav-folder .nav-folder-title.has-folder-note .tree-item-inner.nav-folder-title-content {
+	text-decoration-thickness: 1px;
+	text-decoration-color: var(--color-base-highlight);
+}
+
+.theme-dark .tree-item.nav-folder .nav-folder-title.has-folder-note .tree-item-inner.nav-folder-title-content:before {
+	background-image: url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='rgb(177, 168, 158)' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' class='lucide lucide-folder-edit'%3E%3Cpath d='M8.42 10.61a2.1 2.1 0 1 1 2.97 2.97L5.95 19 2 20l.99-3.95 5.43-5.44Z'/%3E%3Cpath d='M2 11.5V5c0-1.1.9-2 2-2h3.93a2 2 0 0 1 1.66.9l.82 1.2a2 2 0 0 0 1.66.9H20a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-9.5'/%3E%3C/svg%3E");
+}
+
+.theme-light .tree-item.nav-folder .nav-folder-title.has-folder-note .tree-item-inner.nav-folder-title-content:before {
+	background-image: url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='rgb(110, 105, 102)' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' class='lucide lucide-folder-edit'%3E%3Cpath d='M8.42 10.61a2.1 2.1 0 1 1 2.97 2.97L5.95 19 2 20l.99-3.95 5.43-5.44Z'/%3E%3Cpath d='M2 11.5V5c0-1.1.9-2 2-2h3.93a2 2 0 0 1 1.66.9l.82 1.2a2 2 0 0 0 1.66.9H20a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-9.5'/%3E%3C/svg%3E");
+}
+
+
+.tree-item.nav-folder .nav-folder-title.has-folder-note .tree-item-inner.nav-folder-title-content:before {
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center center;
+	content: " ";
+	position: relative;
+	display: inline-block;
+	top: 3px;
+	margin-right: 4px;
+	height: 16px;
+	width: 16px;
+}
+/* Highlight active folder-note */
+.nav-folder-title.has-folder-note.is-active .tree-item-inner.nav-folder-title-content {
+	border-radius: var(--radius-m);
+	width:100%;
+	background-color: var(--color-base-30) !important;
+	position: relative;
+	
+}
+/* END Highlight active folder-note */
+
+/* Folder Notes Overviews */
+
+.markdown-source-view.mod-cm6 .cm-embed-block .block-language-folder-overview .folder-overview {
+	width: fit-content;
+	border: 1px dashed var(--color-base-lowlight);
+	padding-block-start: 12px;
+	padding-block-end: 12px;
+	padding-inline-start: 12px;
+	padding-inline-end: 12px;
+}
+
+.markdown-rendered h1.folder-overview-title {
+	margin-top: 0px;
+}
+	
+
+/* end folder notes */
+
+/* Note general */
+.tree-item.nav-folder .nav-file-title .tree-item-inner.nav-file-title-content {
+	padding-left: 8px;
+	margin-left: -4px;
+}
+
+/* Highlight active note */
+
+.nav-file-title.is-active .tree-item-inner.nav-file-title-content{
+
+	padding-bottom: 4px;
+	margin-bottom: -4px;
+	padding-top: 2px;
+	margin-top: -2px;
+	border-radius: var(--radius-m);
+	width:100%;
+	background-color: var(--color-base-30);
+}
+/* END Highlight active note */
+
+/* folder or note  */
+
+body:not(.is-grabbing) .nav-file-title,
+body:not(.is-grabbing) .nav-folder-title,
+.tree-item-children.nav-folder-children .tree-item.nav-file .nav-file-title,
+.nav-folder-title {
+	background: none;
+}
+/* folder or note HOVER  */
+
+body:not(.is-grabbing) .tree-item-self.is-clickable:hover,
+body:not(.is-grabbing) .nav-file-title:hover,
+body:not(.is-grabbing) .nav-folder-title:hover,
+.tree-item-children.nav-folder-children .tree-item.nav-file .nav-file-title:hover,
+.nav-folder-title:hover {
+	background: none;
+	color: var(--nav-item-color-hover);
+	font-weight:400;
+}
+
+.nav-folder-title[data-path$="/"]:hover {
+	color: var(--vault-name-color)
+}
+
+.workspace-leaf.mod-active .tree-item-self.has-focus {
+	box-shadow: none;
+}
+
+.workspace-leaf.mod-active .tree-item-self.has-focus .tree-item-inner.nav-file-title-content {
+	left: -4px;
+	position: relative;
+	padding-left: 4px;
+	padding-bottom: 4px;
+	margin-bottom: -4px;
+	padding-top: 2px;
+	margin-top: -2px;
+	border-radius: var(--radius-m);
+	width:100%;
+	box-shadow: 0 0 0 2px var(--color-base-highlight);
+}
+
+/* Folder: collapsed */
+
+
+.theme-light .nav-folder .nav-folder-title-content:before,
+.theme-light .nav-folder.is-collapsed .nav-folder-title-content:before {
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(110, 105, 102)' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' class='lucide lucide-folder-closed'%3E%3Cpath d='M4 20h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.93a2 2 0 0 1-1.66-.9l-.82-1.2A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13c0 1.1.9 2 2 2Z'/%3E%3Cpath d='M2 10h20'/%3E%3C/svg%3E");
+}
+
+.theme-dark .nav-folder .nav-folder-title-content:before,
+.theme-dark .nav-folder.is-collapsed .nav-folder-title-content:before {
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(177, 168, 158)' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' class='lucide lucide-folder-closed'%3E%3Cpath d='M4 20h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.93a2 2 0 0 1-1.66-.9l-.82-1.2A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13c0 1.1.9 2 2 2Z'/%3E%3Cpath d='M2 10h20'/%3E%3C/svg%3E");
+}
+
+.nav-folder .nav-folder-title-content:before,
+.nav-folder.is-collapsed .nav-folder-title-content:before {
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center center;
+	content: " ";
+	position: relative;
+	display: inline-block;
+	top: 3px;
+	margin-right: 4px;
+	height: 16px;
+	width: 16px;
+}
+
+	
+/* files */
+/* little label for filetypes */
+.nav-file-tag {
+	margin: 0px;
+	vertical-align: baseline;
+	margin-top:0px;
+	font-size: var(--font-ui-unreadable);
+	font-family: var(--font-monospace-default);
+	text-transform: lowercase;
+	letter-spacing: -0.2px;
+	color: var(--color-base-60);
+	background: none;
+}
+
+.theme-light .nav-file-title-content:before {
+	background-image: url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(110, 105, 102)' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' class='lucide lucide-file'%3E%3Cpath d='M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z'/%3E%3Cpolyline points='14 2 14 8 20 8'/%3E%3C/svg%3E");
+}
+
+.theme-dark .nav-file-title-content:before {
+	background-image: url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(177, 168, 158)' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' class='lucide lucide-file'%3E%3Cpath d='M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z'/%3E%3Cpolyline points='14 2 14 8 20 8'/%3E%3C/svg%3E");
+}
+
+.nav-file-title-content:before {
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center center;
+	content: " ";
+	position: relative;
+	display: inline-block;
+	top: 3px;
+	margin-right: 4px;
+	height: 16px;
+	width: 16px;
+}
+
+.theme-light .nav-file-title[data-path$="png"] .nav-file-title-content:before,
+.theme-light .nav-file-title[data-path$="jpg"] .nav-file-title-content:before,
+.theme-light .nav-file-title[data-path$="jpeg"] .nav-file-title-content:before {
+	background-image: url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='rgb(110, 105, 102)' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' class='lucide lucide-file-image'%3E%3Cpath d='M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z'/%3E%3Cpolyline points='14 2 14 8 20 8'/%3E%3Ccircle cx='10' cy='13' r='2'/%3E%3Cpath d='m20 17-1.09-1.09a2 2 0 0 0-2.82 0L10 22'/%3E%3C/svg%3E");
+}
+
+.theme-dark .nav-file-title[data-path$="png"] .nav-file-title-content:before,
+.theme-dark .nav-file-title[data-path$="jpg"] .nav-file-title-content:before,
+.theme-dark .nav-file-title[data-path$="jpeg"] .nav-file-title-content:before {
+	background-image: url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='rgb(177, 168, 158)' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' class='lucide lucide-file-image'%3E%3Cpath d='M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z'/%3E%3Cpolyline points='14 2 14 8 20 8'/%3E%3Ccircle cx='10' cy='13' r='2'/%3E%3Cpath d='m20 17-1.09-1.09a2 2 0 0 0-2.82 0L10 22'/%3E%3C/svg%3E");
+}
+
+.nav-file-title[data-path$="png"] .nav-file-title-content:before,
+.nav-file-title[data-path$="jpg"] .nav-file-title-content:before,
+.nav-file-title[data-path$="jpeg"] .nav-file-title-content:before {
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center center;
+	content: " ";
+	position: relative;
+	display: inline-block;
+	top: 3px;
+	margin-right: 4px;
+	height: 16px;
+	width: 16px;
+}
+
+.theme-light .nav-file-title[data-path$="docx"] .nav-file-title-content:before,
+.theme-light .nav-file-title[data-path$="pdf"] .nav-file-title-content:before,
+.theme-light .nav-file-title[data-path$="doc"] .nav-file-title-content:before {
+	background-image: url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='rgb(110, 105, 102)' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' class='lucide lucide-file-text'%3E%3Cpath d='M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z'/%3E%3Cpolyline points='14 2 14 8 20 8'/%3E%3Cline x1='16' x2='8' y1='13' y2='13'/%3E%3Cline x1='16' x2='8' y1='17' y2='17'/%3E%3Cline x1='10' x2='8' y1='9' y2='9'/%3E%3C/svg%3E");
+}
+
+.theme-dark .nav-file-title[data-path$="docx"] .nav-file-title-content:before,
+.theme-dark .nav-file-title[data-path$="pdf"] .nav-file-title-content:before,
+.theme-dark .nav-file-title[data-path$="doc"] .nav-file-title-content:before {
+	background-image: url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='rgb(177, 168, 158)' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' class='lucide lucide-file-text'%3E%3Cpath d='M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z'/%3E%3Cpolyline points='14 2 14 8 20 8'/%3E%3Cline x1='16' x2='8' y1='13' y2='13'/%3E%3Cline x1='16' x2='8' y1='17' y2='17'/%3E%3Cline x1='10' x2='8' y1='9' y2='9'/%3E%3C/svg%3E");
+}
+
+.nav-file-title[data-path$="docx"] .nav-file-title-content:before,
+.nav-file-title[data-path$="pdf"] .nav-file-title-content:before,
+.nav-file-title[data-path$="doc"] .nav-file-title-content:before {
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center center;
+	content: " ";
+	position: relative;
+	display: inline-block;
+	top: 3px;
+	margin-right: 4px;
+	height: 16px;
+	width: 16px;
+}
+
+
+/* ↑↑↑↑↑↑↑↑↑↑ Workspace Leafs: Files [ALL] */
+
+/* ↓↓↓↓↓↓↓↓↓↓ Workspace Leafs: Search [ALL] */
+.workspace-leaf-content:has(.search-row) {
+	position: relative;
+	top: 8px;
+	border-top: 1px solid var(--divider-color);
+}
+/* ↑↑↑↑↑↑↑↑↑↑ Workspace Leafs: Search [ALL] */
+
+
+/* ↓↓↓↓↓↓↓↓↓↓ Workspace Advanced Tables: Outline [ALL] */
+.view-content:has(.advanced-tables-buttons) {
+	position: relative;
+	top: 8px;
+	border-top: 1px solid var(--divider-color);
+}
+/* ↑↑↑↑↑↑↑↑↑↑ Workspace Leafs: Outline [ALL] */
+
+/* ↓↓↓↓↓↓↓↓↓↓ Workspace Leafs: Outline [ALL] */
+.view-content:has(.outline) {
+	position: relative;
+	top: 8px;
+	border-top: 1px solid var(--divider-color);
+}
+/* ↑↑↑↑↑↑↑↑↑↑ Workspace Leafs: Outline [ALL] */
+
+/* ↓↓↓↓↓↓↓↓↓↓ Workspace Leafs: Navigation Pane [Colour Light] */
+
+.nav-header {
+	padding-left: 0px;
+	padding-right: 0px;
+	margin-top: 8px;
+	padding-top: 0px;
+	border-top: 1px solid var(--divider-color);
+}
+
+.nav-buttons-container {
+	justify-content: left;
+	margin-left: 0px;
+	
+	border-bottom: 1px solid var(--divider-color);
+	margin-left: 12px;
+	margin-right: 12px;
+	border-radius: var(--radius-none);
+	padding: 5px;
+}
+
+/* ↓↓↓↓↓↓↓↓↓↓ Workspace Leaf: Navigation Pane: Icons [Colour Light] */
+
+.clickable-icon.nav-action-button.is-active,
+.clickable-icon.nav-action-button:hover {
+	background-color: var(--background-modifier-hover);
+	color: var(--color-base-highlight)
+}
+
+/* ↑↑↑↑↑↑↑↑↑↑ Workspace Leaf: Navigation Pane: Icons [Colour Light] */
+
+/* ↑↑↑↑↑↑↑↑↑↑ Workspace Leaf: Navigation Pane [Colour Light] */
+
+/* ↑↑↑↑↑↑↑↑↑↑ Workspace Leaf [Colour Light] */
+
+
+/* START file tabs! */
+
+
+
+/* TOP TABS */
+
+.workspace-split.mod-vertical.mod-root .workspace-tab-header-container-inner {
+	flex-grow: 1;
+}
+
+workspace-split mod-vertical mod-root
+
+.mod-macos.is-hidden-frameless:not(.is-popout-window) .workspace .workspace-tabs.mod-top-right-space .workspace-tab-header-container {
+	height: 87px;
+}
+
+
+.workspace-split.mod-vertical.mod-root .workspace-tabs.mod-top-right-space .workspace-tab-header-container,
+.workspace-split.mod-vertical.mod-root .workspace-tabs.mod-top-left-space .workspace-tab-header-container,
+.workspace-split.mod-vertical.mod-root .workspace-tabs.mod-top .workspace-tab-header-container {
+	height: 81px;
+	transition: height 250ms 0ms;
+	padding-right: 0px;
+	padding-left: 0px;
+	border-bottom: none;
+}
+
+.workspace-split.mod-vertical.mod-root .workspace-tabs.mod-top-right-space .workspace-tab-header-container-inner,
+.workspace-split.mod-vertical.mod-root .workspace-tabs.mod-top-left-space .workspace-tab-header-container .workspace-tab-header-container-inner,
+.workspace-split.mod-vertical.mod-root .workspace-tabs.mod-top .workspace-tab-header-container .workspace-tab-header-container-inner {
+	padding-top: 50px;
+	margin-top: 0px;
+	
+	padding-left:0px;
+	padding-right:0px;
+	margin-left: 0px;
+	margin-right: 0px;
+
+	transition: padding-top 250ms 0ms;
+}
+
+.workspace-split.mod-vertical.mod-root .workspace-tabs .workspace-tab-header-container {
+	height: 31px;
+	padding-right: 0px;
+}
+
+.workspace-split.mod-vertical.mod-root .workspace-tabs .workspace-tab-header-spacer {
+	visibility: collapse;
+	width: 0px;
+	display: none;
+}
+
+/* All Tabs */
+.workspace-split.mod-vertical.mod-root .workspace-tabs .workspace-tab-header-container .workspace-tab-header-container-inner {
+	padding-top: 0px;
+	margin-top: 0px;
+	padding-left:0px;
+	padding-right:0px;
+	margin-left: 0px;
+	margin-right: 0px;
+	transition: padding-top 250ms 0ms;
+}
+
+/* Draw a fake border for aligment purposes on the active tab across the top tab pane */
+.workspace-split.mod-vertical.mod-root .workspace-tabs.mod-top.mod-active .workspace-tab-header-container .workspace-tab-header-container-inner .workspace-tab-header.is-active {
+	border-top: 1px solid var(--color-base-15);
+}
+
+.workspace-split.mod-vertical.mod-root .workspace-tabs.mod-active .workspace-tab-header-container .workspace-tab-header-container-inner .workspace-tab-header.is-active,
+.workspace-split.mod-vertical.mod-root .workspace-tabs.mod-top-left-space.mod-active .workspace-tab-header-container .workspace-tab-header-container-inner .workspace-tab-header.is-active,
+.workspace-split.mod-vertical.mod-root .workspace-tabs.mod-top.mod-active .workspace-tab-header-container .workspace-tab-header-container-inner .workspace-tab-header.is-active {
+	background-color: var(--color-base-15);
+	border-bottom: 1px solid var(--divider-color);
+	font-style: normal;
+}
+
+.workspace-split.mod-vertical.mod-root .workspace-tabs .workspace-tab-header-container .workspace-tab-header-container-inner .workspace-tab-header.is-active,
+.workspace-split.mod-vertical.mod-root .workspace-tabs.mod-top-left-space .workspace-tab-header-container .workspace-tab-header-container-inner .workspace-tab-header.is-active,
+.workspace-split.mod-vertical.mod-root .workspace-tabs.mod-top .workspace-tab-header-container .workspace-tab-header-container-inner .workspace-tab-header.is-active {
+	background-color: var(--color-base-15);
+	color: var(--color-base-60);
+	font-style: italic;
+}
+
+.workspace-split.mod-vertical.mod-root .workspace-tabs.mod-top-left-space .workspace-tab-header-container .workspace-tab-header-container-inner .workspace-tab-header,
+.workspace-split.mod-vertical.mod-root .workspace-tabs.mod-top .workspace-tab-header-container .workspace-tab-header-container-inner .workspace-tab-header {
+	background-color: var(--color-base-25);
+	
+	border-bottom: 1px solid var(--divider-color);
+	border-top: 1px solid var(--divider-color);
+	border-left: 1px solid var(--divider-color);
+	border-radius: 0%;
+	box-shadow: none;
+	padding: 0px;
+}
+
+.workspace-split.mod-vertical.mod-root .workspace-tabs .workspace-tab-header-container .workspace-tab-header-container-inner .workspace-tab-header {
+	background-color: var(--color-base-25);
+	color: var(--tab-text-color);
+	border-bottom: 1px solid var(--divider-color);
+	border-top: none;
+	border-left: 1px solid var(--divider-color);
+	border-radius: 0%;
+	box-shadow: none;
+	padding: 0px;
+}
+
+.workspace-split.mod-vertical.mod-root .workspace-tabs.mod-active .workspace-leaf .workspace-leaf-content .cm-editor.ͼ1.ͼ2 .cm-scroller::-webkit-scrollbar-thumb,
+.workspace-split.mod-vertical.mod-root .workspace-tabs.mod-top-left-space.mod-active .workspace-leaf .workspace-leaf-content .cm-editor.ͼ1.ͼ2 .cm-scroller::-webkit-scrollbar-thumb,
+.workspace-split.mod-vertical.mod-root .workspace-tabs.mod-top.mod-active .workspace-leaf .workspace-leaf-content .cm-editor.ͼ1.ͼ2 .cm-scroller::-webkit-scrollbar-thumb {
+	background-color: var(--color-scrollbar-1);;
+	border: 3px solid transparent;
+}
+
+
+
+.workspace-split.mod-vertical.mod-root .workspace-tabs .workspace-leaf .workspace-leaf-content .cm-editor.ͼ1.ͼ2 .cm-scroller::-webkit-scrollbar-thumb {
+	
+	background-color: var(--color-scrollbar-3);
+	border: 4px solid transparent;
+	
+}
+
+.workspace-split.mod-vertical.mod-root .workspace-tabs .workspace-tab-header-container .workspace-tab-header-container-inner .workspace-tab-header-inner {
+	padding-left: 8px;
+	padding-right: 8px;
+	
+}
+
+/* top and non-top tabs */
+.workspace-split.mod-vertical.mod-root .workspace-tabs .workspace-tab-header-container .workspace-tab-header-new-tab,
+.workspace-split.mod-vertical.mod-root .workspace-tabs .workspace-tab-header-container .workspace-tab-header-tab-list {
+	margin-top: 0px;
+	background-color: var(--color-base-25);
+	justify-content: center;
+	width: 30px;
+	margin-right: 0px;
+	border-bottom: 1px solid var(--divider-color);
+	padding-right: 0px;
+	padding-left: 0px;
+}
+
+/* top tabs specifically */
+.workspace-split.mod-vertical.mod-root .workspace-tabs.mod-top-left-space .workspace-tab-header-container .workspace-tab-header-new-tab,
+.workspace-split.mod-vertical.mod-root .workspace-tabs.mod-top-left-space .workspace-tab-header-container .workspace-tab-header-tab-list,
+.workspace-split.mod-vertical.mod-root .workspace-tabs.mod-top .workspace-tab-header-container .workspace-tab-header-new-tab,
+.workspace-split.mod-vertical.mod-root .workspace-tabs.mod-top .workspace-tab-header-container .workspace-tab-header-tab-list {
+	margin-top: 50px;
+	border-top: 1px solid var(--divider-color);
+
+}
+
+.workspace-tab-header-tab-list {
+	
+	order: -1;
+}
+
+.workspace-tab-header-new-tab {
+	border-left: 1px solid var(--divider-color);
+	border-right: 0px;
+	margin-left: 0px;
+
+}
+
+.workspace-tab-header::before, .workspace-tab-header::after {
+	border-radius: var(--radius-none);
+	width: 0px;
+	height: 0xp;
+	visibility: collapse;
+	display: none;
+}
+
+.workspace-tab-header::before, .workspace-tab-header::after {
+	
+}
+
+/* show close button on tab hover */
+.workspace-tab-header.is-active .workspace-tab-header-inner:hover .workspace-tab-header-inner-close-button, 
+.workspace-tab-header .workspace-tab-header-inner:hover .workspace-tab-header-inner-close-button {
+	visibility: visible;
+}
+
+.workspace .mod-root .workspace-tab-header {
+	width: 100%;
+	min-width: 42px;
+	max-width: 100%;
+	padding: 0px;
+	height: 31px;
+}
+
+.workspace-tab-header:not(.is-active):hover .workspace-tab-header {
+	background-color: var(--color-base-40);
+}
+
+.workspace-tab-header .workspace-tab-header-inner-close-button {
+	--icon-size: 12px;
+	padding-top: 3px;
+	order: -1;
+	visibility:hidden;
+}
+
+.mod-root .workspace-tab-header.is-active.mod-active .workspace-tab-header-inner-close-button:hover {
+	background-color: var(--color-base-50);
+}
+
+
+.workspace-tab-header-new-tab:hover,
+.workspace-tab-header-tab-list:hover {
+	background-color: var(--color-base-30);
+}
+
+.workspace-tab-header-tab-list .clickable-icon,
+.workspace-tab-header-new-tab .clickable-icon
+{
+	--icon-size: 15px;
+	width: 30px;
+	height: 30px;
+	margin-top: -1px;
+}
+
+
+.workspace-tab-header-tab-list:hover .clickable-icon:hover,
+.workspace-tab-header-new-tab:hover .clickable-icon:hover	{
+	background: none;
+	border-radius: 40px;
+}
+
+.workspace .mod-root .workspace-tab-header-inner::after {
+	width: 0px;
+	visibility: collapse;
+}
+
+.mod-root .workspace-tab-header.mod-active {
+	border-radius: var(--radius-none);
+	border-bottom: 1px solid var(--divider-color);
+	border-top: none;
+	padding-bottom: 0px;
+	padding-top: 1px;
+}
+
+.mod-root .workspace-tab-header-inner-title {
+	text-align: center
+}
+
+.mod-root .workspace-tab-header-inner {
+	padding-right: 6px;
+	height: 30px;
+	border-radius: var(--radius-none);
+}
+
+/* Stacked tabs */
+
+.view-header-title-container:not(.mod-at-end):after {
+	background: none;
+}
+
+.workspace .mod-root .workspace-tabs.mod-stacked .workspace-tab-container .workspace-leaf {
+	border-left: 1px solid var(--divider-color);
+}
+
+.workspace-split.mod-vertical.mod-root .workspace-tabs.mod-stacked .workspace-tab-header-container .workspace-tab-header-new-tab {
+	order: 99;
+}
+
+.workspace-split.mod-vertical.mod-root .workspace-tabs.mod-stacked .workspace-tab-header-container .workspace-tab-header-tab-list {
+	order: 98;
+}
+
+.workspace-split.mod-vertical.mod-root .workspace-tabs.mod-stacked.mod-top .workspace-tab-header-container .workspace-tab-header-new-tab,
+.workspace-split.mod-vertical.mod-root .workspace-tabs.mod-stacked.mod-top .workspace-tab-header-container .workspace-tab-header-tab-list {
+	margin-top: 12px;
+
+}
+
+.workspace-split.mod-vertical.mod-root .workspace-tabs.mod-stacked .workspace-tab-header-container .workspace-tab-header-new-tab,
+.workspace-split.mod-vertical.mod-root .workspace-tabs.mod-stacked .workspace-tab-header-container .workspace-tab-header-tab-list {
+	background-color: var(--color-base-15);
+	justify-content: center;
+	width: 30px;
+	margin-top: 0px;
+	margin-right: 0px;
+	border: none;
+	padding-right: 0px;
+	padding-left: 0px;
+}
+
+
+
+.workspace .mod-root .workspace-tabs.mod-stacked .workspace-tab-container .workspace-tab-header {
+	min-width: 34px;
+	max-width: unset;
+	height: unset;
+	width: 34px;
+	writing-mode: var(--tab-stacked-text-writing-mode);
+	text-orientation: sideways;
+	background-color: none;
+	padding: 0;
+	border-radius: 0;
+	--no-tooltip: true;
+	height: 100%;
+	border-bottom: none;
+	box-shadow: -1px 0 0 0 var(--tab-outline-color)
+}
+
+
+
+.workspace .mod-root .workspace-tabs.mod-stacked .workspace-tab-header-container .workspace-tab-header-container-inner {
+	width: 100%;
+}
+
+.workspace .mod-root .workspace-tabs.mod-stacked.mod-top .workspace-tab-header-container {
+	height: 50px;		
+}
+
+.workspace .mod-root .workspace-tabs.mod-stacked.mod-top .workspace-tab-header-container .workspace-tab-header-container-inner {
+	padding-top: 0px;
+}
+
+
+
+
+.workspace .mod-root .workspace-tabs.mod-stacked .workspace-tab-container .workspace-tab-header:hover {
+	background-color: var(--color-base-30);
+}
+
+.workspace .mod-root .workspace-tabs.mod-stacked .workspace-tab-container .workspace-tab-header.mod-active.is-active:hover {
+	background-color: var(--color-base-15);
+}
+
+.workspace .mod-root .workspace-tabs.mod-stacked .workspace-tab-container .workspace-tab-header-inner {
+	border-bottom: 1px solid var(--divider-color);
+	border-top: 1px solid var(--divider-color);
+	padding: 0px;
+	height: 100%;
+	background-color: var(--color-base-25);
+	vertical-align: middle;
+	border-bottom: none;
+}
+
+.workspace .mod-root .workspace-tabs.mod-stacked .workspace-tab-container .workspace-tab-header.mod-active.is-active .workspace-tab-header-inner {
+	background-color: var(--color-base-15);
+	border-top: none;
+}
+
+.workspace .mod-root .workspace-tabs.mod-stacked .workspace-tab-container .workspace-tab-header-inner .workspace-tab-header-inner-icon{
+	visibility: collapse;
+	width: 0px;
+	height: 0px;
+	padding: 0px;
+	margin: 0px;
+}
+
+.workspace .mod-root .workspace-tabs.mod-stacked .workspace-tab-container .workspace-tab-header-inner .workspace-tab-header-inner-close-button {
+	--icon-size: 12px;
+	padding-top: 2px;
+	visibility: visible;
+	top: 7px;
+	margin-bottom: 12px;
+}
+
+
+.workspace .mod-root .workspace-tabs.mod-stacked .workspace-tab-container .workspace-leaf .workspace-leaf-content .view-header {
+	border-top: 1px solid var(--divider-color);
+	height: 32px !important;
+	padding-bottom: 0px;
+}
+
+.workspace .mod-root .workspace-tabs.mod-stacked .workspace-tab-container .workspace-leaf .workspace-leaf-content .view-header .view-header-nav-buttons {
+	
+}
+
+
+
+
+
+/* END file tabs! */
+
+/*
+.is-left-sidedock-open .mod-root .workspace-tab-header-container {
+	height: 70px;
+	background-color: var(--color-base-15);
+	transition: height 250ms 0ms;
+}
+*/
+
+/* resize draggers */
+
+/* Resize handles */
+
+
+.workspace-leaf-resize-handle:hover {
+	background-color: var(--color-base-lowlight);
+	border-color: var(--color-base-lowlight);
+}
+
+
+/* top nav bar icon hover (inactive) */
+
+.mod-left-split .workspace-tab-header,
+.mod-right-split .workspace-tab-header {
+  box-shadow: none;
+  background-color: transparent;
+  padding: 0;
+  margin: 0;
+  border-radius: var(--tab-radius);
+}
+
+.workspace-tab-header:not(.is-active):hover {
+	background-color: var(--color-base-30);
+	
+}
+
+.workspace-tab-header:not(.is-active):hover .workspace-tab-header-inner-icon {
+	color: var(--color-base-highlight);
+	transition: all 100ms 0ms;
+}
+
+/* top nav bar icon hover (active) */
+
+@media (hover: hover) {
+	.mod-left-split .workspace-tab-header.has-active-menu:hover,
+	.mod-right-split .workspace-tab-header.has-active-menu:hover,
+	.mod-left-split .workspace-tab-header.is-active:hover,
+	.mod-right-split .workspace-tab-header.is-active:hover {
+		background-color: var(--color-base-highlight);
+	}
+}
+
+.mod-left-split .workspace-tab-header.has-active-menu,
+.mod-right-split .workspace-tab-header.has-active-menu,
+.mod-left-split .workspace-tab-header.is-active,
+.mod-right-split .workspace-tab-header.is-active {
+	background-color: var(--color-base-highlight);
+	border-radius: var(--tab-radius);
+}
+
+/* top nav bar icon color (active) */
+/* just uses default */
+
+/* top nav bar icon color (active) */
+
+.theme-light .mod-left-split .is-focused .mod-active .workspace-tab-header.is-active .workspace-tab-header-inner-icon,
+.theme-light .mod-right-split .is-focused .mod-active .workspace-tab-header.is-active .workspace-tab-header-inner-icon,
+.theme-light .mod-left-split .workspace-tab-header.has-active-menu .workspace-tab-header-inner-icon,
+.theme-light .mod-right-split .workspace-tab-header.has-active-menu .workspace-tab-header-inner-icon,
+.theme-light .mod-left-split .workspace-tab-header.is-active .workspace-tab-header-inner-icon,
+.theme-light .mod-right-split .workspace-tab-header.is-active .workspace-tab-header-inner-icon {
+	color: var(--color-base-00);
+}
+
+
+.theme-dark .mod-left-split .is-focused .mod-active .workspace-tab-header.is-active .workspace-tab-header-inner-icon,
+.theme-dark .mod-right-split .is-focused .mod-active .workspace-tab-header.is-active .workspace-tab-header-inner-icon,
+.theme-dark .mod-left-split .workspace-tab-header.has-active-menu .workspace-tab-header-inner-icon,
+.theme-dark .mod-right-split .workspace-tab-header.has-active-menu .workspace-tab-header-inner-icon,
+.theme-dark .mod-left-split .workspace-tab-header.is-active .workspace-tab-header-inner-icon,
+.theme-dark .mod-right-split .workspace-tab-header.is-active .workspace-tab-header-inner-icon {
+	color: var(--color-base-100);
+}
+
+/*limit to just the sidebars NOTE: needs a fix to get the show left/right panel buttons when the panels are hidden*/
+
+.mod-horizontal .clickable-icon:hover {
+	background-color: var(--color-base-30);
+}
+
+/* shift the first set of module 'tabs' down (left side) */
+.workspace.is-left-sidedock-open .workspace-tabs.mod-top.mod-top-left-space .workspace-tab-header-container {
+	height: 87px;
+	padding: 0px;
+}
+
+.workspace.is-left-sidedock-open .workspace-tabs.mod-top.mod-top-left-space .workspace-tab-header-container-inner {
+	background-color: none;
+	margin-top: 49px;
+	width:100%;
+
+}
+
+
+
+
+/* EDITOR PANE *
+/* header bit */
+
+/* icons */
+.theme-light .workspace-split.mod-vertical.mod-root .view-header-title-parent .view-header-breadcrumb:before {
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(110, 105, 102)' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' class='lucide lucide-folder-closed'%3E%3Cpath d='M4 20h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.93a2 2 0 0 1-1.66-.9l-.82-1.2A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13c0 1.1.9 2 2 2Z'/%3E%3Cpath d='M2 10h20'/%3E%3C/svg%3E");
+}
+
+.theme-dark .workspace-split.mod-vertical.mod-root .view-header-title-parent .view-header-breadcrumb:before {
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(177, 168, 158)' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' class='lucide lucide-folder-closed'%3E%3Cpath d='M4 20h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.93a2 2 0 0 1-1.66-.9l-.82-1.2A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13c0 1.1.9 2 2 2Z'/%3E%3Cpath d='M2 10h20'/%3E%3C/svg%3E");
+}
+
+.workspace-split.mod-vertical.mod-root .view-header-title-parent .view-header-breadcrumb:before {
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center center;
+	content: " ";
+	position: relative;
+	display: inline-block;
+	top: 2px;
+	margin-right: 6px;
+	height: 13px;
+	width: 13px;
+    margin-top: -3px;
+}
+
+.workspace-split.mod-vertical.mod-root .view-header-title-parent .view-header-breadcrumb.has-folder-note:before {
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center center;
+	content: " ";
+	position: relative;
+	display: inline-block;
+	top: 2px;
+	margin-right: 6px;
+	height: 13px;
+	width: 13px;
+    margin-top: -3px;
+}
+
+.theme-light .workspace-split.mod-vertical.mod-root .view-header-title-parent .view-header-breadcrumb.has-folder-note:before {
+	background-image: url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='rgb(110, 105, 102)' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' class='lucide lucide-folder-edit'%3E%3Cpath d='M8.42 10.61a2.1 2.1 0 1 1 2.97 2.97L5.95 19 2 20l.99-3.95 5.43-5.44Z'/%3E%3Cpath d='M2 11.5V5c0-1.1.9-2 2-2h3.93a2 2 0 0 1 1.66.9l.82 1.2a2 2 0 0 0 1.66.9H20a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-9.5'/%3E%3C/svg%3E");
+}
+
+.theme-dark .workspace-split.mod-vertical.mod-root .view-header-title-parent .view-header-breadcrumb.has-folder-note:before {
+	background-image: url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='rgb(177, 168, 158)' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' class='lucide lucide-folder-edit'%3E%3Cpath d='M8.42 10.61a2.1 2.1 0 1 1 2.97 2.97L5.95 19 2 20l.99-3.95 5.43-5.44Z'/%3E%3Cpath d='M2 11.5V5c0-1.1.9-2 2-2h3.93a2 2 0 0 1 1.66.9l.82 1.2a2 2 0 0 0 1.66.9H20a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-9.5'/%3E%3C/svg%3E");
+}
+
+
+/* end icons */
+
+.workspace-split.mod-vertical.mod-root .view-header {
+	border-bottom: 1px solid var(--divider-color);
+	height: 32px;
+}
+
+.workspace-split.mod-vertical.mod-root .view-header-title-container {
+	justify-content: left;
+
+}
+
+.workspace-split.mod-vertical.mod-root .view-header-title-parent,
+.workspace-split.mod-vertical.mod-root .view-header-breadcrumb-separator,
+.workspace-split.mod-vertical.mod-root .view-header-title {
+	font-size: var(--font-ui-teeny);
+}
+
+.workspace-split.mod-vertical.mod-root .view-header-title-parent .view-header-breadcrumb {
+	text-decoration-line: none;
+}
+
+.workspace-split.mod-vertical.mod-root .view-header-title-parent .view-header-breadcrumb:hover {
+	background: none;
+	text-decoration-line: none;
+	color: var(--text-normal);
+	font-weight: normal;
+}
+
+/* replace slashes with chevrons in breadcrumbs */
+
+.view-header-breadcrumb {
+	top: 2px;
+	padding-left: 2px;
+	padding-right: 2px;
+	position: relative;
+	display: inline-block;		
+}
+
+.view-header-title-container .view-header-title-parent .view-header-breadcrumb.has-folder-note {
+	/* color: #016FF6; need a better way */ 
+}
+
+.view-header-title-container .view-header-title {
+	color: var(--text-muted);
+}
+
+
+.view-header-breadcrumb-separator {
+	visibility: hidden;
+	font-size: 0px;
+}
+
+.view-header-breadcrumb-separator:after {
+	content: " ";
+	position: relative;
+	display: inline-block;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-image: url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(110, 105, 102)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='lucide lucide-chevron-right'%3E%3Cpath d='m9 18 6-6-6-6'/%3E%3C/svg%3E");
+	visibility: visible;
+	top: 2px;
+	height: 14px;
+	width: 14px;
+	color: var(--text-faint);
+	opacity: 0.5;
+
+
+}
+
+/* Blank Page*/	
+.empty-state {
+	justify-content: flex-start;
+}
+
+.empty-state-container {
+	margin-top: 150px;
+}
+
+.empty-state-action {
+	color: var(--color-base-highlight);
+	line-height: 18px;
+	margin-top: 8px;
+	
+}
+
+.empty-state-action:hover{
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+/* highlight active page */
+
+.cm-editor.ͼ1.ͼ2 .inline-title{
+	color: var(--color-base-80);
+	transition: all 250ms 0ms;
+}
+.workspace-leaf.mod-active .cm-editor.ͼ1.ͼ2 .inline-title{
+	color: var(--color-base-highlight);
+	transition: all 250ms 0ms;
+}
+
+
+/*
+.cm-editor.cm-focused.ͼ1.ͼ2:before {
+
+	visibility: visible;
+	content: "\25cb";
+	color: var(--color-base-highlight);
+	position: absolute;
+	top: 6px;
+	left: 10px;
+	display:block;
+	transition: all 250ms 0ms;
+
+}
+*/
+/* Content Text and Formatting */
+.inline-title {
+	color: var(--color-base-highlight);
+	font-weight: 900;
+	font-size: 3em;
+	margin-bottom: 0px;
+}
+/* FRONTMATTER */
+
+
+/* text basic*/
+
+
+/* bullets */
+
+
+.cm-s-obsidian .is-collapsed ~ .cm-formatting-list {
+	color: var(--color-base-highlight);
+}
+
+.cm-indent::before {
+	border-right: 1px solid var(--color-base-verylowlight);
+}
+
+
+/* numbers */
+.cm-formatting-list-ol {
+
+}
+
+/* inline code */
+.cm-s-obsidian span.cm-inline-code{
+	color: var(--text-normal);
+	font-size: 0.82em;
+}
+
+/*Headings*/
+
+
+.markdown-source-view.mod-cm6 .cm-foldPlaceholder{
+	color: var(--color-base-highlight);
+	margin-left: 0px;
+	font-weight: bold;
+	}
+	
+.cm-formatting.cm-formatting-header {
+	color: var(--color-base-highlight);
+	
+}
+
+.HyperMD-header:has(.cm-fold-indicator.is-collapsed) .cm-header {
+	text-decoration: underline;
+	text-decoration-color: var(--color-base-highlight);
+}
+
+
+/* Tables */
+/* Tables: Edit button*/
+.markdown-source-view.mod-cm6 .cm-embed-block:hover .edit-block-button:hover {
+	color: var(--color-base-highlight);
+}
+
+.markdown-source-view.mod-cm6 .edit-block-button{
+	color: var(--color-base-lowlight);
+}
+
+.markdown-source-view.mod-cm6 .block-language-dataview + .edit-block-button:after {
+	color: var(--color-base-lowlight);
+}
+
+/* Table: pretty view */
+
+.markdown-rendered table{
+	font-size: var(--font-smaller);
+}
+
+.markdown-rendered thead {
+	background-color: var(--color-base-verylowlight);
+}
+
+.markdown-rendered thead tr > th {
+	border-top-width: 0px;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-bottom-color: var(--color-base-lowlight);
+}
+
+.markdown-rendered td,
+.markdown-rendered th {
+	border-color: var(--color-base-lowlight);
+}
+
+.markdown-rendered th {
+	color: var(--color-base-highlight);
+}
+/* rounded corners */
+.markdown-rendered thead tr > th:first-child {
+	border-top-left-radius: var(--radius-s);
+}
+.markdown-rendered thead tr > th:last-child {
+	border-top-right-radius: var(--radius-s);
+}
+
+
+/* Table: Dataview [Colors Light] */
+.table-view-table > tbody > tr:hover {
+	background-color: var(--color-base-00) !important;
+}
+
+.table-view-table > tbody > tr > td {
+	border-bottom-color: var(--color-base-lowlight);
+}
+
+
+
+/* Table: Edit Mode */
+.cm-s-obsidian .HyperMD-table-row span.cm-hmd-table-sep,
+.cm-s-obsidian .HyperMD-table-row-1 {
+	color: var(--color-base-lowlight);
+}
+
+/* ↓↓↓↓↓↓↓↓↓↓ Hierarchy Browsers [Colours Light] */
+
+/* ↑↑↑↑↑↑↑↑↑↑ Hierarchy Browsers: tree lines [Colours Light] */
+
+/* ↓↓↓↓↓↓↓↓↓↓ Hierarchy Browsers: items [Colours Light] */
+.collapse-icon.is-collapsed svg.svg-icon {
+	color: var(--color-base-highlight);
+}
+
+
+/* ↑↑↑↑↑↑↑↑↑↑ Hierarchy Browsers: items [Colours Light] */	
+
+/* ↑↑↑↑↑↑↑↑↑↑ Hierarchy Browsers [Colours Light] */
+
+
+
+/* ↓↓↓↓↓↓↓↓↓↓ CALLOUT [Colours Light]] */
+
+/* ↓↓↓↓↓↓↓↓↓↓ CALLOUT: Custom (metadata) [Colours Light]] */
+.callout[data-callout="metadata"] {
+	--callout-color: 200, 200, 200;
+}
+/* ↑↑↑↑↑↑↑↑↑↑ CALLOUT: Custom (metadata) [Colours Light]] */
+
+/* ↑↑↑↑↑↑↑↑↑↑ CALLOUT [Colours Light]] */
+
+/* ↓↓↓↓↓↓↓↓↓↓ EMBEDS [ALL]*/
+.markdown-embed {
+	border: 1px dashed var(--color-base-lowlight);
+	padding-top: 12px;
+	padding-bottom: 12px;
+}
+/* ↓↓↓↓↓↓↓↓↓↓ EMBEDS: Pictures [ALL]*/
+.image-embed {
+	display: flex;
+	width:fit-content;
+	padding-right:5px;
+}
+
+.image-embed img {
+	max-width:var(--line-width);
+	max-height: 100vh;
+	border: 0.5px solid var(--color-base-50);
+	
+}
+
+/* ↓↓↓↓↓↓↓↓↓↓ LINKS [Colours Light]] */
+
+.markdown-source-view.mod-cm6 .cm-link .cm-underline,
+.markdown-source-view.mod-cm6 .cm-url .cm-underline {
+	color: var(--text-normal);
+	text-decoration:underline;
+	text-decoration-color: var(--link-external-decoration-color);
+}
+
+.markdown-rendered .external-link:after,
+.markdown-source-view.mod-cm6 .cm-link .cm-underline:after,
+.markdown-source-view.mod-cm6 .cm-url .cm-underline:after {
+	content: '\2197';
+	visibility: visible;
+	color: var(--link-external-decoration-color);
+}
+
+.cm-s-obsidian span.cm-formatting-link.cm-url,
+.cm-s-obsidian span.cm-url,
+.cm-string.cm-url {
+	color: var(--link-external-decoration-color);
+}
+
+/* Image amd Embed Links */
+/*
+.cm-s-obsidian span.cm-hmd-internal-link {
+	color: #35B649ff;
+}
+*/
+.cm-s-obsidian span.cm-hmd-internal-link.cm-link-alias {
+	color: var(--text-normal);
+}
+/* Image Link */
+
+.cm-s-obsidian .markdown-source-view.mod-cm6 .cm-link {
+	color: var(--text-normal);
+	text-decoration: none;
+}
+
+/* Link - Unresolved */
+.cm-s-obsidian span.cm-hmd-internal-link .is-unresolved .cm-underline {
+	color: var(--link-unresolved-color);
+}
+
+/* Link - Internal */
+
+.cm-s-obsidian .cm-hmd-internal-link.cm-link-alias-pipe {
+	color: var(--text-faint);
+}
+
+.cm-s-obsidian .cm-hmd-internal-link.cm-link-alias {
+	color: var(--text-normal);
+}
+
+.cm-s-obsidian.span .cm-hmd-internal-link {
+	color: var(--color-base-highlight);
+}
+
+.cm-s-obsidian span.cm-hmd-internal-link:hover {
+	text-decoration: none;
+}
+
+.cm-hmd-internal-link.cm-link-alias:hover {
+	color: var(--text-normal);
+	text-decoration: none;
+}
+
+.cm-formatting.cm-formatting-link-string.cm-string.cm-url {
+	color: var(--text-faint);
+}
+
+.cm-formatting.cm-formatting-link.cm-link {
+	color: var(--text-faint);
+}
+
+.cm-s-obsidian span.cm-link {
+	text-decoration: none;
+}
+.cm-s-obsidian span.cm-link:hover {
+	text-decoration: none;
+}
+
+.external-link:hover,
+.markdown-source-view.mod-cm6 .cm-link .cm-underline:hover,
+.markdown-source-view.mod-cm6 .cm-url .cm-underline:hover {
+	color: var(--text-normal);
+	text-decoration: underline;
+	text-decoration-color: var(--link-external-decoration-color);
+}
+
+.cm-link ~ .cm-url.external-link {
+	visibility: collapse;
+	width:0px;
+	height:0px;
+	padding: 0px;
+}
+
+.markdown-rendered .internal-link,
+.cm-hmd-internal-link .cm-underline {
+	color: var(--text-normal);
+	text-decoration-color: var(--link-color);
+}
+
+.markdown-rendered .internal-link:hover,
+.cm-hmd-internal-link .cm-underline:hover {
+	color: var(--text-normal);
+	text-decoration-color: var(--link-color);
+}
+
+.external-link, a {
+	background-image: none;
+	padding-right: 0px;
+}
+
+/* ↑↑↑↑↑↑↑↑↑↑ LINKS [Colours Light]] */
+
+/* ↓↓↓↓↓↓↓↓↓↓ Settings [Colours Light] */
+
+/* ↓↓↓↓↓↓↓↓↓↓ Settings [Position etc.] */
+
+
+
+.modal-close-button {
+	left: var(--size-2-3);
+}
+
+.modal-close-button:after {
+	content: '\25cf';
+	font-size: 13.5px;
+	color: var(--color-fakeclose-inner);
+	margin-left: -13.6px;
+	top: -1.4px;
+	position: relative;
+}
+
+.modal-close-button:before {
+	content: '\25cf';
+	font-size: 16.5px;
+	color: var(--color-fakeclose-outer);
+	top: 0px;
+	left: 0.25px;
+	position: relative;
+}
+
+@media (hover: hover) {
+.modal-close-button:hover {
+    background: none;
+    color: var(--text-normal);
+	}
+}
+/* ↓↓↓↓↓↓↓↓↓↓ Settings: Background Dim [Colours Light] */
+.modal-bg {
+	background-color: rgb(0 0 0 / 50%);
+}
+/* ↑↑↑↑↑↑↑↑↑↑ Settings: Background Dim [Colours Light] */
+
+/* ↓↓↓↓↓↓↓↓↓↓ Settings: Left Pane [Colours Light] */
+.vertical-tab-header {
+	background-color: var(--color-base-17);
+	padding-top:34px;
+}
+
+/* ↓↓↓↓↓↓↓↓↓↓ Settings: Right Pane [Colours Light] */
+.vertical-tab-content {
+	background-color: var(--color-base-15);
+	padding-top:60px;
+	padding-bottom:35px;
+}
+
+
+
+.modal {
+	background-color: var(--color-base-15);
+}
+
+.modal-sidebar {
+	padding-top:34px;
+}
+
+/* Folder Notes */
+.modal-container.mod-dim .vertical-tab-content .setting-item .setting-item-info[style] {
+	color: var(--color-base-warn) !important;
+	font-size: var(--font-ui-smaller) !important; 
+}
+
+
+.modal-title {
+	margin-top: 20px;
+}
+
+
+
+
+/* dropdown selector */
+.search-results-info .dropdown {
+
+}
+
+
+
+
+
+
+/* buttons */
+
+
+
+.setting-item-control .clickable-icon {
+	border-radius: var(--radius-m);
+	height: auto;
+	width: auto;
+	box-shadow: none;
+	border: 0px solid var(--color-base-50);
+	font-size: 12px;
+	background-color: var(--color-base-15);
+}
+
+.setting-item-control .clickable-icon:hover {
+	color: var(--color-base-highlight);
+}
+
+
+
+
+/* ↓↓↓↓↓↓↓↓↓↓ Settings: Left Bar [Position etc.] */
+.setting-item-info,
+.vertical-tab-header-group-title {
+	font-size: var(--font-ui-teeny);
+	font-style: normal;
+}
+
+.setting-item-info {
+	color: var(--text-normal) !important;
+	font-style: italic;
+}
+
+.vertical-tab-nav-item {
+	font-size: 13px;
+}
+
+.vertical-tab-content {
+	font-size: var(--font-ui-teeny);
+	font-style: normal;
+}
+
+.vertical-tab-content .setting-item-info,
+.vertical-tab-content h3,
+.vertical-tab-content h2,
+.vertical-tab-content h1 {
+	font-size: 16px;
+}
+
+.setting-item-name {
+	font-size: 13px;
+	font-style: normal;
+}
+
+.setting-item-description {
+	font-style: normal;
+}
+/* ↑↑↑↑↑↑↑↑↑↑ Settings: Background Dim [Position etc.] */
+
+/* Settings: Dropdowns */
+
+.setting-item-control select {
+	min-width: 200px;
+	width:fit-content;
+}
+
+.dropdown {
+	height: 24px;
+	box-shadow: none;
+	border: 0.5px solid var(--color-base-50);
+	background-size: 12px;
+	transition: all 250ms;
+}
+
+@media (hover: hover){
+	select:hover, .dropdown:hover {
+		box-shadow: none;
+		transition: all 250ms;
+	}
+}
+
+.theme-dark .dropdown {
+	background-color: var(--color-base-15);
+	background-image: url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(218, 221, 220)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='lucide lucide-chevrons-up-down'%3E%3Cpath d='m7 15 5 5 5-5'/%3E%3Cpath d='m7 9 5-5 5 5'/%3E%3C/svg%3E");
+}
+
+.theme-dark .dropdown:hover,
+.theme-light .dropdown:hover {
+	background-color: var(--color-base-05);
+}
+
+.theme-light .dropdown {
+	background-color: var(--color-base-00);
+	background-image: url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='lucide lucide-chevrons-up-down'%3E%3Cpath d='m7 15 5 5 5-5'/%3E%3Cpath d='m7 9 5-5 5 5'/%3E%3C/svg%3E");
+}
+
+
+/* Settings: buttons */
+.setting-item-control button {
+	height: 22px;
+	border-radius: var(--button-radius);
+	box-shadow: none;
+	border: 0.5px solid var(--color-base-50);
+	font-size: var(--font-ui-teeny);
+	transition: all 250ms;
+
+}
+
+.theme-light .setting-item-control button {
+	background-color: var(--color-base-00);
+}
+
+.theme-dark .setting-item-control button:hover,
+.theme-light .setting-item-control button:hover {
+	background-color: var(--color-base-05);
+	transition: all 250ms;
+}
+
+.theme-dark .setting-item-control button {
+	background-color: var(--color-base-15);
+}
+
+.setting-item-control button .svg-icon {
+		height: 14px;
+}
+
+.theme-dark .setting-item-control button:active,
+.theme-light .setting-item-control button:active {
+	background-color: var(--color-base-20);
+}
+
+.setting-item-control button.mod-cta {
+	background-color: var(--color-base-highlight) !important;
+	color: var(--color-base-00);
+}
+
+.setting-item-control button.mod-cta:active {
+	background-color: var(--color-base-darklight) !important;
+}
+
+.setting-item-control button.mod-warning {
+	background-color: var(--color-base-warn) !important;
+	color: var(--color-base-00);
+}
+
+	/*Caret [Colour Light]*/
+	.markdown-source-view.mod-cm6 .cm-content {
+		caret-color: var(--color-base-highlight);
+	}
+	/*Caret [Colour Light]*/
+	.markdown-source-view.mod-cm6 .cm-content > * {
+
+	}
 
 
 
