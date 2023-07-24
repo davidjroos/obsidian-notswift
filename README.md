@@ -17,10 +17,10 @@ Some specific features to improve nativeness:
 - Colours (light and dark)
 - Fat Header bar with sidebar toggle buttons in the right place
 - File Tabs
-- Square
-- close button on left, visible on hover
-- dropdown moved to left
-- expand to fill width
+  - Square
+  - close button on left, visible on hover
+  - dropdown moved to left
+  - expand to fill width
 - Fake red close circle in settings/dialogs
 - resized and recoloured Toggles
 - Settings buttons styled
@@ -46,17 +46,16 @@ Some stuff I've included in here because I wanted to make my life easier/less ha
 - YAML nicer looking and the `---` autohide
 - Custom 'metadata' callout that is just grey that (I'll use until YAML supports links natively)
 - (Lucide-based) folder and file icons for:
-- Folders with Folder Notes (https://github.com/LostPaul/obsidian-folder-notes)
-- Template Folders:
-- Folders named "templates" or "_templates"
-- Files within template folders above
-- Attachment Folders (named "attachments" or "_attachments")
-- File icons:
-- Images (png/jpeg)
-- Documents (pdf, docx)
+  - Folders with Folder Notes (https://github.com/LostPaul/obsidian-folder-notes)
+  - Template Folders:
+  - Folders named "templates" or "_templates"
+  - Files within template folders above
+  - Attachment Folders (named "attachments" or "_attachments")
+  - Images (png/jpeg)
+  - Documents (pdf, docx)
 - Added file and folder icons to Breadcrumbs:
-- Folders and Folders with Folder Notes (https://github.com/LostPaul/obsidian-folder-notes)
-- 'Normal' files (didn't bother with attachments/images/pdfs etc.)
+  - Folders and Folders with Folder Notes (https://github.com/LostPaul/obsidian-folder-notes)
+  - 'Normal' files (didn't bother with attachments/images/pdfs etc.)
 - Link styling to make them more subtle but still discernable (including internal vs external)
 
 # Colours
