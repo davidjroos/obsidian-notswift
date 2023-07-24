@@ -4,8 +4,8 @@ With Big Sur Aesthetic and California Coast dead I was unhappy with the general 
 
 **Note**: Requires Apple San Francisco (SF) `Pro` and `Mono` fonts installed as they are specified in the CSS (https://developer.apple.com/fonts/)
 
-![](https://raw.githubusercontent.com/davidjroos/obsidian-notswift/master/img/Dark_Main%402x.png)
 ![](https://raw.githubusercontent.com/davidjroos/obsidian-notswift/master/img/Light_Main%402x.png)
+![](https://raw.githubusercontent.com/davidjroos/obsidian-notswift/master/img/Dark_Main%402x.png)
 ![](https://raw.githubusercontent.com/davidjroos/obsidian-notswift/master/img/Light_Settings%402x.png)
 ![](https://raw.githubusercontent.com/davidjroos/obsidian-notswift/master/img/Dark_Settings%402x.png)
 
