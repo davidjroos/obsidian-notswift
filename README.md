@@ -1,95 +1,112 @@
-This is a sample theme for Obsidian ([https://obsidian.md](https://obsidian.md/)).
+# What, Why
 
-## First Time publishing a theme?
+With Big Sur Aesthetic and California Coast dead I was unhappy with the general options for Obsidian fitting in with MacOS. This is my attempt at styling Obsidian the best I can to look Mac-native. Key aspects of the interface just don't work as I'd like (e.g. the Ribbon generally and the Back/Forward buttons being in the wrong place entirely), but it's good enough for me to release publicly. It's based on me looking at Mail.app, Finder and Notes.app and winging it - don't quote the Apple style guides at me - I didn't and won't read them :)
 
-### Quick start
+**Note**: Requires Apple San Francisco (SF) `Pro` and `Mono` fonts installed as they are specified in the CSS (https://developer.apple.com/fonts/)
 
-<img width="244" alt="Pasted image 20220822135601" src="https://user-images.githubusercontent.com/693981/186000386-4f4da987-fcaf-4aa5-aed4-e34b5901255d.png">
+![](https://raw.githubusercontent.com/davidjroos/obsidian-notswift/master/img/Dark_Main%402x.png)
+![](https://raw.githubusercontent.com/davidjroos/obsidian-notswift/master/img/Light_Main%402x.png)
+![](https://raw.githubusercontent.com/davidjroos/obsidian-notswift/master/img/Light_Settings%402x.png)
+![](https://raw.githubusercontent.com/davidjroos/obsidian-notswift/master/img/Dark_Settings%402x.png)
 
-First, choose **Use this template**. That will create a copy of this repository (repo) under your Github profile. Then, you will want to _clone_ your new repository to your computer.
+# Special Stuff
 
-Once you have the repo locally on your computer, there are a couple of placeholder fields you will need to fill in.
+## Mac-ish
 
-1. Inside the `manifest.json` file, change the "name" field to whatever you want the name of your theme to be. For example:
+Some specific features to improve nativeness:
+- Colours (light and dark)
+- Fat Header bar with sidebar toggle buttons in the right place
+- File Tabs
+- Square
+- close button on left, visible on hover
+- dropdown moved to left
+- expand to fill width
+- Fake red close circle in settings/dialogs
+- resized and recoloured Toggles
+- Settings buttons styled
+- Setting Dropdowns styled and dropdown icon changed
+- Checkbox size and tick shape match Notes.app
+- Bullet size and colour match Notes.app
+- Stacked tabs look… as best I can get them but it's never going to be very "Mac"
+- Scrollbars are as good as I can get them
+- Added a bunch of missing borders in the sidebars
+- Replaced slash with Chevron in the breadcrumbs
+- Ribbon is hidden, gone, kaput. I couldn't get it to not look ugly and it's useless and doesn't fit and I don't use it anyway (just use the command pane!)
 
-  ```json
-  {
-    "name": "Moonstone",
-    "version": "0.0.0",
-    "minAppVersion": "1.0.0"
-  }
-  ```
+## From (for?) Me
 
-2. Also inside the manifest.json file, you can include your name under next to the "author" field.
+Some stuff I've included in here because I wanted to make my life easier/less hard to see what is going on:
 
-After you have those fields configured, all that's left to do is add your styles! All of your CSS needs to be inside the file `theme.css` which is located at root of your repository.
+- improving visibility of collapsed items so I don't forget they are there
+- Visual representation of which (if any) file tab is active, including the weird concept where there is more than one 'active' tab across the different tab groups:
+- Tab styling
+- Main header highlighting
+- Scroll bar highlighting
+- Local graph in the sidebar fits in better as part of the sidebar
+- YAML nicer looking and the `---` autohide
+- Custom 'metadata' callout that is just grey that (I'll use until YAML supports links natively)
+- (Lucide-based) folder and file icons for:
+- Folders with Folder Notes (https://github.com/LostPaul/obsidian-folder-notes)
+- Template Folders:
+- Folders named "templates" or "_templates"
+- Files within template folders above
+- Attachment Folders (named "attachments" or "_attachments")
+- File icons:
+- Images (png/jpeg)
+- Documents (pdf, docx)
+- Added file and folder icons to Breadcrumbs:
+- Folders and Folders with Folder Notes (https://github.com/LostPaul/obsidian-folder-notes)
+- 'Normal' files (didn't bother with attachments/images/pdfs etc.)
+- Link styling to make them more subtle but still discernable (including internal vs external)
 
-## Adding your theme to the Theme Gallery
+# Colours
 
-### Add a screenshot thumbnail
+Recommended Accent colour is rgb(75 135 253) as that's what I've tweaked the highlights to work best with, but the default Purple looks nice also! (rgb(252 186 1) if you want to match Notes.app but the contrast isn't great on dark mode)
 
-Inside the repository, include a screenshot thumbnail of your theme. You can name the file anything, for example `screenshot.png`. This image will be used for the small preview in the theme list.
+# Watch Out
 
-Your screenshot file should be `16:9` aspect ratio.
-The recommended size is 512x288.
+I'd fully expect things to break outside of my existing use cases as:
 
-### Submit your theme for review
+1. I'm not a web developer, I have a tenuous grasp of what I'm doing, I hate CSS and built this from scratch off the sample theme
+2. I've had to put some pretty big margins and paddings in to shift things around to get the 'fat' top bar to match MacOS generally - see a. above for why that might cause you trouble
+3. I've done everything by pixels on a 5K iMac screen (and tested on a M2 Macbook Air), so I have no idea if custom display scaling will break things (again, see a. above)
 
-To have your theme included in the Theme Gallery, you will need to submit a Pull Request to [`obsidianmd/obsidian-releases`](https://github.com/obsidianmd/obsidian-releases#community-theme).
+Prioritisation is based on my general use of Obsidian, so if something is broken or hidden it's because I don't use it.
 
-## Releasing Versions _(Optional)_
+I've tried to Document the CSS but it's probably like 70% done and the really weird modifications are the least clearly documented… also note Color is spelt Colour in the CSS comments if you're looking for it
 
-If your theme is getting more and more complex, you might want to start thinking about how your theme will stay compatible with different versions of Obsidian. Introduced in v0.16 of Obsidian, themes support [Github Releases](https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository). This means that you can specify which versions of your theme are compatible with which versions of Obsidian.
+# Known Issues
 
-### Steps for releasing the initial version of your theme (1.0.0)
+## …for Things Annoying Me
 
-1. From your theme's repository, click on "Releases".
-   
-<img width="235" alt="Pasted image 20220822145001" src="https://user-images.githubusercontent.com/693981/186000441-287a1a97-65f6-4b5f-ba66-810ceae91cd3.png">
+- Sidebar toggle buttons look janky during animations
+- Add templates folder and file icons to Breadcrumbs
 
-2. On the Releases page, there should be a button to **Draft a new Release**. Press it.
+## …that I Aim to Fix but Aren't Like, Super High Importance for Me
 
-<img width="202" alt="Pasted image 20220822145048" src="https://user-images.githubusercontent.com/693981/186000664-6c63ae14-f685-4d39-bfe6-324f95cd9669.png">
+- Moving a tab into a New Window is totally un-styled at the moment
+- Reader mode formatting is inconsistent as a bunch of selectors I've used are specific to editor mode and I'm too scared to try and fix it at the moment
+- Mobile isn't….totally broken, but it's got some obvious janky stuff
+- I want to get support for Style Settings top allow people to undo some of my (what may be controversial) decisions (e.g. Ribbon and Status bar are hard-hidden), but also it's MacOS so you get what you get :)
+- Styling for search embeds
 
-3. Fill out the Release information form.
-	- **Choose a Tag**: Type in the name of the version number here. At the bottom of the dropdown should be a button to create a new tag with your latest theme changes. Choose this option.
-		<img width="340" alt="Pasted image 20220822145648" src="https://user-images.githubusercontent.com/693981/186000848-bd1c2619-ea09-4e70-a886-40769cda6921.png">
-	- **Release Title**: This can be the version number.
-	- **Description** _Optional_: Anything that changed
-	- **Files:** The most important part of this form is uploading the files. You can do this by dragging 'n dropping the `manifest.json` file and the `theme.css` file your for theme inside the file upload field.
+## That I Am Not Going to Fix Because I Don't Think There is a Good Fix
 
-<img width="946" alt="Pasted image 20220822145356" src="https://user-images.githubusercontent.com/693981/186000772-e689ecea-c3b7-4e9d-9204-7ad62c0123aa.png">
+- Translucent window - I can't really get it to look or behave even remotely like the native MacOS style so it doesn't work at all - don't use it!
+- Window Frame styles that aren't "Hidden" - I tried to get "Native Frame" to work, but the line across the top was untenable
 
-4. Click "Publish Release."
-5. Make sure that `versions.json` is set up correctly. This file is a map.
-  ```json
-  {
-    "1.0.0": "0.16.0"
-  }
-  ```
-  
-  This means that version 1.0.0 of your theme is compatible with version 0.16.0 of Obsidian. For the initial release of your theme, you shouldn't need to make any changes to this file.
- 
-### Steps for releasing new versions
+# Supported Plugins
 
-Releasing a new version of your theme is the same as releasing the initial version.
+Supported here means that I've got it installed and made some specific tweaks to accomodate it - other plugins will probably also work ok but who knows
 
-1. From your theme's repository, click on "Releases."
-2. On the Releases page, there should be a button to **Draft a new Release**. Press it.
-3. Fill out the Release information form.
-	- **Choose a Tag**: Type in the name of the version number here. At the bottom of the dropdown should be a button to create a new tag with your latest theme changes. Choose this option.
-		<img width="333" alt="Pasted image 20220822145812" src="https://user-images.githubusercontent.com/693981/186000912-f494def9-0f67-4662-92bf-bd278082455f.png">
-	- **Release Title**: This can be the version number.
-	- **Description** _Optional_: Anything that changed
-	- **Files:** The most important part of this form is uploading the files. You can do this by dragging 'n dropping the `manifest.json` file and the `theme.css` file your for theme inside the file upload field.
+- Dataview (https://github.com/blacksmithgu/obsidian-dataview)
+- Templater (https://github.com/SilentVoid13/Templater)
+- Folder Notes (https://github.com/LostPaul/obsidian-folder-notes)
+- Advanced Tables (https://github.com/tgrosinger/advanced-tables-obsidian)
+- Zen (https://github.com/Maxymillion/zen)
 
-4. Click "Publish Release."
-5. Update the `versions.json` file in your repository. For the initial release of your theme, you probably didn't need to make any changes to the `versions.json` file. When you release subsequent versions of your theme; however, it's best practice to include the new version as entry in the versions.json file. So this might look like:
-  ```json
-  {  
-		"1.0.0": "0.16.0",
-		"1.0.1": "0.16.0"
-  }
-  ```
+# Other Notes
 
-  What's important to note here is: the new version is included as the "key" and the "value" is the minimum version of Obsidian that your theme compatible with. So if the new version of your theme is only compatible with an Insider version of Obsidian, it's important to set this value accordingly. This will prevent users on older versions of Obsidian from updating to the newer version of your theme.
+I use Linter (https://github.com/platers/obsidian-linter) to put line breaks between things automatically, so some padding might be a bit tight if you are not in the habit of spacing things manually
+
+Please raise issues or feel free to Fork and improve to your liking
