@@ -289,7 +289,7 @@ body {
 .theme-dark {
 	color-scheme: dark;
 	--color-base-00: #1D1E1E;
-	--color-base-05: #231A16;
+	--color-base-05: #242627;
 	--color-base-10: #CFCCCB;
 	--color-base-17: #302926;
 	--color-base-15: #332721;
@@ -684,7 +684,7 @@ body {
 	height: 30px;
 	top:0px;
 	position:relative;
-	padding-top: 0px;
+	padding-top: 4px;
 }
 
 /* ================================================================================================= */
@@ -1349,6 +1349,8 @@ input.prompt-input {
 /* ================================================================================================= */
 /* 	Plugins - Dataview */
 
+
+
 /* ---------------------------------------------------------------------------------- */
 /* 	Plugins - Dataview - Embeds */
 
@@ -1358,10 +1360,11 @@ input.prompt-input {
 	width: fit-content;
 	border: 1px dashed var(--color-base-verylowlight);
 	border-radius: var(--radius-m);
-	padding-block-start: 6px;
-	padding-block-end: 6px;
-	padding-inline-start: 6px;
-	padding-inline-end: 6px;
+	padding-block-start: 12px;
+	padding-block-end: 12px;
+	padding-inline-start: 12px;
+	padding-inline-end: 12px;
+	background-color: rgb(255 255 255 / 1%);
 }
 
 /* ---------------------------------------------------------------------------------- */
@@ -1411,10 +1414,11 @@ input.prompt-input {
 	width: fit-content;
 	border: 1px dashed var(--color-base-verylowlight);
 	border-radius: var(--radius-m);
-	padding-block-start: 6px;
-	padding-block-end: 6px;
-	padding-inline-start: 6px;
-	padding-inline-end: 6px;
+	padding-block-start: 12px;
+	padding-block-end: 12px;
+	padding-inline-start: 12px;
+	padding-inline-end: 12px;
+	background-color: rgb(255 255 255 / 1%);
 }
 
 .markdown-source-view.mod-cm6 .cm-embed-block .block-language-folder-overview .folder-overview ul.folder-overview-list {
@@ -2667,22 +2671,157 @@ workspace-split mod-vertical mod-root
 /* ↑↑↑↑↑↑↑↑↑↑ CALLOUT [Colours Light]] */
 
 /* ↓↓↓↓↓↓↓↓↓↓ EMBEDS [ALL]*/
+,
 .markdown-embed {
 	border: 1px dashed var(--color-base-lowlight);
-	padding-top: 12px;
-	padding-bottom: 12px;
+	padding-top: 6px;
+	padding-bottom: 6px;
 }
-/* ↓↓↓↓↓↓↓↓↓↓ EMBEDS: Pictures [ALL]*/
-.image-embed {
+
+.cm-preview-code-block.cm-embed-block.markdown-rendered {
+	padding-top: 6px;
+	padding-bottom: 6px;
+}
+
+/* EMBED: Transclusion */
+
+.internal-embed.markdown-embed.inline-embed.is-loaded {
+	border: none;
 	display: flex;
-	width:fit-content;
-	padding-right:5px;
+    padding-left: 10px;
+    left: -40px;
+    width: calc(100% + 40px);
+}
+
+.internal-embed.markdown-embed.inline-embed.is-loaded .embed-title.markdown-embed-title {
+	display: none;
+}
+
+.internal-embed.markdown-embed.inline-embed.is-loaded .markdown-embed-link{
+	visibility: hidden;
+	order: -1;
+	justify-content: center;
+    align-items: center;
+    height: 30px;
+	width: 30px;
+    top: 0px;
+    position: relative;
+    padding-top: 4px;
+	color: var(--color-base-highlight);
+}
+
+.internal-embed.markdown-embed.inline-embed.is-loaded:hover .markdown-embed-link {
+	visibility: visible;
+}
+
+.internal-embed.markdown-embed.inline-embed.is-loaded .markdown-embed-content{
+	width: fit-content;
+    border: 1px dashed var(--color-base-verylowlight);
+    border-radius: var(--radius-m);
+    padding-block-start: 4px;
+    padding-block-end: 12px;
+    padding-inline-start: 12px;
+    padding-inline-end: 12px;
+	background-color: rgb(255 255 255 / 1%);
+}
+
+/* end transcusion
+
+
+/* EMBEDS: search */
+
+.cm-preview-code-block.cm-embed-block.markdown-rendered {
+
+
+}
+
+.cm-preview-code-block.cm-embed-block.markdown-rendered .internal-query{
+	border-top: none;
+
+}
+
+.cm-preview-code-block.cm-embed-block.markdown-rendered .internal-query-header {
+	padding-top: 4px;
+	padding-bottom: 4px;
+
+}
+
+.cm-preview-code-block.cm-embed-block.markdown-rendered .internal-query-header .internal-query-header-title {
+	font-family: var(--font-monospace-default);
+	font-size: 0.8em;
+}
+
+.cm-preview-code-block.cm-embed-block.markdown-rendered .internal-query .search-result-container {
+	width: fit-content;
+    border: 1px dashed var(--color-base-verylowlight);
+    border-radius: var(--radius-m);
+    padding-block-start: 12px;
+    padding-block-end: 12px;
+    padding-inline-start: 12px;
+    padding-inline-end: 12px;
+	background-color: rgb(255 255 255 / 1%);
+}
+.cm-preview-code-block.cm-embed-block.markdown-rendered .search-result-file-matches,
+.cm-preview-code-block.cm-embed-block.markdown-rendered .tree-item-flair-outer,
+.cm-preview-code-block.cm-embed-block.markdown-rendered .tree-item-icon {
+	display: none;
+}
+
+.cm-preview-code-block.cm-embed-block.markdown-rendered .search-result-file-title {
+	padding-left: 0px;
+
+}
+
+.cm-preview-code-block.cm-embed-block.markdown-rendered .internal-query .search-result-container .tree-item-inner {
+	text-decoration-line: underline !important;
+	text-decoration: solid;
+text-decoration-color: var(--color-base-highlight);
+cursor: var(--cursor-link);
+}
+.cm-preview-code-block.cm-embed-block.markdown-rendered .search-result-file-title:hover {
+
+
+}
+
+.theme-light .cm-preview-code-block.cm-embed-block.markdown-rendered .search-result-file-title :before {
+	background-image: url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(110, 105, 102)' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' class='lucide lucide-file'%3E%3Cpath d='M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z'/%3E%3Cpolyline points='14 2 14 8 20 8'/%3E%3C/svg%3E");
+}
+
+.theme-dark .cm-preview-code-block.cm-embed-block.markdown-rendered .search-result-file-title :before {
+	background-image: url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(177, 168, 158)' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' class='lucide lucide-file'%3E%3Cpath d='M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z'/%3E%3Cpolyline points='14 2 14 8 20 8'/%3E%3C/svg%3E");
+}
+
+.cm-preview-code-block.cm-embed-block.markdown-rendered .search-result-file-title :before {
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center center;
+	content: " ";
+	position: relative;
+	display: inline-block;
+	top: 3px;
+	margin-right: 4px;
+	height: 16px;
+	width: 16px;
+}
+
+/* searcg */
+
+/* ↓↓↓↓↓↓↓↓↓↓ EMBEDS: Pictures [ALL]*/
+.markdown-source-view.mod-cm6 .cm-line .internal-embed.image-embed {
+	display: flex;
+
+}
+
+.internal-embed img:not([width]) {
+	max-width: 50vw;
+	max-height: 50vh;
 }
 
 .image-embed img {
-	max-width:var(--line-width);
-	max-height: 100vh;
+	
+	
 	border: 0.5px solid var(--color-base-50);
+	border-radius: var(--radius-s);
 	
 }
 
