@@ -47,12 +47,11 @@ Some stuff I've included in here because I wanted to make my life easier/less ha
 - Custom 'metadata' callout that is just grey that (I'll use until YAML supports links natively)
 - (Lucide-based) folder and file icons for:
   - Folders with Folder Notes (https://github.com/LostPaul/obsidian-folder-notes)
-  - Template Folders:
-  - Folders named "templates" or "_templates"
+  - Template Folders (any folder containing "template" in the name)
   - Files within template folders above
-  - Attachment Folders (named "attachments" or "_attachments")
-  - Images (png/jpeg)
-  - Documents (pdf, docx)
+  - Attachment Folders (any folder containing "attachment" in the name)
+  - Images (png/jpg/jpeg)
+  - Documents (pdf/docx)
 - Added file and folder icons to Breadcrumbs:
   - Folders and Folders with Folder Notes (https://github.com/LostPaul/obsidian-folder-notes)
   - 'Normal' files (didn't bother with attachments/images/pdfs etc.)
@@ -83,11 +82,9 @@ I've tried to Document the CSS but it's probably like 70% done and the really we
 
 ## …that I Aim to Fix but Aren't Like, Super High Importance for Me
 
-- Moving a tab into a New Window is totally un-styled at the moment
-- Reader mode formatting is inconsistent as a bunch of selectors I've used are specific to editor mode and I'm too scared to try and fix it at the moment
-- Mobile isn't….totally broken, but it's got some obvious janky stuff
+- Reader mode formatting is not 100% 
+- Mobile isn't… totally broken, but it's got some obvious janky stuff that is next on my list once I figure out how to get the mobile view in the developer console
 - I want to get support for Style Settings top allow people to undo some of my (what may be controversial) decisions (e.g. Ribbon and Status bar are hard-hidden), but also it's MacOS so you get what you get :)
-- Styling for search embeds
 
 ## That I Am Not Going to Fix Because I Don't Think There is a Good Fix
 
@@ -102,7 +99,6 @@ Supported here means that I've got it installed and made some specific tweaks to
 - Templater (https://github.com/SilentVoid13/Templater)
 - Folder Notes (https://github.com/LostPaul/obsidian-folder-notes)
 - Advanced Tables (https://github.com/tgrosinger/advanced-tables-obsidian)
-- Zen (https://github.com/Maxymillion/zen)
 
 # Other Notes
 

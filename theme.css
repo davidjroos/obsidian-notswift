@@ -19,31 +19,6 @@
 	padding-right: 0px !important;
 }
 
-/*
-.mod-macos.is-hidden-frameless:not(.is-popout-window) .sidebar-toggle-button.mod-left,
-.mod-root .sidebar-toggle-button.mod-left {
-	height: auto;
-	width: auto;
-	margin-right: 0px;
-	padding: 8px;
-	justify-content: center;
-	left: 80px;
-	top: 4px;
-	position:absolute;
-	z-index: 0 !important;
-}
-
-
-
-.mod-macos.is-hidden-frameless:not(.is-popout-window) .sidebar-toggle-button.mod-right .clickable-icon:hover,
-.mod-root .sidebar-toggle-button.mod-right .clickable-icon:hover,
-.mod-macos.is-hidden-frameless:not(.is-popout-window) .sidebar-toggle-button.left-right .clickable-icon:hover,
-.mod-root .sidebar-toggle-button.mod-left .clickable-icon:hover  {
-	background-color: var(--color-base-30);
-}
-	
-
-*/
 .is-flashing {
 	background: none !important;
 }
@@ -66,7 +41,7 @@ body {
 /* 	Variables (Global) - Fonts - UI Sizes */
 
 	--font-ui-unreadable: 8px;
-	--font-ui-teeny: 11px;
+	--font-ui-teeny: 10px;
 	--font-ui-smaller: 12px;
 	--font-ui-small: 13px;
 	--font-ui-medium: 15px;
@@ -74,6 +49,7 @@ body {
 	
 	--vault-name-font-size: var(--font-ui-smaller);
 	--tab-font-size: var(--font-ui-teeny);
+	--tab-stacked-font-size: var(--font-ui-teeny);
 	
 /* ---------------------------------------------------------------------------------- */
 /* 	Variables (Global) - Fonts - Typeface */
@@ -86,9 +62,9 @@ body {
 /* ---------------------------------------------------------------------------------- */
 /* 	Variables (Global) - Fonts - Colours */
 
-	--text-faint: var(--color-base-70);
+	--text-faint: var(--color-base-60);
 	--vault-name-color: var(--color-base-70);
-	color: var(--tab-text-color-focused-active-current); 
+
 	/*--nav-item-color-hover: */
 
 /* ================================================================================================= */
@@ -139,6 +115,7 @@ body {
 /* 	Variables - Checkbox - Size */
 
 	--checkbox-size: 18px;
+	--checkbox-radius: var(--radius-round);
 
 /* ---------------------------------------------------------------------------------- */
 /* 	Variables - Checkbox - Colour */
@@ -266,7 +243,7 @@ body {
     --interactive-normal: var(--color-base-00);
     --interactive-hover: var(--color-base-05);
 
-
+	--text-highlight-bg: var(--color-base-verylowlight);
 
 /* ---------------------------------------------------------------------------------- */
 /* 	Variables (theme-light) - Colours - highlight definitions */
@@ -312,8 +289,6 @@ body {
 
 	--color-base-warn: #EA5A47;
 
-
-	
 	--color-fakeclose-inner: #FE5F57;
 	--color-fakeclose-outer: #DF544C;
 
@@ -356,6 +331,8 @@ body {
     --interactive-normal: var(--color-base-00);
     --interactive-hover: var(--color-base-05);
 
+	--text-highlight-bg: var(--color-base-verylowlight);
+
 }
 
 /* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
@@ -382,10 +359,9 @@ body {
 	color: var(--text-muted);
 }
 
-
-.workspace-split.mod-vertical.mod-root .view-header {
+.view-header {
 	border-bottom: 1px solid var(--divider-color);
-	height: 32px;
+	height: 39px;
 }
 
 .workspace-split.mod-vertical.mod-root .view-header-title-container {
@@ -468,7 +444,6 @@ body {
     margin-top: -3px;
 }
 
-
 /* ---------------------------------------------------------------------------------- */
 /* 	Editor Frame - Breadcrumbs  - folder notes */
 
@@ -512,9 +487,9 @@ body {
 	content: " ";
 	position: relative;
 	display: inline-block;
-	top: 1px;
+	top: -1px;
 	margin-right: 6px;
-	height: 13px;
+	height: 14px;
 	width: 13px;
     margin-top: -3px;
 }
@@ -577,7 +552,6 @@ body {
 	color: var(--color-base-highlight);
 	line-height: 18px;
 	margin-top: 8px;
-	
 }
 
 .empty-state-action:hover{
@@ -601,11 +575,13 @@ body {
 /* ---------------------------------------------------------------------------------- */
 /* 	Editor Content - Inline-Title - Active/Inactive */
 
-.cm-editor.ͼ1.ͼ2 .inline-title{
+/* cant use special characters */
+
+.cm-editor .inline-title{
 	color: var(--color-base-80);
 	transition: all 250ms 0ms;
 }
-.workspace-leaf.mod-active .cm-editor.ͼ1.ͼ2 .inline-title{
+.workspace-leaf.mod-active .cm-editor .inline-title{
 	color: var(--color-base-highlight);
 	transition: all 250ms 0ms;
 }
@@ -723,11 +699,14 @@ body {
 	width: 14px;
 }
 
-.callout-content p {
-	margin-top: 0px;
-	margin-bottom:0px;
-	padding-right: 0px;
-	font-size: 80%;
+.callout-content p, .callout-content ul, .callout-content ol {
+    margin-top: 3px;
+    margin-bottom: 0px;
+    padding-right: 0px;
+}
+
+.callout-content {
+	font-size: 0.85em;
 }
 
 .callout-content p a {
@@ -809,6 +788,11 @@ body {
 /* ================================================================================================= */
 /* 	Editor Content - Codeblocks */
 
+.el-pre > pre{
+	border: 1px solid var(--color-base-30);;
+	border-radius: var(--codeblock-radius);
+}
+
 /* ---------------------------------------------------------------------------------- */
 /* 	Editor Content - Codeblocks - sizing */
 
@@ -827,7 +811,7 @@ body {
 /* ---------------------------------------------------------------------------------- */
 /* 	Editor Content - Codeblocks - Code Styling */
 
-.cm-comment {
+.cm-comment.cm-hmd-codeblock {
 	color: var(--code-comment);
 	font-size: 0.9em;
 	font-style: italic;
@@ -1022,26 +1006,31 @@ input[type=checkbox]:checked {
 /* ---------------------------------------------------------------------------------- */
 /* 	Editor Content - Headings - Specific Headings */
 
+.markdown-rendered h1,
 .HyperMD-header .cm-header-1 {
 	font-size: 32px !important;
 	font-weight: 800;
 }
 
+.markdown-rendered h2,
 .HyperMD-header .cm-header-2 {
 	font-size: 24px !important;
 	font-weight: 700;
 }
 
+.markdown-rendered h3,
 .HyperMD-header .cm-header-3 {
 	font-size: 18px !important;
 	font-weight: 600;
 }
 
+.markdown-rendered h4,
 .HyperMD-header .cm-header-4 {
 	font-size: 14px !important;
 	font-weight: 600;
 }
 
+.markdown-rendered h5,
 .HyperMD-header .cm-header-5 {
 	font-size: 14px !important;
 	font-weight: 600;
@@ -1131,13 +1120,11 @@ input[type=checkbox]:checked {
 	top: 6px;
 }
 
-
 .graph-controls:not(.is-close) {
 	box-shadow: none;
 	border: 1px solid var(--divider-color);
 	margin-top: -1px;
 	background-color: var(--color-base-17);
-	
 }
 
 .mod-horizontal .graph-controls:not(.is-close) {
@@ -1178,7 +1165,6 @@ input[type=checkbox]:checked {
 	display: none;
 }
 
-
 ::-webkit-scrollbar-thumb
 {
 	background-color: var(--color-scrollbar-1);
@@ -1189,6 +1175,28 @@ input[type=checkbox]:checked {
 	position: absolute;
 }
 
+.cm-scroller::-webkit-scrollbar-thumb {
+	background-color: var(--color-scrollbar-3);
+}
+
+/* ---------------------------------------------------------------------------------- */
+/* 	Scrollbars - Editor Panes - Inactive styling */
+
+.workspace-split.mod-vertical.mod-root .workspace-tabs .workspace-leaf .workspace-leaf-content .cm-editor .cm-scroller::-webkit-scrollbar-thumb {
+	background-color: var(--color-scrollbar-3);
+	border: 4px solid transparent;
+}
+
+/* ---------------------------------------------------------------------------------- */
+/* 	Scrollbars - Editor Panes - Active styling */
+
+.workspace-split.mod-vertical.mod-root .workspace-tabs.mod-active .workspace-leaf .workspace-leaf-content .cm-editor .cm-scroller::-webkit-scrollbar-thumb,
+.workspace-split.mod-vertical.mod-root .workspace-tabs.mod-top-left-space.mod-active .workspace-leaf .workspace-leaf-content .cm-editor .cm-scroller::-webkit-scrollbar-thumb,
+.workspace-split.mod-vertical.mod-root .workspace-tabs.mod-top.mod-active .workspace-leaf .workspace-leaf-content .cm-editor .cm-scroller::-webkit-scrollbar-thumb {
+	background-color: var(--color-scrollbar-1);;
+	border: 3px solid transparent;
+}
+
 
 /* ================================================================================================= */
 /* 	Scrollbars - Sidebar Leafs */
@@ -1196,9 +1204,6 @@ input[type=checkbox]:checked {
 /* ---------------------------------------------------------------------------------- */
 /* 	Scrollbars - Sidebar Leafs - Styling */
 
-.cm-scroller::-webkit-scrollbar-thumb {
-	background-color: var(--color-scrollbar-3);
-}
 
 .nav-files-container::-webkit-scrollbar-thumb
 {
@@ -1326,6 +1331,59 @@ input.prompt-input {
 	background-color: var(--color-base-00);
 }
 
+button {
+	height: 22px;
+	border-radius: var(--button-radius);
+	box-shadow: none;
+	border: 0.5px solid var(--color-base-50);
+	font-size: var(--font-ui-teeny);
+	transition: all 250ms;
+}
+
+button:not(.clickable-icon) {
+	box-shadow: none;
+}
+
+.theme-light button {
+	background-color: var(--color-base-00);
+}
+
+.theme-dark button:hover,
+.theme-light button:hover {
+	background-color: var(--color-base-05);
+	transition: all 250ms;
+}
+
+.theme-dark button {
+	background-color: var(--color-base-15);
+}
+
+button .svg-icon {
+		height: 14px;
+}
+
+.theme-dark button:active,
+.theme-light button:active {
+	background-color: var(--color-base-20);
+}
+
+button.mod-cta {
+	background-color: var(--color-base-highlight) !important;
+	color: var(--color-base-00);
+}
+
+button.mod-cta:active {
+	background-color: var(--color-base-darklight) !important;
+}
+
+button.mod-warning {
+	background-color: var(--color-base-warn) !important;
+	color: var(--color-base-00);
+}
+
+button.clickable-icon {
+	border: none;
+}
 
 /* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 /* 	Interface Leafs */
@@ -1504,112 +1562,30 @@ input.prompt-input {
 	fill: var(--color-base-highlight);
 }
 
+/* ---------------------------------------------------------------------------------- */
+/* 	Plugins - Advanced Tables - Missing top border */
+
+.view-content:has(.advanced-tables-buttons) {
+	position: relative;
+	top: 8px;
+	border-top: 1px solid var(--divider-color);
+}
+
+/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+/* 	Workspace Splits */
+
 /* ================================================================================================= */
-/* 	Plugins - Zen */
+/* 	Workspace Splits - Resize Handlers */
 
-.zen-enabled .mod-vertical.mod-root .workspace-tab-header-container {
-	padding-left: 0px !important;
+.workspace-leaf-resize-handle:hover {
+	background-color: var(--color-base-lowlight);
+	border-color: var(--color-base-lowlight);
 }
 
-/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
-/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
-/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+/* ================================================================================================= */
+/* 	Workspace Splits - General */
 
-/* UNSORTED GOES BELOW HERE */
-
-/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
-/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
-/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
-
-
-
-/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
-/* TRASHCAN */
-/*
---titlebar-background: unset;
---titlebar-background-focused: unset;
-
-.HyperMD-codeblock.HyperMD-codeblock-begin.cm-line {
-	padding-top: 0px;
-	padding-bottom: 0px;
-	border-top-width: 0px;
-	border-top-style: solid;
-	border-top-color: var(--color-base-verylowlight);
-	border-top-left-radius: var(--radius-none);
-	border-top-right-radius: var(--radius-none);
-}
-.HyperMD-codeblock.HyperMD-codeblock-end.cm-line {
-	padding-top: 0px;
-	border-bottom-width: 0px;
-	border-bottom-style: solid;
-	border-bottom-color: var(--color-base-verylowlight);
-	border-bottom-left-radius: var(--radius-none);
-	border-bottom-right-radius: var(--radius-none);
-
-}
-
-.HyperMD-codeblock.cm-line {
-	border-left-width: 1px;
-	border-left-style: solid;
-	border-left-color: var(--color-base-highlight);
-	
-}
-
-.cm-line:has(.cm-fold-indicator):has(.cm-def.cm-hmd-frontmatter) {
-	border: none;
-	border-bottom: none;
-	background-color: var(--color-base-00);
-}
-
-
-
-.workspace-ribbon.mod-left.is-collapsed {
-	transition: background-color 250ms 200ms ease-in-out;
-}
-
-.workspace-ribbon.mod-left.is-collapsed:before{
-	transition: background-color 250ms 200ms ease-in-out;
-}
-
---background-modifier-hover: #00000000;
---background-modifier-active-hover: #00000000;
-
-/* TRASHCAN */
-
-
-
-/* 	
-.markdown-source-view.mod-cm6 .cm-preview-code-block.cm-embed-block.markdown-rendered {
-	margin-top: 12px !important;
-	margin-bottom: 12px !important;
-
-}
-
-
-
-
-.cm-s-obsidian .HyperMD-table-row {
-	font-size: var(--font-ui-teeny);
-}
-
-.cm-s-obsidian .HyperMD-table-row-0 {
-	font-weight: bold;
-	}
-	
-.cm-s-obsidian .HyperMD-table-row span.cm-hmd-table-sep,
-.cm-s-obsidian .HyperMD-table-row-1 {
-	color: var(--color-base-lowlight);
-}
-
-/* ↑↑↑↑↑↑↑↑↑↑ Tables [Shape, Size, Position] */
-
-
-/* ↓↓↓↓↓↓↓↓↓↓ PANES [Shape, Size, Position] */
-
-.mod-left-split .workspace-tab-header-container,
-.mod-right-split .workspace-tab-header-container {
-	height: auto;
-}
+/* Workspace Splits - General - Size and Position	*/
 
 .mod-left-split .workspace-tab-header-container-inner,
 .mod-right-split .workspace-tab-header-container-inner {
@@ -1620,28 +1596,37 @@ input.prompt-input {
 	margin-top: 10px;
 	margin-left: 0px;
 	margin-right: 0px;
-	/*border-bottom: 1px solid #CDC7C7;*/
 	border-radius: var(--radius-none);
 	width: 100%;
 	height: 38px;
 	display: flex;
 }
 
-
-/* ↓↓↓↓↓↓↓↓↓↓ PANES: Left [Shape, Size, Position] */
-
-
-
-.sidebar-toggle-button.mod-left .clickable-icon {
-	padding: 0px;
-	width: 34px;
-	height: 30px;
+.workspace-tab-header-container {
+	background: none;
 }
 
-.sidebar-toggle-button.mod-right .clickable-icon {
-	width: 34px;
-	height: 34px;
+
+
+/* ---------------------------------------------------------------------------------- */
+/* Workspace Splits - General - Colours	*/
+
+/* override some stupid focus colour changing */
+body.is-focused .sidebar-toggle-button,
+body.is-focused .workspace-tabs.mod-top,
+.sidebar-toggle-button,
+.workspace-tabs.mod-top {
+--tab-container-background: var(--color-base-17);
 }
+
+.mod-left-split .workspace-tab-header-container,
+.mod-right-split .workspace-tab-header-container {
+	background-color: var(--color-base-17);
+}
+
+/* ================================================================================================= */
+/* 	Workspace Splits - Left Specific */
+
 
 .workspace-tabs.mod-top.mod-top-left-space .sidebar-toggle-button.mod-left {
 	width: 34px;
@@ -1652,39 +1637,37 @@ input.prompt-input {
 	padding: 0px;
 }
 
-/* ↓↓↓↓↓↓↓↓↓↓ PANES: Left: Header Icons  [Shape, Size, Position] */
-
 .mod-top-left-space .workspace-tab-header-container {
 	border-right: 0px solid var(--divider-color)
 }
 
-/* ↑↑↑↑↑↑↑↑↑↑ PANES: Left [Shape, Size, Position] */
+/* shift the first set of module 'tabs' down (left side) */
+.workspace.is-left-sidedock-open .workspace-tabs.mod-top.mod-top-left-space .workspace-tab-header-container {
+	height: 87px;
+	padding: 0px;
+}
+
+.workspace.is-left-sidedock-open .workspace-tabs.mod-top.mod-top-left-space .workspace-tab-header-container-inner {
+	background-color: none;
+	margin-top: 49px;
+	width:100%;
+}
 
 
-
+/* ================================================================================================= */
+/* 	Workspace Splits -  Middle Specific */
 
 
 .mod-horizontal .workspace-tab-header-container {
 	border-bottom: 0px;
 }
 
-
-
-/* ↓↓↓↓↓↓↓↓↓↓ PANES: Middle [Shape, Size, Position] */
-
-
-/* ↓↓↓↓↓↓↓↓↓↓ PANES: Middle: Sidebar Show buttons [Shape, Size, Position] */
-
-
-.sidebar-toggle-button  {
-	transition: position 250ms;
+.mod-root .workspace-tab-header-container {
+	background-color: var(--color-base-15);
 }
 
-/* ↑↑↑↑↑↑↑↑↑↑ PANES: Middle: Sidebar Show buttons [Shape, Size, Position] */
-
-/* ↑↑↑↑↑↑↑↑↑↑ PANES: Middle [Shape, Size, Position] */
-
-/* ↓↓↓↓↓↓↓↓↓↓ PANES: Right [Shape, Size, Position] */
+/* ================================================================================================= */
+/* 	Workspace Splits - Right Specific */
 
 .workspace.is-right-sidedock-open .workspace-split.mod-horizontal.mod-right-split .mod-top-right-space .workspace-tab-header-container {
 	height: 87px;
@@ -1701,7 +1684,6 @@ input.prompt-input {
 	padding-bottom: 4px;
 	margin-left: 0px;
 	margin-right: 0px;
-	/*border-bottom: 1px solid #CDC7C7;*/
 	border-radius: var(--radius-none);
 	width: 100%;
 	height: 38px;
@@ -1710,78 +1692,15 @@ input.prompt-input {
 
 
 
-/* ↑↑↑↑↑↑↑↑↑↑ PANES: Right [Shape, Size, Position] */
 
-/* ↑↑↑↑↑↑↑↑↑↑ PANES [Shape, Size, Position] */
+/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+/* 	Workspace Leafs */
 
-/* Panes */
-/* override some stupid focus colour changing */
+/* ================================================================================================= */
+/* 	Workspace Leafs - Files */
 
-.workspace-tab-header-container {
-	background: none;
-}
-
-body.is-focused .sidebar-toggle-button,
-body.is-focused .workspace-tabs.mod-top,
-.sidebar-toggle-button,
-.workspace-tabs.mod-top {
---tab-container-background: var(--color-base-17);
-}
-
-
-
-/* ↓↓↓↓↓↓↓↓↓↓ PANES: Left [Colour Light] */
-
-.mod-left-split .workspace-tab-header-container,
-.workspace-tabs .workspace-leaf	 {
-	background-color: var(--color-base-17);
-}
-
-
-/* ↑↑↑↑↑↑↑↑↑↑ PANES: Left [Colour Light] */
-
-
-
-
-/* ↓↓↓↓↓↓↓↓↓↓ PANES: Middle [Colour Light] */
-
-.mod-root .workspace-tab-header-container {
-	background-color: var(--color-base-15);
-}
-
-/* ↓↓↓↓↓↓↓↓↓↓ PANES: Middle: Sidebar Show buttons [Colour Light] */
-
-
-
-
-
-/* ↑↑↑↑↑↑↑↑↑↑ PANES: Middle: Sidebar Show buttons [Colour Light] */
-
-/* ↑↑↑↑↑↑↑↑↑↑ PANES: Middle [Colour Light] */
-
-
-
-
-
-
-/* ↓↓↓↓↓↓↓↓↓↓ PANES: Right [Colour Light] */
-.mod-right-split .workspace-tab-header-container {
-	background-color: var(--color-base-17);
-}
-
-.sidebar-toggle-button, .workspace-tabs.mod-top {
-	
-}
-
-/* ↑↑↑↑↑↑↑↑↑↑ PANES: Right [Colour Light] */
-
-/* ↑↑↑↑↑↑↑↑↑↑ PANES [Colour Light] */
-
-/* ↓↓↓↓↓↓↓↓↓↓ Workspace Leaf [Colour Light] */
-
-
-/* ↓↓↓↓↓↓↓↓↓↓ Workspace Leafs: Files [ALL] */
-/* vault name */
+/* ---------------------------------------------------------------------------------- */
+/* 	Workspace Leafs - Files - Vault Name */
 
 .tree-item.nav-folder .nav-folder-title[data-path$="/"] {
 	padding-left: 8px;
@@ -1801,53 +1720,8 @@ body.is-focused .workspace-tabs.mod-top,
 	color: var(--vault-name-color)
 }
 
-/*
-.tree-item.nav-file:has(.nav-file-title.is-active) {
-	background-color: var(--color-base-30) !important;
-}
-*/
-
-/* Folder General */
-.tree-item.nav-folder .nav-folder-title .tree-item-inner.nav-folder-title-content {
-	padding-left: 8px;
-	margin-left: -4px;
-	padding-top: 2px !important;
-}
-
-/* Folder Notes */
-
-
-/* END Highlight active folder-note */
-
-/* Folder Notes Overviews */
-
-
-
-
-
-/* end folder notes */
-
-/* Note general */
-.tree-item.nav-folder .nav-file-title .tree-item-inner.nav-file-title-content {
-	padding-left: 8px;
-	margin-left: -4px;
-}
-
-/* Highlight active note */
-
-.nav-file-title.is-active .tree-item-inner.nav-file-title-content{
-
-	padding-bottom: 4px;
-	margin-bottom: -4px;
-	padding-top: 2px;
-	margin-top: -2px;
-	border-radius: var(--radius-m);
-	width:100%;
-	background-color: var(--color-base-30);
-}
-/* END Highlight active note */
-
-/* folder or note  */
+/* ---------------------------------------------------------------------------------- */
+/* 	Workspace Leafs - Files - General */
 
 body:not(.is-grabbing) .nav-file-title,
 body:not(.is-grabbing) .nav-folder-title,
@@ -1867,8 +1741,6 @@ body:not(.is-grabbing) .nav-folder-title:hover,
 	font-weight:400;
 }
 
-
-
 .workspace-leaf.mod-active .tree-item-self.has-focus {
 	box-shadow: none;
 }
@@ -1878,30 +1750,35 @@ body:not(.is-grabbing) .nav-folder-title:hover,
 	box-shadow: 0 0 0 2px var(--color-base-highlight);
 }
 
-/* Templates: Folder */
-.theme-light .nav-folder .nav-folder-title[data-path$="templates"] .nav-folder-title-content:before,
-.theme-light .nav-folder .nav-folder-title[data-path$="_templates"] .nav-folder-title-content:before {
-	background-image: url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(110, 105, 102)' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' class='lucide lucide-folder-plus'%3E%3Cpath d='M4 20h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.93a2 2 0 0 1-1.66-.9l-.82-1.2A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13c0 1.1.9 2 2 2Z'/%3E%3Cline x1='12' x2='12' y1='10' y2='16'/%3E%3Cline x1='9' x2='15' y1='13' y2='13'/%3E%3C/svg%3E");
+.tree-item.nav-folder .nav-file-title .tree-item-inner.nav-file-title-content,
+.tree-item.nav-folder .nav-folder-title .tree-item-inner.nav-folder-title-content {
+	padding-left: 8px;
+	margin-left: -4px;
 }
 
-.theme-dark .nav-folder .nav-folder-title[data-path$="templates"] .nav-folder-title-content:before,
-.theme-dark .nav-folder .nav-folder-title[data-path$="_templates"] .nav-folder-title-content:before {
-	background-image: url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(177, 168, 158)' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' class='lucide lucide-folder-plus'%3E%3Cpath d='M4 20h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.93a2 2 0 0 1-1.66-.9l-.82-1.2A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13c0 1.1.9 2 2 2Z'/%3E%3Cline x1='12' x2='12' y1='10' y2='16'/%3E%3Cline x1='9' x2='15' y1='13' y2='13'/%3E%3C/svg%3E");
+/* ---------------------------------------------------------------------------------- */
+/* 	Workspace Leafs - Files - Folders specifically */
+
+
+
+/* ---------------------------------------------------------------------------------- */
+/* 	Workspace Leafs - Files - Files  specifically */
+
+/* Highlight active note */
+
+.nav-file-title.is-active .tree-item-inner.nav-file-title-content{
+
+	padding-bottom: 4px;
+	margin-bottom: -4px;
+	padding-top: 2px;
+	margin-top: -2px;
+	border-radius: var(--radius-m);
+	width:100%;
+	background-color: var(--color-base-30);
 }
 
-/* Templates: Files */
-.theme-light .nav-folder .nav-file-title[data-path*="templates"] .nav-file-title-content:before,
-.theme-light .nav-folder .nav-file-title[data-path*="_templates"] .nav-file-title-content:before {
-	background-image: url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(110, 105, 102)' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' class='lucide lucide-file-plus'%3E%3Cpath d='M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z'/%3E%3Cpolyline points='14 2 14 8 20 8'/%3E%3Cline x1='12' x2='12' y1='18' y2='12'/%3E%3Cline x1='9' x2='15' y1='15' y2='15'/%3E%3C/svg%3E");
-}
-
-.theme-dark .nav-folder .nav-file-title[data-path*="templates"] .nav-file-title-content:before,
-.theme-dark .nav-folder .nav-file-title[data-path*="_templates"] .nav-file-title-content:before {
-	background-image: url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(177, 168, 158)' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' class='lucide lucide-file-plus'%3E%3Cpath d='M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z'/%3E%3Cpolyline points='14 2 14 8 20 8'/%3E%3Cline x1='12' x2='12' y1='18' y2='12'/%3E%3Cline x1='9' x2='15' y1='15' y2='15'/%3E%3C/svg%3E");
-}
-
-/* Folder: collapsed */
-
+/* ---------------------------------------------------------------------------------- */
+/* 	Workspace Leafs - Files - Icons (Folders) */
 
 .theme-light .nav-folder .nav-folder-title-content:before,
 .theme-light .nav-folder.is-collapsed .nav-folder-title-content:before {
@@ -1927,31 +1804,42 @@ body:not(.is-grabbing) .nav-folder-title:hover,
 	width: 16px;
 }
 
-/* folder: attachments */
-.theme-light .nav-folder .nav-folder-title[data-path$="attachments"] .nav-folder-title-content:before,
-.theme-light .nav-folder .nav-folder-title[data-path$="_attachments"] .nav-folder-title-content:before {
+/* ---------------------------------------------------------------------------------- */
+/* 	Workspace Leafs - Files - Icons (Template Folder) */
+
+.theme-light .nav-folder .nav-folder-title[data-path*="template"] .nav-folder-title-content:before {
+	background-image: url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(110, 105, 102)' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' class='lucide lucide-folder-plus'%3E%3Cpath d='M4 20h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.93a2 2 0 0 1-1.66-.9l-.82-1.2A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13c0 1.1.9 2 2 2Z'/%3E%3Cline x1='12' x2='12' y1='10' y2='16'/%3E%3Cline x1='9' x2='15' y1='13' y2='13'/%3E%3C/svg%3E");
+}
+
+.theme-dark .nav-folder .nav-folder-title[data-path*="template"] .nav-folder-title-content:before {
+	background-image: url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(177, 168, 158)' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' class='lucide lucide-folder-plus'%3E%3Cpath d='M4 20h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.93a2 2 0 0 1-1.66-.9l-.82-1.2A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13c0 1.1.9 2 2 2Z'/%3E%3Cline x1='12' x2='12' y1='10' y2='16'/%3E%3Cline x1='9' x2='15' y1='13' y2='13'/%3E%3C/svg%3E");
+}
+
+/* ---------------------------------------------------------------------------------- */
+/* 	Workspace Leafs - Files - Icons (Template File) */
+.theme-light .nav-folder .nav-file-title[data-path*="template"] .nav-file-title-content:before {
+	background-image: url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(110, 105, 102)' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' class='lucide lucide-file-plus'%3E%3Cpath d='M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z'/%3E%3Cpolyline points='14 2 14 8 20 8'/%3E%3Cline x1='12' x2='12' y1='18' y2='12'/%3E%3Cline x1='9' x2='15' y1='15' y2='15'/%3E%3C/svg%3E");
+}
+
+.theme-dark .nav-folder .nav-file-title[data-path*="template"] .nav-file-title-content:before {
+	background-image: url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(177, 168, 158)' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' class='lucide lucide-file-plus'%3E%3Cpath d='M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z'/%3E%3Cpolyline points='14 2 14 8 20 8'/%3E%3Cline x1='12' x2='12' y1='18' y2='12'/%3E%3Cline x1='9' x2='15' y1='15' y2='15'/%3E%3C/svg%3E");
+}
+
+/* ---------------------------------------------------------------------------------- */
+/* 	Workspace Leafs - Files - Icons (Attachment Folder) */
+
+.theme-light .nav-folder .nav-folder-title[data-path*="attachment"] .nav-folder-title-content:before {
 	background-image: url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(110, 105, 102)' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' class='lucide lucide-paperclip'%3E%3Cpath d='m21.44 11.05-9.19 9.19a6 6 0 0 1-8.49-8.49l8.57-8.57A4 4 0 1 1 18 8.84l-8.59 8.57a2 2 0 0 1-2.83-2.83l8.49-8.48'/%3E%3C/svg%3E");
 }
 
-.theme-dark .nav-folder .nav-folder-title[data-path$="attachments"] .nav-folder-title-content:before,
-.theme-dark .nav-folder .nav-folder-title[data-path$="_attachments"] .nav-folder-title-content:before {
+.theme-dark .nav-folder .nav-folder-title[data-path*="attachment"] .nav-folder-title-content:before {
 	background-image: url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(177, 168, 158)' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' class='lucide lucide-paperclip'%3E%3Cpath d='m21.44 11.05-9.19 9.19a6 6 0 0 1-8.49-8.49l8.57-8.57A4 4 0 1 1 18 8.84l-8.59 8.57a2 2 0 0 1-2.83-2.83l8.49-8.48'/%3E%3C/svg%3E");
 }
 
 
-/* files */
-/* little label for filetypes */
-.nav-file-tag {
-	margin: 0px;
-	vertical-align: baseline;
-	margin-top:0px;
-	font-size: var(--font-ui-unreadable);
-	font-family: var(--font-monospace-default);
-	text-transform: lowercase;
-	letter-spacing: -0.2px;
-	color: var(--color-base-60);
-	background: none;
-}
+/* ---------------------------------------------------------------------------------- */
+/* 	Workspace Leafs - Files - Icons (Files) */
+
 
 .theme-light .nav-file-title-content:before {
 	background-image: url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(110, 105, 102)' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' class='lucide lucide-file'%3E%3Cpath d='M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z'/%3E%3Cpolyline points='14 2 14 8 20 8'/%3E%3C/svg%3E");
@@ -1973,6 +1861,9 @@ body:not(.is-grabbing) .nav-folder-title:hover,
 	height: 16px;
 	width: 16px;
 }
+
+/* ---------------------------------------------------------------------------------- */
+/* 	Workspace Leafs - Files - Icons (non md files) */
 
 .theme-light .nav-file-title[data-path$="png"] .nav-file-title-content:before,
 .theme-light .nav-file-title[data-path$="jpg"] .nav-file-title-content:before,
@@ -2028,10 +1919,28 @@ body:not(.is-grabbing) .nav-folder-title:hover,
 	width: 16px;
 }
 
+/* ---------------------------------------------------------------------------------- */
+/* 	Workspace Leafs - Files - Little labels for non md files */
 
-/* ↑↑↑↑↑↑↑↑↑↑ Workspace Leafs: Files [ALL] */
+.nav-file-tag {
+	margin: 0px;
+	vertical-align: baseline;
+	margin-top:0px;
+	font-size: var(--font-ui-unreadable);
+	font-family: var(--font-monospace-default);
+	text-transform: lowercase;
+	letter-spacing: -0.2px;
+	color: var(--color-base-60);
+	background: none;
+}
 
-/* ↓↓↓↓↓↓↓↓↓↓ Workspace Leafs: Search [ALL] */
+
+/* ================================================================================================= */
+/* 	Workspace Leafs - Search */
+
+/* ---------------------------------------------------------------------------------- */
+/* 	Workspace Leafs - Search - Missing top border */
+
 .workspace-leaf-content:has(.search-row) {
 	position: relative;
 	top: 8px;
@@ -2039,24 +1948,23 @@ body:not(.is-grabbing) .nav-folder-title:hover,
 }
 /* ↑↑↑↑↑↑↑↑↑↑ Workspace Leafs: Search [ALL] */
 
+/* ================================================================================================= */
+/* 	Workspace Leafs - Outline */
 
-/* ↓↓↓↓↓↓↓↓↓↓ Workspace Advanced Tables: Outline [ALL] */
-.view-content:has(.advanced-tables-buttons) {
-	position: relative;
-	top: 8px;
-	border-top: 1px solid var(--divider-color);
-}
-/* ↑↑↑↑↑↑↑↑↑↑ Workspace Leafs: Outline [ALL] */
+/* ---------------------------------------------------------------------------------- */
+/* 	Workspace Leafs - Outline - Missing top border */
 
-/* ↓↓↓↓↓↓↓↓↓↓ Workspace Leafs: Outline [ALL] */
 .view-content:has(.outline) {
 	position: relative;
 	top: 8px;
 	border-top: 1px solid var(--divider-color);
 }
-/* ↑↑↑↑↑↑↑↑↑↑ Workspace Leafs: Outline [ALL] */
 
-/* ↓↓↓↓↓↓↓↓↓↓ Workspace Leafs: Navigation Pane [Colour Light] */
+/* ================================================================================================= */
+/* 	Workspace Leafs - Navigation Pane (Common) */
+
+/* ---------------------------------------------------------------------------------- */
+/* 	Workspace Leafs - Navigation Pane (Common) - General */
 
 .nav-header {
 	padding-left: 0px;
@@ -2077,7 +1985,8 @@ body:not(.is-grabbing) .nav-folder-title:hover,
 	padding: 5px;
 }
 
-/* ↓↓↓↓↓↓↓↓↓↓ Workspace Leaf: Navigation Pane: Icons [Colour Light] */
+/* ---------------------------------------------------------------------------------- */
+/* 	Workspace Leafs - Navigation Pane (Common) - Icons */
 
 .clickable-icon.nav-action-button.is-active,
 .clickable-icon.nav-action-button:hover {
@@ -2085,46 +1994,46 @@ body:not(.is-grabbing) .nav-folder-title:hover,
 	color: var(--color-base-highlight)
 }
 
-/* ↑↑↑↑↑↑↑↑↑↑ Workspace Leaf: Navigation Pane: Icons [Colour Light] */
+/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+/* 	File Tabs */
 
-/* ↑↑↑↑↑↑↑↑↑↑ Workspace Leaf: Navigation Pane [Colour Light] */
+/* ================================================================================================= */
+/* 	File Tabs - When at Top */
 
-/* ↑↑↑↑↑↑↑↑↑↑ Workspace Leaf [Colour Light] */
-
-
-/* START file tabs! */
-
-
-
-/* TOP TABS */
+/* ---------------------------------------------------------------------------------- */
+/* 	File Tabs - When at Top - Size and Position*/
 
 .workspace-split.mod-vertical.mod-root .workspace-tab-header-container-inner {
 	flex-grow: 1;
 }
 
-workspace-split mod-vertical mod-root
-
 .mod-macos.is-hidden-frameless:not(.is-popout-window) .workspace .workspace-tabs.mod-top-right-space .workspace-tab-header-container {
 	height: 87px;
 }
 
-
 .workspace-split.mod-vertical.mod-root .workspace-tabs.mod-top-right-space .workspace-tab-header-container,
 .workspace-split.mod-vertical.mod-root .workspace-tabs.mod-top-left-space .workspace-tab-header-container,
 .workspace-split.mod-vertical.mod-root .workspace-tabs.mod-top .workspace-tab-header-container {
-	height: 81px;
+	height: 96px;
 	transition: height 250ms 0ms;
 	padding-right: 0px;
 	padding-left: 0px;
 	border-bottom: none;
 }
 
+.workspace-split.mod-vertical.mod-root .workspace-tabs.mod-top-left-space .workspace-tab-header-container .workspace-tab-header-new-tab,
+.workspace-split.mod-vertical.mod-root .workspace-tabs.mod-top-left-space .workspace-tab-header-container .workspace-tab-header-tab-list,
+.workspace-split.mod-vertical.mod-root .workspace-tabs.mod-top .workspace-tab-header-container .workspace-tab-header-new-tab,
+.workspace-split.mod-vertical.mod-root .workspace-tabs.mod-top .workspace-tab-header-container .workspace-tab-header-tab-list {
+	margin-top: 65px;
+	border-top: 1px solid var(--divider-color);
+}
+
 .workspace-split.mod-vertical.mod-root .workspace-tabs.mod-top-right-space .workspace-tab-header-container-inner,
 .workspace-split.mod-vertical.mod-root .workspace-tabs.mod-top-left-space .workspace-tab-header-container .workspace-tab-header-container-inner,
 .workspace-split.mod-vertical.mod-root .workspace-tabs.mod-top .workspace-tab-header-container .workspace-tab-header-container-inner {
-	padding-top: 50px;
+	padding-top: 65px;
 	margin-top: 0px;
-	
 	padding-left:0px;
 	padding-right:0px;
 	margin-left: 0px;
@@ -2144,7 +2053,51 @@ workspace-split mod-vertical mod-root
 	display: none;
 }
 
-/* All Tabs */
+
+
+/* ================================================================================================= */
+/* 	File Tabs - All tabs */
+
+/* ---------------------------------------------------------------------------------- */
+/* 	File Tabs - All tabs - Tab Sizing */
+
+.workspace .mod-root .workspace-tab-header {
+	width: 100%;
+	min-width: 42px;
+	max-width: 100%;
+	padding: 0px;
+	height: 31px;
+}
+
+/* ---------------------------------------------------------------------------------- */
+/* 	File Tabs - All tabs - get rid of after/before spacers */
+
+.workspace .mod-root .workspace-tab-header-inner::after {
+	width: 0px;
+	visibility: collapse;
+}
+
+.workspace-tab-header::before, .workspace-tab-header::after {
+	border-radius: var(--radius-none);
+	width: 0px;
+	height: 0xp;
+	visibility: collapse;
+	display: none;
+}
+
+/* ---------------------------------------------------------------------------------- */
+/* 	File Tabs - All tabs - General Styling*/
+
+.mod-root .workspace-tab-header-inner-title {
+	text-align: center
+}
+
+.mod-root .workspace-tab-header-inner {
+	padding-right: 6px;
+	height: 30px;
+	border-radius: var(--radius-none);
+}
+
 .workspace-split.mod-vertical.mod-root .workspace-tabs .workspace-tab-header-container .workspace-tab-header-container-inner {
 	padding-top: 0px;
 	margin-top: 0px;
@@ -2155,26 +2108,21 @@ workspace-split mod-vertical mod-root
 	transition: padding-top 250ms 0ms;
 }
 
-/* Draw a fake border for aligment purposes on the active tab across the top tab pane */
-.workspace-split.mod-vertical.mod-root .workspace-tabs.mod-top .workspace-tab-header-container .workspace-tab-header-container-inner .workspace-tab-header.is-active,
-.workspace-split.mod-vertical.mod-root .workspace-tabs.mod-top.mod-active .workspace-tab-header-container .workspace-tab-header-container-inner .workspace-tab-header.is-active {
-	border-top: 1px solid var(--color-base-15);
+.workspace-split.mod-vertical.mod-root .workspace-tabs .workspace-tab-header-container .workspace-tab-header-container-inner .workspace-tab-header-inner {
+	padding-left: 8px;
+	padding-right: 8px;	
 }
 
-.workspace-split.mod-vertical.mod-root .workspace-tabs.mod-active .workspace-tab-header-container .workspace-tab-header-container-inner .workspace-tab-header.is-active,
-.workspace-split.mod-vertical.mod-root .workspace-tabs.mod-top-left-space.mod-active .workspace-tab-header-container .workspace-tab-header-container-inner .workspace-tab-header.is-active,
-.workspace-split.mod-vertical.mod-root .workspace-tabs.mod-top.mod-active .workspace-tab-header-container .workspace-tab-header-container-inner .workspace-tab-header.is-active {
-	background-color: var(--color-base-15);
+.workspace-split.mod-vertical.mod-root .workspace-tabs .workspace-tab-header-container .workspace-tab-header-new-tab,
+.workspace-split.mod-vertical.mod-root .workspace-tabs .workspace-tab-header-container .workspace-tab-header-tab-list {
+	margin-top: 0px;
+	background-color: var(--color-base-25);
+	justify-content: center;
+	width: 30px;
+	margin-right: 0px;
 	border-bottom: 1px solid var(--divider-color);
-	font-style: normal;
-}
-
-.workspace-split.mod-vertical.mod-root .workspace-tabs .workspace-tab-header-container .workspace-tab-header-container-inner .workspace-tab-header.is-active,
-.workspace-split.mod-vertical.mod-root .workspace-tabs.mod-top-left-space .workspace-tab-header-container .workspace-tab-header-container-inner .workspace-tab-header.is-active,
-.workspace-split.mod-vertical.mod-root .workspace-tabs.mod-top .workspace-tab-header-container .workspace-tab-header-container-inner .workspace-tab-header.is-active {
-	background-color: var(--color-base-15);
-	color: var(--color-base-60);
-	font-style: italic;
+	padding-right: 0px;
+	padding-left: 0px;
 }
 
 .workspace-split.mod-vertical.mod-root .workspace-tabs.mod-top-left-space .workspace-tab-header-container .workspace-tab-header-container-inner .workspace-tab-header,
@@ -2199,73 +2147,46 @@ workspace-split mod-vertical mod-root
 	padding: 0px;
 }
 
-.workspace-split.mod-vertical.mod-root .workspace-tabs.mod-active .workspace-leaf .workspace-leaf-content .cm-editor.ͼ1.ͼ2 .cm-scroller::-webkit-scrollbar-thumb,
-.workspace-split.mod-vertical.mod-root .workspace-tabs.mod-top-left-space.mod-active .workspace-leaf .workspace-leaf-content .cm-editor.ͼ1.ͼ2 .cm-scroller::-webkit-scrollbar-thumb,
-.workspace-split.mod-vertical.mod-root .workspace-tabs.mod-top.mod-active .workspace-leaf .workspace-leaf-content .cm-editor.ͼ1.ͼ2 .cm-scroller::-webkit-scrollbar-thumb {
-	background-color: var(--color-scrollbar-1);;
-	border: 3px solid transparent;
+/* ---------------------------------------------------------------------------------- */
+/* 	File Tabs - All tabs - Active Styling */
+
+.workspace-split.mod-vertical.mod-root .workspace-tabs.mod-top .workspace-tab-header-container .workspace-tab-header-container-inner .workspace-tab-header.is-active,
+.workspace-split.mod-vertical.mod-root .workspace-tabs.mod-top.mod-active .workspace-tab-header-container .workspace-tab-header-container-inner .workspace-tab-header.is-active {
+	border-top: 1px solid var(--color-base-15);
 }
 
-
-
-.workspace-split.mod-vertical.mod-root .workspace-tabs .workspace-leaf .workspace-leaf-content .cm-editor.ͼ1.ͼ2 .cm-scroller::-webkit-scrollbar-thumb {
-	
-	background-color: var(--color-scrollbar-3);
-	border: 4px solid transparent;
-	
-}
-
-.workspace-split.mod-vertical.mod-root .workspace-tabs .workspace-tab-header-container .workspace-tab-header-container-inner .workspace-tab-header-inner {
-	padding-left: 8px;
-	padding-right: 8px;
-	
-}
-
-/* top and non-top tabs */
-.workspace-split.mod-vertical.mod-root .workspace-tabs .workspace-tab-header-container .workspace-tab-header-new-tab,
-.workspace-split.mod-vertical.mod-root .workspace-tabs .workspace-tab-header-container .workspace-tab-header-tab-list {
-	margin-top: 0px;
-	background-color: var(--color-base-25);
-	justify-content: center;
-	width: 30px;
-	margin-right: 0px;
+.workspace-split.mod-vertical.mod-root .workspace-tabs.mod-active .workspace-tab-header-container .workspace-tab-header-container-inner .workspace-tab-header.is-active,
+.workspace-split.mod-vertical.mod-root .workspace-tabs.mod-top-left-space.mod-active .workspace-tab-header-container .workspace-tab-header-container-inner .workspace-tab-header.is-active,
+.workspace-split.mod-vertical.mod-root .workspace-tabs.mod-top.mod-active .workspace-tab-header-container .workspace-tab-header-container-inner .workspace-tab-header.is-active {
+	background-color: var(--color-base-15);
 	border-bottom: 1px solid var(--divider-color);
-	padding-right: 0px;
-	padding-left: 0px;
+	font-style: normal;
 }
 
-/* top tabs specifically */
-.workspace-split.mod-vertical.mod-root .workspace-tabs.mod-top-left-space .workspace-tab-header-container .workspace-tab-header-new-tab,
-.workspace-split.mod-vertical.mod-root .workspace-tabs.mod-top-left-space .workspace-tab-header-container .workspace-tab-header-tab-list,
-.workspace-split.mod-vertical.mod-root .workspace-tabs.mod-top .workspace-tab-header-container .workspace-tab-header-new-tab,
-.workspace-split.mod-vertical.mod-root .workspace-tabs.mod-top .workspace-tab-header-container .workspace-tab-header-tab-list {
-	margin-top: 50px;
-	border-top: 1px solid var(--divider-color);
-
+.workspace-split.mod-vertical.mod-root .workspace-tabs .workspace-tab-header-container .workspace-tab-header-container-inner .workspace-tab-header.is-active,
+.workspace-split.mod-vertical.mod-root .workspace-tabs.mod-top-left-space .workspace-tab-header-container .workspace-tab-header-container-inner .workspace-tab-header.is-active,
+.workspace-split.mod-vertical.mod-root .workspace-tabs.mod-top .workspace-tab-header-container .workspace-tab-header-container-inner .workspace-tab-header.is-active {
+	background-color: var(--color-base-15);
+	color: var(--color-base-60);
+	font-style: italic;
 }
 
-.workspace-tab-header-tab-list {
-	
+/* ---------------------------------------------------------------------------------- */
+/* 	File Tabs - All tabs - Hover */
+
+.workspace-tab-header:not(.is-active):hover .workspace-tab-header {
+	background-color: var(--color-base-40);
+}
+
+/* ---------------------------------------------------------------------------------- */
+/* 	File Tabs - All tabs - Close Button */
+
+/* hide by default */
+.workspace-tab-header .workspace-tab-header-inner-close-button {
+	--icon-size: 12px;
+	padding-top: 3px;
 	order: -1;
-}
-
-.workspace-tab-header-new-tab {
-	border-left: 1px solid var(--divider-color);
-	border-right: 0px;
-	margin-left: 0px;
-
-}
-
-.workspace-tab-header::before, .workspace-tab-header::after {
-	border-radius: var(--radius-none);
-	width: 0px;
-	height: 0xp;
-	visibility: collapse;
-	display: none;
-}
-
-.workspace-tab-header::before, .workspace-tab-header::after {
-	
+	visibility:hidden;
 }
 
 /* show close button on tab hover */
@@ -2274,33 +2195,18 @@ workspace-split mod-vertical mod-root
 	visibility: visible;
 }
 
-.workspace .mod-root .workspace-tab-header {
-	width: 100%;
-	min-width: 42px;
-	max-width: 100%;
-	padding: 0px;
-	height: 31px;
-}
-
-.workspace-tab-header:not(.is-active):hover .workspace-tab-header {
-	background-color: var(--color-base-40);
-}
-
-.workspace-tab-header .workspace-tab-header-inner-close-button {
-	--icon-size: 12px;
-	padding-top: 3px;
-	order: -1;
-	visibility:hidden;
-}
-
 .mod-root .workspace-tab-header.is-active.mod-active .workspace-tab-header-inner-close-button:hover {
 	background-color: var(--color-base-50);
 }
 
+/* ================================================================================================= */
+/* 	File Tabs - Function Buttons */
 
-.workspace-tab-header-new-tab:hover,
-.workspace-tab-header-tab-list:hover {
-	background-color: var(--color-base-30);
+/* ---------------------------------------------------------------------------------- */
+/* 	File Tabs - Function Buttons - Tab List/new Tab*/
+
+.workspace-tab-header-tab-list {
+	order: -1;
 }
 
 .workspace-tab-header-tab-list .clickable-icon,
@@ -2308,41 +2214,24 @@ workspace-split mod-vertical mod-root
 {
 	--icon-size: 15px;
 	width: 30px;
-	height: 30px;
+	height: 31px;
 	margin-top: -1px;
 }
 
-
-.workspace-tab-header-tab-list:hover .clickable-icon:hover,
-.workspace-tab-header-new-tab:hover .clickable-icon:hover	{
-	background: none;
-	border-radius: 40px;
+.workspace-tab-header-tab-list .clickable-icon:hover,
+.workspace-tab-header-new-tab .clickable-icon:hover	{
+	background-color: var(--color-base-30);
+	border-radius: 0px;
 }
 
-.workspace .mod-root .workspace-tab-header-inner::after {
-	width: 0px;
-	visibility: collapse;
+.workspace-tab-header-new-tab {
+	border-left: 1px solid var(--divider-color);
+	border-right: 0px;
+	margin-left: 0px;
 }
 
-.mod-root .workspace-tab-header.mod-active {
-	border-radius: var(--radius-none);
-	border-bottom: 1px solid var(--divider-color);
-	border-top: none;
-	padding-bottom: 0px;
-	padding-top: 1px;
-}
-
-.mod-root .workspace-tab-header-inner-title {
-	text-align: center
-}
-
-.mod-root .workspace-tab-header-inner {
-	padding-right: 6px;
-	height: 30px;
-	border-radius: var(--radius-none);
-}
-
-/* Stacked tabs */
+/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+/* 	Stacked Tabs */
 
 .view-header-title-container:not(.mod-at-end):after {
 	background: none;
@@ -2352,39 +2241,23 @@ workspace-split mod-vertical mod-root
 	border-left: 1px solid var(--divider-color);
 }
 
-.workspace-split.mod-vertical.mod-root .workspace-tabs.mod-stacked .workspace-tab-header-container .workspace-tab-header-new-tab {
-	order: 99;
+.workspace .mod-root .workspace-tabs.mod-stacked .workspace-tab-container .workspace-leaf.is-hidden {
+	border-left: 1px solid red;
+	position:relative;
+	left: 99px;
+	margin-left:35px;
 }
+/* ================================================================================================= */
+/* 	Stacked Tabs - General */
 
-.workspace-split.mod-vertical.mod-root .workspace-tabs.mod-stacked .workspace-tab-header-container .workspace-tab-header-tab-list {
-	order: 98;
-}
-
-.workspace-split.mod-vertical.mod-root .workspace-tabs.mod-stacked.mod-top .workspace-tab-header-container .workspace-tab-header-new-tab,
-.workspace-split.mod-vertical.mod-root .workspace-tabs.mod-stacked.mod-top .workspace-tab-header-container .workspace-tab-header-tab-list {
-	margin-top: 12px;
-
-}
-
-.workspace-split.mod-vertical.mod-root .workspace-tabs.mod-stacked .workspace-tab-header-container .workspace-tab-header-new-tab,
-.workspace-split.mod-vertical.mod-root .workspace-tabs.mod-stacked .workspace-tab-header-container .workspace-tab-header-tab-list {
-	background-color: var(--color-base-15);
-	justify-content: center;
-	width: 30px;
-	margin-top: 0px;
-	margin-right: 0px;
-	border: none;
-	padding-right: 0px;
-	padding-left: 0px;
-}
 
 
 
 .workspace .mod-root .workspace-tabs.mod-stacked .workspace-tab-container .workspace-tab-header {
-	min-width: 34px;
-	max-width: unset;
+	max-width: 30px;
+	min-width: 30px;
 	height: unset;
-	width: 34px;
+	width: 30px;
 	writing-mode: var(--tab-stacked-text-writing-mode);
 	text-orientation: sideways;
 	background-color: none;
@@ -2393,24 +2266,23 @@ workspace-split mod-vertical mod-root
 	--no-tooltip: true;
 	height: 100%;
 	border-bottom: none;
-	box-shadow: -1px 0 0 0 var(--tab-outline-color)
+	box-shadow: -1px 0 0 0 var(--tab-outline-color);
+
 }
 
 
 
-.workspace .mod-root .workspace-tabs.mod-stacked .workspace-tab-header-container .workspace-tab-header-container-inner {
+.workspace .mod-root .workspace-tabs.mod-stacked .workspace-tab-container .workspace-tab-header-container .workspace-tab-header-container-inner {
 	width: 100%;
 }
 
 .workspace .mod-root .workspace-tabs.mod-stacked.mod-top .workspace-tab-header-container {
-	height: 50px;		
+	height: 95px;
 }
 
 .workspace .mod-root .workspace-tabs.mod-stacked.mod-top .workspace-tab-header-container .workspace-tab-header-container-inner {
 	padding-top: 0px;
 }
-
-
 
 
 .workspace .mod-root .workspace-tabs.mod-stacked .workspace-tab-container .workspace-tab-header:hover {
@@ -2433,7 +2305,7 @@ workspace-split mod-vertical mod-root
 
 .workspace .mod-root .workspace-tabs.mod-stacked .workspace-tab-container .workspace-tab-header.mod-active.is-active .workspace-tab-header-inner {
 	background-color: var(--color-base-15);
-	border-top: none;
+	border-top: 1px solid var(--color-base-15);
 }
 
 .workspace .mod-root .workspace-tabs.mod-stacked .workspace-tab-container .workspace-tab-header-inner .workspace-tab-header-inner-icon{
@@ -2444,6 +2316,83 @@ workspace-split mod-vertical mod-root
 	margin: 0px;
 }
 
+
+/* ================================================================================================= */
+/* 	Stacked Tabs - Function Buttons */
+
+/* ---------------------------------------------------------------------------------- */
+/* 	Stacked Tabs - Function Buttons - General */
+
+.workspace-split.mod-vertical.mod-root .workspace-tabs.mod-stacked .workspace-tab-header-container .workspace-tab-header-new-tab {
+	order: 99;
+}
+
+.workspace-split.mod-vertical.mod-root .workspace-tabs.mod-stacked .workspace-tab-header-container .workspace-tab-header-tab-list {
+	order: 98;
+}
+
+.workspace-split.mod-vertical.mod-root .workspace-tabs.mod-stacked .workspace-tab-header-tab-list .clickable-icon,
+.workspace-split.mod-vertical.mod-root .workspace-tabs.mod-stacked .workspace-tab-header-new-tab .clickable-icon {
+	color: var(--icon-color);
+	width: 24px;
+	height: 24px;
+
+}
+
+.workspace-split.mod-vertical.mod-root .workspace-tabs.mod-stacked .workspace-tab-header-container .workspace-tab-header-new-tab,
+.workspace-split.mod-vertical.mod-root .workspace-tabs.mod-stacked .workspace-tab-header-container .workspace-tab-header-tab-list {
+	background-color: var(--color-base-15);
+	justify-content: center;
+	margin-top: 3.5px;
+	width: 24px;
+	height: 24px;
+	border: none;
+	padding: 0px;
+	margin-right: 3px;
+}
+
+.workspace-split.mod-vertical.mod-root .workspace-tabs.mod-stacked .workspace-tab-header-container .workspace-tab-header-new-tab:hover,
+.workspace-split.mod-vertical.mod-root .workspace-tabs.mod-stacked .workspace-tab-header-container .workspace-tab-header-tab-list:hover {
+	border-radius: var(--radius-m);
+	background-color: var(--color-base-30);
+}
+
+.workspace-split.mod-vertical.mod-root .workspace-tabs.mod-stacked .workspace-tab-header-tab-list .clickable-icon:hover,
+.workspace-split.mod-vertical.mod-root .workspace-tabs.mod-stacked .workspace-tab-header-new-tab .clickable-icon:hover	{
+	background: none;
+}
+
+/* ---------------------------------------------------------------------------------- */
+/* 	Stacked Tabs - Function Buttons - Top Specific */
+
+.workspace-split.mod-vertical.mod-root .workspace-tabs.mod-stacked.mod-top .workspace-tab-header-container .workspace-tab-header-new-tab,
+.workspace-split.mod-vertical.mod-root .workspace-tabs.mod-stacked.mod-top .workspace-tab-header-container .workspace-tab-header-tab-list {
+	margin-top: 53px;
+	width: 34px;
+	height: 30px;
+	padding: 0px;
+}
+
+.workspace-split.mod-vertical.mod-root .workspace-tabs.mod-stacked.mod-top .workspace-tab-header-tab-list .clickable-icon,
+.workspace-split.mod-vertical.mod-root .workspace-tabs.mod-stacked.mod-top .workspace-tab-header-new-tab .clickable-icon {
+	color: var(--icon-color);
+	width: 34px;
+	height: 30px;
+	padding-top: 6px;
+	padding-bottom: 6px;
+	padding-right: 8px;
+	padding-left: 8px;
+}
+
+.workspace-split.mod-vertical.mod-root .workspace-tabs.mod-stacked.mod-top .workspace-tab-header-container .workspace-tab-header-new-tab {
+	margin-right: 12px;
+	margin-left: 3px;
+}
+
+
+/* ---------------------------------------------------------------------------------- */
+/* 	Stacked Tabs - All tabs - Close Button */
+
 .workspace .mod-root .workspace-tabs.mod-stacked .workspace-tab-container .workspace-tab-header-inner .workspace-tab-header-inner-close-button {
 	--icon-size: 12px;
 	padding-top: 2px;
@@ -2452,39 +2401,24 @@ workspace-split mod-vertical mod-root
 	margin-bottom: 12px;
 }
 
-
-.workspace .mod-root .workspace-tabs.mod-stacked .workspace-tab-container .workspace-leaf .workspace-leaf-content .view-header {
-	border-top: 1px solid var(--divider-color);
-	height: 32px !important;
-	padding-bottom: 0px;
+.workspace .mod-root .workspace-tab-header:not(.is-active) .workspace-tab-header-inner-close-button {
+	display: flex;
 }
 
-.workspace .mod-root .workspace-tabs.mod-stacked .workspace-tab-container .workspace-leaf .workspace-leaf-content .view-header .view-header-nav-buttons {
-	
+.workspace .mod-root .workspace-tabs.mod-stacked .workspace-tab-container .workspace-tab-header-inner-close-button:hover {
+	background: none;
 }
 
 
-
-
+.workspace .mod-root .workspace-tab-header.is-active.mod-active .workspace-tab-header-inner-close-button:hover {
+	background-color: var(--color-base-50);
+}
 
 /* END file tabs! */
-
-/*
-.is-left-sidedock-open .mod-root .workspace-tab-header-container {
-	height: 70px;
-	background-color: var(--color-base-15);
-	transition: height 250ms 0ms;
-}
-*/
-
-/* resize draggers */
-
-/* Resize handles */
-
-
-.workspace-leaf-resize-handle:hover {
-	background-color: var(--color-base-lowlight);
-	border-color: var(--color-base-lowlight);
+.workspace .mod-root .workspace-tabs.mod-stacked .workspace-tab-container .workspace-leaf .workspace-leaf-content .view-header {
+	border-top: 1px solid var(--divider-color);
+	height: 32px;
+	padding-bottom: 0px;
 }
 
 
@@ -2552,31 +2486,6 @@ workspace-split mod-vertical mod-root
 	color: var(--color-base-100);
 }
 
-/*limit to just the sidebars NOTE: needs a fix to get the show left/right panel buttons when the panels are hidden*/
-
-.mod-horizontal .clickable-icon:hover {
-	background-color: var(--color-base-30);
-}
-
-/* shift the first set of module 'tabs' down (left side) */
-.workspace.is-left-sidedock-open .workspace-tabs.mod-top.mod-top-left-space .workspace-tab-header-container {
-	height: 87px;
-	padding: 0px;
-}
-
-.workspace.is-left-sidedock-open .workspace-tabs.mod-top.mod-top-left-space .workspace-tab-header-container-inner {
-	background-color: none;
-	margin-top: 49px;
-	width:100%;
-
-}
-
-
-
-/*Headings*/
-
-
-
 
 
 /* Tables */
@@ -2601,6 +2510,7 @@ workspace-split mod-vertical mod-root
 
 .markdown-rendered thead {
 	background-color: var(--color-base-verylowlight);
+
 }
 
 .markdown-rendered thead tr > th {
@@ -2608,6 +2518,10 @@ workspace-split mod-vertical mod-root
 	border-bottom-style: solid;
 	border-bottom-width: 1px;
 	border-bottom-color: var(--color-base-lowlight);
+}
+
+.theme-dark .markdown-rendered thead tr > th {
+	color: var(--color-base-100);
 }
 
 .markdown-rendered td,
@@ -2671,7 +2585,7 @@ workspace-split mod-vertical mod-root
 /* ↑↑↑↑↑↑↑↑↑↑ CALLOUT [Colours Light]] */
 
 /* ↓↓↓↓↓↓↓↓↓↓ EMBEDS [ALL]*/
-,
+
 .markdown-embed {
 	border: 1px dashed var(--color-base-lowlight);
 	padding-top: 6px;
@@ -2730,28 +2644,23 @@ workspace-split mod-vertical mod-root
 
 /* EMBEDS: search */
 
-.cm-preview-code-block.cm-embed-block.markdown-rendered {
 
-
-}
-
-.cm-preview-code-block.cm-embed-block.markdown-rendered .internal-query{
+.internal-query{
 	border-top: none;
-
 }
 
-.cm-preview-code-block.cm-embed-block.markdown-rendered .internal-query-header {
+.internal-query-header {
 	padding-top: 4px;
 	padding-bottom: 4px;
 
 }
 
-.cm-preview-code-block.cm-embed-block.markdown-rendered .internal-query-header .internal-query-header-title {
+.internal-query-header .internal-query-header-title {
 	font-family: var(--font-monospace-default);
 	font-size: 0.8em;
 }
 
-.cm-preview-code-block.cm-embed-block.markdown-rendered .internal-query .search-result-container {
+.internal-query .search-result-container {
 	width: fit-content;
     border: 1px dashed var(--color-base-verylowlight);
     border-radius: var(--radius-m);
@@ -2761,37 +2670,33 @@ workspace-split mod-vertical mod-root
     padding-inline-end: 12px;
 	background-color: rgb(255 255 255 / 1%);
 }
-.cm-preview-code-block.cm-embed-block.markdown-rendered .search-result-file-matches,
-.cm-preview-code-block.cm-embed-block.markdown-rendered .tree-item-flair-outer,
-.cm-preview-code-block.cm-embed-block.markdown-rendered .tree-item-icon {
+.internal-query .search-result-file-matches,
+.internal-query .tree-item-flair-outer,
+.internal-query .tree-item-icon {
 	display: none;
 }
 
-.cm-preview-code-block.cm-embed-block.markdown-rendered .search-result-file-title {
+.internal-query .search-result-file-title {
 	padding-left: 0px;
-
 }
 
-.cm-preview-code-block.cm-embed-block.markdown-rendered .internal-query .search-result-container .tree-item-inner {
+.internal-query .search-result-container .tree-item-inner {
 	text-decoration-line: underline !important;
 	text-decoration: solid;
-text-decoration-color: var(--color-base-highlight);
-cursor: var(--cursor-link);
-}
-.cm-preview-code-block.cm-embed-block.markdown-rendered .search-result-file-title:hover {
-
-
+	text-decoration-color: var(--color-base-highlight);
+	cursor: var(--cursor-link);
 }
 
-.theme-light .cm-preview-code-block.cm-embed-block.markdown-rendered .search-result-file-title :before {
+
+.theme-light .internal-query  .search-result-file-title :before {
 	background-image: url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(110, 105, 102)' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' class='lucide lucide-file'%3E%3Cpath d='M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z'/%3E%3Cpolyline points='14 2 14 8 20 8'/%3E%3C/svg%3E");
 }
 
-.theme-dark .cm-preview-code-block.cm-embed-block.markdown-rendered .search-result-file-title :before {
+.theme-dark .internal-query  .search-result-file-title :before {
 	background-image: url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(177, 168, 158)' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' class='lucide lucide-file'%3E%3Cpath d='M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z'/%3E%3Cpolyline points='14 2 14 8 20 8'/%3E%3C/svg%3E");
 }
 
-.cm-preview-code-block.cm-embed-block.markdown-rendered .search-result-file-title :before {
+.internal-query  .search-result-file-title :before {
 	background-size: contain;
 	background-repeat: no-repeat;
 	background-position: center center;
@@ -2804,10 +2709,10 @@ cursor: var(--cursor-link);
 	width: 16px;
 }
 
-/* searcg */
+/* search */
 
 /* ↓↓↓↓↓↓↓↓↓↓ EMBEDS: Pictures [ALL]*/
-.markdown-source-view.mod-cm6 .cm-line .internal-embed.image-embed {
+.internal-embed.image-embed {
 	display: flex;
 
 }
@@ -2975,6 +2880,13 @@ cursor: var(--cursor-link);
     color: var(--text-normal);
 	}
 }
+
+.modal-button-container,
+.modal-content p{
+	font-size: var(--font-ui-small);
+	margin-top: 3px;
+}
+
 /* ↓↓↓↓↓↓↓↓↓↓ Settings: Background Dim [Colours Light] */
 .modal-bg {
 	background-color: rgb(0 0 0 / 50%);
@@ -2992,27 +2904,12 @@ cursor: var(--cursor-link);
 	font-size: var(--font-ui-smaller) !important; 
 }
 
-
 .modal-title {
 	margin-top: 20px;
 }
 
 
-
-
-/* dropdown selector */
-.search-results-info .dropdown {
-
-}
-
-
-
-
-
-
 /* buttons */
-
-
 
 .setting-item-control .clickable-icon {
 	border-radius: var(--radius-m);
@@ -3139,61 +3036,43 @@ cursor: var(--cursor-link);
 
 
 /* Settings: buttons */
-.setting-item-control button {
-	height: 22px;
-	border-radius: var(--button-radius);
-	box-shadow: none;
-	border: 0.5px solid var(--color-base-50);
+
+
+/*Caret [Colour Light]*/
+.markdown-source-view.mod-cm6 .cm-content {
+	caret-color: var(--color-base-highlight);
+}
+
+
+
+
+
+
+/* Tag Pane */
+
+.tree-item-flair {
 	font-size: var(--font-ui-teeny);
-	transition: all 250ms;
-
+    color: var(--text-faint);
+    line-height: 1;
+    border-radius: var(--radius-s);
 }
 
-.theme-light .setting-item-control button {
-	background-color: var(--color-base-00);
+
+.cm-comment {
+	color: var(--color-base-50);
+	font-size: 0.7em;
+	font-style: italic;
 }
 
-.theme-dark .setting-item-control button:hover,
-.theme-light .setting-item-control button:hover {
-	background-color: var(--color-base-05);
-	transition: all 250ms;
+/* ================================================================================================= */
+/* 	GUI Buttons */
+
+.clickable-icon {
+	padding: 0px;
+	width: 34px;
+	height: 30px;
 }
 
-.theme-dark .setting-item-control button {
-	background-color: var(--color-base-15);
+.sidebar-toggle-button  {
+	transition: position 250ms;
 }
-
-.setting-item-control button .svg-icon {
-		height: 14px;
-}
-
-.theme-dark .setting-item-control button:active,
-.theme-light .setting-item-control button:active {
-	background-color: var(--color-base-20);
-}
-
-.setting-item-control button.mod-cta {
-	background-color: var(--color-base-highlight) !important;
-	color: var(--color-base-00);
-}
-
-.setting-item-control button.mod-cta:active {
-	background-color: var(--color-base-darklight) !important;
-}
-
-.setting-item-control button.mod-warning {
-	background-color: var(--color-base-warn) !important;
-	color: var(--color-base-00);
-}
-
-	/*Caret [Colour Light]*/
-	.markdown-source-view.mod-cm6 .cm-content {
-		caret-color: var(--color-base-highlight);
-	}
-	/*Caret [Colour Light]*/
-	.markdown-source-view.mod-cm6 .cm-content > * {
-
-	}
-
-
-
