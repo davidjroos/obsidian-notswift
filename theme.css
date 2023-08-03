@@ -1,4 +1,4 @@
-
+mod-macos.is-hidden-frameless:not(.is-popout-window) .workspace .workspace-tabs.mod-top-right-space .workspace-tab-header-container 
 .mod-macos.is-hidden-frameless:not(.is-popout-window) .sidebar-toggle-button.mod-right,
 .mod-root .sidebar-toggle-button.mod-right {
 	z-index: 0 !important;
@@ -2007,7 +2007,7 @@ body:not(.is-grabbing) .nav-folder-title:hover,
 	flex-grow: 1;
 }
 
-.mod-macos.is-hidden-frameless:not(.is-popout-window) .workspace .workspace-tabs.mod-top-right-space .workspace-tab-header-container {
+.mod-macos.is-hidden-frameless:not(.is-popout-window) .workspace .mod-horizontal .workspace-tabs.mod-top-right-space .workspace-tab-header-container {
 	height: 87px;
 }
 
