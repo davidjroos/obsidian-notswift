@@ -82,8 +82,8 @@ I've tried to Document the CSS but it's probably like 70% done and the really we
 
 ## …that I Aim to Fix but Aren't Like, Super High Importance for Me
 
-- Reader mode formatting is not 100% 
-- Mobile isn't… totally broken, but it's got some obvious janky stuff that is next on my list once I figure out how to get the mobile view in the developer console
+- Reader mode formatting is probably at like 95% where want it and it's unlikely to change unless I find problems 
+- Mobile has been tested on my iPhone 11, YMMV!
 - I want to get support for Style Settings top allow people to undo some of my (what may be controversial) decisions (e.g. Ribbon and Status bar are hard-hidden), but also it's MacOS so you get what you get :)
 
 ## That I Am Not Going to Fix Because I Don't Think There is a Good Fix
@@ -102,6 +102,6 @@ Supported here means that I've got it installed and made some specific tweaks to
 
 # Other Notes
 
-I use Linter (https://github.com/platers/obsidian-linter) to put line breaks between things automatically, so some padding might be a bit tight if you are not in the habit of spacing things manually
+I use Linter (https://github.com/platers/obsidian-linter) to put line breaks between things automatically, so some padding might be a bit tight if you are not in the habit of spacing things manually (the recently added post-heading spacer CSS variables have been zerod out)
 
 Please raise issues or feel free to Fork and improve to your liking
