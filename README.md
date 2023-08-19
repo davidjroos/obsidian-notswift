@@ -9,9 +9,9 @@ With Big Sur Aesthetic and California Coast dead I was unhappy with the general 
 ![](https://raw.githubusercontent.com/davidjroos/obsidian-notswift/master/img/Light_Settings%402x.png)
 ![](https://raw.githubusercontent.com/davidjroos/obsidian-notswift/master/img/Dark_Settings%402x.png)
 
-![](https://raw.githubusercontent.com/davidjroos/obsidian-notswift/1.1.0/img/mobile/dark-0-main.PNG) ![](https://raw.githubusercontent.com/davidjroos/obsidian-notswift/1.1.0/img/mobile/light-0-main.PNG)
-![](https://raw.githubusercontent.com/davidjroos/obsidian-notswift/1.1.0/img/mobile/dark-1-files.PNG) ![](https://raw.githubusercontent.com/davidjroos/obsidian-notswift/1.1.0/img/mobile/light-1-files.PNG)
-![](https://raw.githubusercontent.com/davidjroos/obsidian-notswift/1.1.0/img/mobile/dark-2-setting.PNG) ![](https://raw.githubusercontent.com/davidjroos/obsidian-notswift/1.1.0/img/mobile/light-2-setting.PNG)
+![](https://raw.githubusercontent.com/davidjroos/obsidian-notswift/1.1.0/img/mobile/dark-0-main.PNG | width=100) ![](https://raw.githubusercontent.com/davidjroos/obsidian-notswift/1.1.0/img/mobile/light-0-main.PNG | width=100)
+![](https://raw.githubusercontent.com/davidjroos/obsidian-notswift/1.1.0/img/mobile/dark-1-files.PNG | width=100) ![](https://raw.githubusercontent.com/davidjroos/obsidian-notswift/1.1.0/img/mobile/light-1-files.PNG | width=100)
+![](https://raw.githubusercontent.com/davidjroos/obsidian-notswift/1.1.0/img/mobile/dark-2-setting.PNG | width=100) ![](https://raw.githubusercontent.com/davidjroos/obsidian-notswift/1.1.0/img/mobile/light-2-setting.PNG | width=100)
 
 # Special Stuff
 
