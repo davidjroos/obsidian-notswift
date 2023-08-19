@@ -8,11 +8,10 @@ With Big Sur Aesthetic and California Coast dead I was unhappy with the general 
 ![](https://raw.githubusercontent.com/davidjroos/obsidian-notswift/c3a7e5c12d733a457df20d0ef80789e93c3928e4/img/Dark_Main%402x.png)
 ![](https://github.com/davidjroos/obsidian-notswift/blob/c3a7e5c12d733a457df20d0ef80789e93c3928e4/img/Light_Settings%402x.png?raw=true)
 ![](https://github.com/davidjroos/obsidian-notswift/blob/c3a7e5c12d733a457df20d0ef80789e93c3928e4/img/Dark_Settings%402x.png?raw=true)
-<p style="text-align: center;">
-	<img src="https://raw.githubusercontent.com/davidjroos/obsidian-notswift/c3a7e5c12d733a457df20d0ef80789e93c3928e4/img/mobile/light-0-main.PNG" width="250"> <img src="https://raw.githubusercontent.com/davidjroos/obsidian-notswift/c3a7e5c12d733a457df20d0ef80789e93c3928e4/img/mobile/light-1-files.PNG" width="250"> <img src="https://raw.githubusercontent.com/davidjroos/obsidian-notswift/c3a7e5c12d733a457df20d0ef80789e93c3928e4/img/mobile/light-2-setting.PNG" width="250">
-	
-	<img src="https://github.com/davidjroos/obsidian-notswift/blob/c3a7e5c12d733a457df20d0ef80789e93c3928e4/img/mobile/dark-0-main.PNG?raw=true" width="250"> <img src="https://github.com/davidjroos/obsidian-notswift/blob/c3a7e5c12d733a457df20d0ef80789e93c3928e4/img/mobile/dark-1-files.PNG?raw=true" width="250"> <img src="https://github.com/davidjroos/obsidian-notswift/blob/c3a7e5c12d733a457df20d0ef80789e93c3928e4/img/mobile/dark-2-setting.PNG?raw=true" width="250">
-</p>
+<img src="https://raw.githubusercontent.com/davidjroos/obsidian-notswift/c3a7e5c12d733a457df20d0ef80789e93c3928e4/img/mobile/light-0-main.PNG" width="250"> <img src="https://raw.githubusercontent.com/davidjroos/obsidian-notswift/c3a7e5c12d733a457df20d0ef80789e93c3928e4/img/mobile/light-1-files.PNG" width="250"> <img src="https://raw.githubusercontent.com/davidjroos/obsidian-notswift/c3a7e5c12d733a457df20d0ef80789e93c3928e4/img/mobile/light-2-setting.PNG" width="250">
+
+<img src="https://github.com/davidjroos/obsidian-notswift/blob/c3a7e5c12d733a457df20d0ef80789e93c3928e4/img/mobile/dark-0-main.PNG?raw=true" width="250"> <img src="https://github.com/davidjroos/obsidian-notswift/blob/c3a7e5c12d733a457df20d0ef80789e93c3928e4/img/mobile/dark-1-files.PNG?raw=true" width="250"> <img src="https://github.com/davidjroos/obsidian-notswift/blob/c3a7e5c12d733a457df20d0ef80789e93c3928e4/img/mobile/dark-2-setting.PNG?raw=true" width="250">
+
 # Special Stuff
 
 ## Mac-ish
