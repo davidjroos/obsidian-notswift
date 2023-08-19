@@ -4,14 +4,14 @@ With Big Sur Aesthetic and California Coast dead I was unhappy with the general 
 
 **Note**: Requires Apple San Francisco (SF) `Pro` and `Mono` fonts installed as they are specified in the CSS (https://developer.apple.com/fonts/)
 
-![](https://raw.githubusercontent.com/davidjroos/obsidian-notswift/master/img/Light_Main%402x.png)
-![](https://raw.githubusercontent.com/davidjroos/obsidian-notswift/master/img/Dark_Main%402x.png)
-![](https://raw.githubusercontent.com/davidjroos/obsidian-notswift/master/img/Light_Settings%402x.png)
-![](https://raw.githubusercontent.com/davidjroos/obsidian-notswift/master/img/Dark_Settings%402x.png)
+![](https://github.com/davidjroos/obsidian-notswift/blob/c3a7e5c12d733a457df20d0ef80789e93c3928e4/img/Light_Main%402x.png?raw=true)
+![](https://raw.githubusercontent.com/davidjroos/obsidian-notswift/c3a7e5c12d733a457df20d0ef80789e93c3928e4/img/Dark_Main%402x.png)
+![](https://github.com/davidjroos/obsidian-notswift/blob/c3a7e5c12d733a457df20d0ef80789e93c3928e4/img/Light_Settings%402x.png?raw=true)
+![](https://github.com/davidjroos/obsidian-notswift/blob/c3a7e5c12d733a457df20d0ef80789e93c3928e4/img/Dark_Settings%402x.png?raw=true)
 
-<img src="https://github.com/favicon.ico](https://raw.githubusercontent.com/davidjroos/obsidian-notswift/1.1.0/img/mobile/dark-0-main.PNG" width="100"><img src="https://raw.githubusercontent.com/davidjroos/obsidian-notswift/1.1.0/img/mobile/light-0-main.PNG" width="100">
-<img src="notswift/1.1.0/img/mobile/dark-1-files.PNG" width="100"><img src="https://raw.githubusercontent.com/davidjroos/obsidian-notswift/1.1.0/img/mobile/light-1-files.PNG" width="100">
-<img src="https://raw.githubusercontent.com/davidjroos/obsidian-notswift/1.1.0/img/mobile/dark-2-setting.PNG" width="100"><img src="https://raw.githubusercontent.com/davidjroos/obsidian-notswift/1.1.0/img/mobile/light-2-setting.PNG" width="100">
+<img src="https://raw.githubusercontent.com/davidjroos/obsidian-notswift/c3a7e5c12d733a457df20d0ef80789e93c3928e4/img/mobile/light-0-main.PNG" width="250"><img src="https://raw.githubusercontent.com/davidjroos/obsidian-notswift/c3a7e5c12d733a457df20d0ef80789e93c3928e4/img/mobile/light-1-files.PNG" width="250"><img src="https://raw.githubusercontent.com/davidjroos/obsidian-notswift/c3a7e5c12d733a457df20d0ef80789e93c3928e4/img/mobile/light-2-setting.PNG" width="250">
+
+<img src="https://github.com/davidjroos/obsidian-notswift/blob/c3a7e5c12d733a457df20d0ef80789e93c3928e4/img/mobile/dark-0-main.PNG?raw=true" width="250"><img src="https://github.com/davidjroos/obsidian-notswift/blob/c3a7e5c12d733a457df20d0ef80789e93c3928e4/img/mobile/dark-1-files.PNG?raw=true" width="250"><img src="https://github.com/davidjroos/obsidian-notswift/blob/c3a7e5c12d733a457df20d0ef80789e93c3928e4/img/mobile/dark-2-setting.PNG?raw=true" width="250">
 
 # Special Stuff
 
