@@ -68,19 +68,19 @@ body {
     --h5-line-height: var(--line-height-normal);
     --h6-line-height: var(--line-height-normal);
 
-	--h1-font: SFPro-Ultralight;
-    --h2-font: SFPro-Light;
-    --h3-font: SFPro-Medium;
-    --h4-font: SFPro-Semibold;
-    --h5-font: SFPro-Bold;
-    --h6-font: SFPro-Black;
+	--h1-font: SFPro-Ultralight, -apple-system, BlinkMacSystemFont, sans-serif;
+    --h2-font: SFPro-Light, -apple-system, BlinkMacSystemFont, sans-serif;
+    --h3-font: SFPro-Mediu, -apple-system, BlinkMacSystemFont, sans-serif;
+    --h4-font: SFPro-Semibold, -apple-system, BlinkMacSystemFont, sans-serif;
+    --h5-font: SFPro-Bold, -apple-system, BlinkMacSystemFont, sans-serif;
+    --h6-font: SFPro-Black, -apple-system, BlinkMacSystemFont, sans-serif;
 
 	--h1-weight: 100;
-    --h2-weight: 100;
-    --h3-weight: 100;
-    --h4-weight: 100;
-    --h5-weight: 100;
-    --h6-weight: 100;
+    --h2-weight: 200;
+    --h3-weight: 300;
+    --h4-weight: 400;
+    --h5-weight: 600;
+    --h6-weight: 800;
 
 /* ---------------------------------------------------------------------------------- */
 /* 	Variables (Global) - Fonts - Typeface */
@@ -1056,14 +1056,49 @@ input[type=checkbox]:checked {
 /* ---------------------------------------------------------------------------------- */
 /* 	Editor Content - Headings - Specific Headings */
 h1,
+.HyperMD-header .cm-header-1,
 .markdown-rendered h1,
 .HyperMD-header-1 {
 	border-bottom: 1px solid var(--color-base-highlight);
-	
+	font-size: var(--h1-size) !important;
 }
-
 .HyperMD-header.HyperMD-header-1.cm-line {
 	padding-top: 30px ;
+}
+
+h2,
+.HyperMD-header .cm-header-2,
+.markdown-rendered h2,
+.HyperMD-header-2 {
+	font-size: var(--h2-size) !important;
+}
+
+h3,
+.HyperMD-header .cm-header-3,
+.markdown-rendered h3,
+.HyperMD-header-3 {
+	font-size: var(--h3-size) !important;
+}
+
+h4,
+.HyperMD-header .cm-header-4,
+.markdown-rendered h4,
+.HyperMD-header-4 {
+	font-size: var(--h4-size) !important;
+}
+
+h5,
+.HyperMD-header .cm-header-5,
+.markdown-rendered h5,
+.HyperMD-header-5 {
+	font-size: var(--h5-size) !important;
+}
+
+h6,
+.HyperMD-header .cm-header-6,
+.markdown-rendered h6,
+.HyperMD-header-6 {
+	font-size: var(--h6-size) !important;
 }
 
 /* ================================================================================================= */
@@ -3471,6 +3506,11 @@ body:not(.is-grabbing) .nav-folder-title:hover,
 .is-mobile.theme-dark .setting-item-control button {
 	background-color: #2c2c2e;
 	color:var(--color-base-100);	
+}
+
+.is-mobile .setting-item-control button.mod-cta {
+	background-color: var(--color-base-highlight);
+	border-color: var(--color-base-verylowlight);
 }
 
 .is-mobile .workspace-drawer,
