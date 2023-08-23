@@ -403,7 +403,7 @@ body {
 
 .view-header {
 	border-bottom: var(--divider-width) solid var(--divider-color);
-	height: 39px;
+	height: 42px;
 }
 
 .workspace-split.mod-vertical.mod-root .view-header-title-container {
@@ -497,20 +497,6 @@ body {
 	background-image: url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='rgb(149 149 149)' stroke-width='1.25' stroke-linecap='round' stroke-linejoin='round' class='lucide lucide-folder-edit'%3E%3Cpath d='M8.42 10.61a2.1 2.1 0 1 1 2.97 2.97L5.95 19 2 20l.99-3.95 5.43-5.44Z'/%3E%3Cpath d='M2 11.5V5c0-1.1.9-2 2-2h3.93a2 2 0 0 1 1.66.9l.82 1.2a2 2 0 0 0 1.66.9H20a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-9.5'/%3E%3C/svg%3E");
 }
 
-.workspace-split.mod-vertical.mod-root .view-header-title-parent .view-header-breadcrumb.has-folder-note:before {
-	background-size: contain;
-	background-repeat: no-repeat;
-	background-position: center center;
-	content: " ";
-	position: relative;
-	display: inline-block;
-	top: 2px;
-	margin-right: 6px;
-	height: 13px;
-	width: 13px;
-    margin-top: -3px;
-}
-
 /* ---------------------------------------------------------------------------------- */
 /* 	Editor Frame - Breadcrumbs  - files */
 
@@ -535,6 +521,44 @@ body {
 	width: 13px;
     margin-top: -3px;
 }
+
+/* ---------------------------------------------------------------------------------- */
+/* 	Editor Frame - Breadcrumbs  - Template Folder */
+
+.theme-light .workspace-split.mod-vertical.mod-root .view-header-title-parent .view-header-breadcrumb[data-path*="template"]:before {
+	background-image: url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(110, 105, 102)' stroke-width='1.25' stroke-linecap='round' stroke-linejoin='round' class='lucide lucide-folder-plus'%3E%3Cpath d='M4 20h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.93a2 2 0 0 1-1.66-.9l-.82-1.2A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13c0 1.1.9 2 2 2Z'/%3E%3Cline x1='12' x2='12' y1='10' y2='16'/%3E%3Cline x1='9' x2='15' y1='13' y2='13'/%3E%3C/svg%3E");
+}
+
+.theme-dark .workspace-split.mod-vertical.mod-root .view-header-title-parent .view-header-breadcrumb[data-path*="template"]:before {
+	background-image: url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(149 149 149)' stroke-width='1.25' stroke-linecap='round' stroke-linejoin='round' class='lucide lucide-folder-plus'%3E%3Cpath d='M4 20h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.93a2 2 0 0 1-1.66-.9l-.82-1.2A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13c0 1.1.9 2 2 2Z'/%3E%3Cline x1='12' x2='12' y1='10' y2='16'/%3E%3Cline x1='9' x2='15' y1='13' y2='13'/%3E%3C/svg%3E");
+}
+
+/* ---------------------------------------------------------------------------------- */
+/* 	Editor Frame - Breadcrumbs  - Template files */
+
+.theme-light .workspace-split.mod-vertical.mod-root .view-header-title-parent[data-path*="template"] + .view-header-title:before {
+	background-image: url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(110, 105, 102)' stroke-width='1.25' stroke-linecap='round' stroke-linejoin='round' class='lucide lucide-file-plus'%3E%3Cpath d='M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z'/%3E%3Cpolyline points='14 2 14 8 20 8'/%3E%3Cline x1='12' x2='12' y1='18' y2='12'/%3E%3Cline x1='9' x2='15' y1='15' y2='15'/%3E%3C/svg%3E");
+}
+
+.theme-dark .workspace-split.mod-vertical.mod-root .view-header-title-parent[data-path*="template"] + .view-header-title:before {
+	background-image: url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(149 149 149)' stroke-width='1.25' stroke-linecap='round' stroke-linejoin='round' class='lucide lucide-file-plus'%3E%3Cpath d='M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z'/%3E%3Cpolyline points='14 2 14 8 20 8'/%3E%3Cline x1='12' x2='12' y1='18' y2='12'/%3E%3Cline x1='9' x2='15' y1='15' y2='15'/%3E%3C/svg%3E");
+}
+
+/* ---------------------------------------------------------------------------------- */
+/* 	Editor Frame - Breadcrumbs  - Attachments Folder */
+
+.theme-light .workspace-split.mod-vertical.mod-root .view-header-title-parent .view-header-breadcrumb[data-path*="attachment"]:before {
+	background-image: url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(110, 105, 102)' stroke-width='1.25' stroke-linecap='round' stroke-linejoin='round' class='lucide lucide-paperclip'%3E%3Cpath d='m21.44 11.05-9.19 9.19a6 6 0 0 1-8.49-8.49l8.57-8.57A4 4 0 1 1 18 8.84l-8.59 8.57a2 2 0 0 1-2.83-2.83l8.49-8.48'/%3E%3C/svg%3E");
+}
+
+.theme-dark .workspace-split.mod-vertical.mod-root .view-header-title-parent .view-header-breadcrumb[data-path*="attachment"]:before {
+	background-image: url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='rgb(149 149 149)' stroke-width='1.25' stroke-linecap='round' stroke-linejoin='round' class='lucide lucide-paperclip'%3E%3Cpath d='m21.44 11.05-9.19 9.19a6 6 0 0 1-8.49-8.49l8.57-8.57A4 4 0 1 1 18 8.84l-8.59 8.57a2 2 0 0 1-2.83-2.83l8.49-8.48'/%3E%3C/svg%3E");
+}
+
+/* ---------------------------------------------------------------------------------- */
+/* 	Editor Frame - Breadcrumbs  - Attachment files */
+
+/* Not possible :( */
 
 /* ================================================================================================= */
 /* 	Editor Frame - Search and Replace */
@@ -1056,7 +1080,6 @@ input[type=checkbox]:checked {
 /* ---------------------------------------------------------------------------------- */
 /* 	Editor Content - Headings - Specific Headings */
 h1,
-.HyperMD-header .cm-header-1,
 .markdown-rendered h1,
 .HyperMD-header-1 {
 	border-bottom: 1px solid var(--color-base-highlight);
@@ -1153,7 +1176,7 @@ h6,
 
 
 /* ================================================================================================= */
-/* 	???? */
+/* 	Outgoing links  - Missing top border */
 
 .workspace-leaf-content[data-type="outgoing-link"] .view-content {
 	position:relative;
@@ -1161,6 +1184,31 @@ h6,
 	border-top: var(--divider-width) solid var(--divider-color);
 }
 
+.mod-root .workspace-leaf-content[data-type="outgoing-link"] .view-content {
+	top: 0px;
+	border-top: none;
+}
+
+/* ================================================================================================= */
+/* 	Backlinks - Missing top border */
+
+.mod-root .workspace-leaf-content[data-type="backlink"] .nav-header {
+	margin-top: 0px;
+	border-top: none;
+}
+
+.embedded-backlinks .nav-header {
+	top: 0px;
+	border-top: none;
+}
+
+.embedded-backlinks .nav-buttons-container {
+	border-bottom: none;
+}
+
+.embedded-backlinks .backlink-pane .search-result-container {
+	margin-top: 20px;
+}
 
 /* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 /* 	Graph */
@@ -1643,6 +1691,11 @@ button.clickable-icon {
 	border-top: var(--divider-width) solid var(--divider-color);
 }
 
+.mod-root .view-content:has(.advanced-tables-buttons) {
+	top: 0px;
+	border-top: none;
+}
+
 /* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 /* 	Workspace Splits */
 
@@ -2032,6 +2085,11 @@ body:not(.is-grabbing) .nav-folder-title:hover,
 	border-top: var(--divider-width) solid var(--divider-color);
 }
 
+.mod-root .view-content:has(.outline) {
+	top: 0px;
+	border-top: none;
+}
+
 /* ================================================================================================= */
 /* 	Workspace Leafs - Navigation Pane (Common) */
 
@@ -2326,10 +2384,10 @@ body:not(.is-grabbing) .nav-folder-title:hover,
 
 
 .workspace .mod-root .workspace-tabs.mod-stacked .workspace-tab-container .workspace-tab-header {
-	max-width: 30px;
-	min-width: 30px;
+	max-width: 36px;
+	min-width: 36px;
 	height: unset;
-	width: 30px;
+	width: 36px;
 	writing-mode: var(--tab-stacked-text-writing-mode);
 	text-orientation: sideways;
 	background-color: none;
@@ -2489,7 +2547,7 @@ body:not(.is-grabbing) .nav-folder-title:hover,
 /* END file tabs! */
 .workspace .mod-root .workspace-tabs.mod-stacked .workspace-tab-container .workspace-leaf .workspace-leaf-content .view-header {
 	border-top: var(--divider-width) solid var(--divider-color);
-	height: 32px;
+	height: 42px;
 	padding-bottom: 0px;
 }
 
