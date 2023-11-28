@@ -239,7 +239,7 @@ body {
 /* ---------------------------------------------------------------------------------- */
 /* 	Variables - Ribbon - Hide SS */
 
-	--ribbon-width: 0px;
+	 --ribbon-width: 0px;
 
 /* ---------------------------------------------------------------------------------- */
 /* 	Variables - Ribbon - Colour */
@@ -1371,7 +1371,7 @@ h6,
 
 /* ================================================================================================= */
 /* 	GUI Elements - Ribbon */
-
+/* 	some progress here but it still sucks */
 body.is-focused .workspace-ribbon.mod-left,
 .workspace-ribbon {
 --titlebar-background: var(--color-base-17);
@@ -1379,14 +1379,23 @@ border: none;
 padding: 0px;
 }
 
+.side-dock-actions {
+	padding-left: 8px;
+}
 
 .workspace-ribbon.mod-left.is-collapsed,
+.workspace-ribbon.mod-left.is-collapsed:before {
+	background-color: var(--color-base-15);
+}
+
 .workspace-ribbon.mod-left:before,
-.workspace-ribbon.mod-left.is-collapsed:before,
 .workspace-ribbon.mod-left{
 background-color: var(--color-base-17);
 }
 
+.workspace-ribbon.mod-left {
+	margin-top: 105px;
+}
 
 .workspace-ribbon.mod-left:before {
 border: 0px;
@@ -1796,7 +1805,7 @@ body.is-focused .workspace-tabs.mod-top,
 	width: 34px;
 	height: 30px;
 	position: absolute;
-	left: 90px;
+	left: calc(90px - var(--ribbon-width));
 	top: 10px;
 	padding: 0px;
 }
@@ -1892,6 +1901,8 @@ body:not(.is-grabbing) .nav-folder-title,
 .tree-item-children.nav-folder-children .tree-item.nav-file .nav-file-title,
 .nav-folder-title {
 	background: none;
+	padding-top: 2px;
+	padding-bottom: 2px;
 }
 /* folder or note HOVER  */
 
@@ -1905,19 +1916,21 @@ body:not(.is-grabbing) .nav-folder-title:hover,
 	font-weight:400;
 }
 
-.workspace-leaf.mod-active .tree-item-self.has-focus {
-	box-shadow: none;
-}
 
-.workspace-leaf.mod-active .tree-item-self.has-focus .tree-item-inner.nav-file-title-content {
-	position: relative;
-	box-shadow: 0 0 0 2px var(--color-base-highlight);
-}
 
 .tree-item.nav-folder .nav-file-title .tree-item-inner.nav-file-title-content,
 .tree-item.nav-folder .nav-folder-title .tree-item-inner.nav-folder-title-content {
 	padding-left: 8px;
 	margin-left: -4px;
+	
+}
+
+.workspace-leaf.mod-active .tree-item-self.has-focus {
+	box-shadow: none !important;
+}
+
+.workspace-leaf.mod-active .tree-item-self.has-focus .tree-item-inner.nav-file-title-content {
+	box-shadow: none;
 }
 
 /* ---------------------------------------------------------------------------------- */
@@ -3211,10 +3224,6 @@ body:not(.is-grabbing) .nav-folder-title:hover,
 	border-right: none;
 }
 
-.theme-dark .modal.mod-settings .vertical-tab-header,
-.theme-dark .vertical-tab-header {
-	
-}
 
 .modal.mod-sidebar-layout .modal-content {
 	display: flex;
@@ -3360,6 +3369,12 @@ body:not(.is-grabbing) .nav-folder-title:hover,
 	padding: 0px;
 	width: 34px;
 	height: 30px;
+}
+
+.clickable-icon.search-results-result-count {
+	width: auto;
+	padding-left: 8px;
+	padding-right: 8px;
 }
 
 .sidebar-toggle-button  {
@@ -3508,10 +3523,6 @@ body:not(.is-grabbing) .nav-folder-title:hover,
 	background: none;
 }
 
-.suggestion-container {
-	display: none;
-}
-
 .workspace > .workspace-split:not(.mod-root) .metadata-container {
 	--icon-stroke: 1.25px;
 }
@@ -3577,9 +3588,6 @@ body:not(.is-grabbing) .nav-folder-title:hover,
 	display: none;
 }
 
-.is-mobile .workspace-leaf-content[data-mode="preview"] .view-header {
-	
-}
 
 .is-mobile .markdown-preview-view,
 .is-mobile .cm-line {
@@ -3659,9 +3667,6 @@ body:not(.is-grabbing) .nav-folder-title:hover,
 	background-color: #ffffff;
 }
 
-.is-mobile .mod-root .workspace-tabs .workspace-leaf {
-	/*background-color: var(--background-secondary);*/
-}
 .is-mobile .mod-community-theme,
 .is-mobile .mod-community-plugin {
 	background: none;
@@ -4063,9 +4068,6 @@ body:not(.is-grabbing) .nav-folder-title:hover,
 	border-radius: var(--radius-none);
 }
 
-.is-mobile .graph-controls.is-close .graph-controls-button.mod-open {
-	
-}
 
 .is-mobile .graph-controls .mod-cta {
 	background: none;
@@ -4139,11 +4141,6 @@ body:not(.is-grabbing) .nav-folder-title:hover,
 	justify-content: left;
 }
 
-.is-mobile .view-header {
-	/*background-color: var(--background-secondary);*/
-
-}
-
 .is-mobile .workspace-split.mod-vertical.mod-root .view-header-title,
 .is-mobile .view-header-title {
 	color: var(--text-normal);
@@ -4174,11 +4171,6 @@ body:not(.is-grabbing) .nav-folder-title:hover,
 	background-color: var(--background-secondary);
 }
 
-.is-mobile .workspace-split.mod-root,
-.is-mobile .workspace,
-.is-mobile .app-container {
-	/*background-color: var(--background-secondary);*/
-}
 
 .mobile-navbar {
 	border-top: 1px solid var(--divider-color);
@@ -4301,10 +4293,6 @@ body:not(.is-grabbing) .nav-folder-title:hover,
 	gap: 0px;
 }
 
-.is-mobile.theme-dark button, .is-mobile.theme-light button,
-.is-mobile.theme-dark button:hover, .is-mobile.theme-light button:hover {
-	/*background: none;*/
-}
 
 .is-mobile .block-language-dataview.node-insert-event:has(.dataview.list-view-ul),
 .is-mobile .block-language-dataview.node-insert-event:has(.dataview.table-view-table) {
