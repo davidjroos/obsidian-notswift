@@ -1,4 +1,4 @@
-mod-macos.is-hidden-frameless:not(.is-popout-window) .workspace .workspace-tabs.mod-top-right-space .workspace-tab-header-container, 
+mod-macos.is-hidden-frameless:not(.is-popout-window) .workspace .workspace-tabs.mod-top-right-space .workspace-tab-header-container,
 .mod-macos.is-hidden-frameless:not(.is-popout-window) .sidebar-toggle-button.mod-right,
 .mod-root .sidebar-toggle-button.mod-right {
 	z-index: 0 !important;
@@ -30,7 +30,7 @@ mod-macos.is-hidden-frameless:not(.is-popout-window) .workspace .workspace-tabs.
   }
 
 body {
-	
+
 /* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 /* 	Variables (Global) */
 
@@ -46,11 +46,11 @@ body {
 	--font-ui-small: 13px;
 	--font-ui-medium: 15px;
 	--font-ui-large: 20px;
-	
+
 	--vault-name-font-size: var(--font-ui-smaller);
 	--tab-font-size: var(--font-ui-teeny);
 	--tab-stacked-font-size: var(--font-ui-teeny);
-	
+
 	--p-spacing: 0.5rem;
     --p-spacing-empty: 0.2rem;
 
@@ -60,7 +60,7 @@ body {
     --h4-size: 1.3rem;
     --h5-size: 1.15rem;
     --h6-size: 1rem;
-	
+
 	--h1-line-height: 1.2;
     --h2-line-height: 1.2;
     --h3-line-height: 1.2;
@@ -277,11 +277,11 @@ body {
 	--color-base-90: #D5D5D5;
 	--color-base-100: #4C4949;
 	--color-base-101: #000000;
-	
+
 	--divider-color: #D8D2D2;
-	
+
 	--color-base-warn: #EA5A47;
-	
+
 	--color-fakeclose-inner: #FE5F57;
 	--color-fakeclose-outer: #DF544C;
 
@@ -308,8 +308,8 @@ body {
     --link-unresolved-opacity: 0.7;
     --link-unresolved-decoration-style: solid;
     --link-unresolved-decoration-color: hsla(var(--color-base-warn), 0.3);
-	
-	--ribbon-background: var(--color-base-17);	
+
+	--ribbon-background: var(--color-base-17);
 
     --background-modifier-border: var(--divider-color);
     --background-modifier-border-hover: var(--divider-color);
@@ -381,7 +381,7 @@ body {
 	--color-base-verylowlight:  hsl(var(--accent-h), 50%, 20%);
 	--color-base-darklight: hsl(var(--accent-h), var(--accent-s), calc(var(--accent-l) + 40%));
 
-	
+
 
     --link-color: var(--color-base-lowlight);
     --link-color-hover: var(--color-base-100);
@@ -398,17 +398,14 @@ body {
     --link-unresolved-opacity: 0.7;
     --link-unresolved-decoration-style: solid;
     --link-unresolved-decoration-color: hsla(var(--color-base-warn), 0.3);
-	
-	--ribbon-background: var(--color-base-17);	
+
+	--ribbon-background: var(--color-base-17);
 
     --background-modifier-border: var(--color-base-00);
     --background-modifier-border-hover: var(--color-base-30);
     --background-modifier-border-focus: var(--color-base-highlight);
     --interactive-normal: var(--color-base-00);
     --interactive-hover: var(--color-base-05);
-
-
-	
 
 	--text-highlight-bg: var(--color-base-verylowlight);
 
@@ -475,7 +472,7 @@ body {
 	padding-left: 2px;
 	padding-right: 2px;
 	position: relative;
-	display: inline-block;		
+	display: inline-block;
 }
 
 .view-header-breadcrumb-separator {
@@ -886,6 +883,10 @@ body {
 	border-right: none;
 }
 
+.cm-embed-block.cm-table-widget.markdown-rendered {
+	left: 0px;
+    width: 100%;
+}
 
 /* ---------------------------------------------------------------------------------- */
 /* 	Editor Content - Embed -  */
@@ -1105,10 +1106,10 @@ input[type=checkbox]:checked {
 	margin-left: 0px;
 	font-weight: bold;
 	}
-	
+
 .cm-formatting.cm-formatting-header {
 	color: var(--color-base-highlight);
-	
+
 }
 
 .HyperMD-header:has(.cm-fold-indicator.is-collapsed) .cm-header {
@@ -1371,7 +1372,7 @@ h6,
 
 /* ================================================================================================= */
 /* 	GUI Elements - Ribbon */
-/* 	some progress here but it still sucks */
+
 body.is-focused .workspace-ribbon.mod-left,
 .workspace-ribbon {
 --titlebar-background: var(--color-base-17);
@@ -1582,7 +1583,7 @@ button.clickable-icon {
 
 .block-language-dataview.node-insert-event:has(.dataview.list-view-ul),
 .block-language-dataview.node-insert-event:has(.dataview.table-view-table) {
-	/*width:100%; SS*/ 
+	/*width:100%; SS*/
 	width: fit-content;
 	border: 1px dashed var(--color-base-verylowlight);
 	border-radius: var(--radius-m);
@@ -1700,7 +1701,7 @@ button.clickable-icon {
 	width:100%;
 	background-color: var(--color-base-30) !important;
 	position: relative;
-	
+
 }
 
 /* ================================================================================================= */
@@ -1922,7 +1923,7 @@ body:not(.is-grabbing) .nav-folder-title:hover,
 .tree-item.nav-folder .nav-folder-title .tree-item-inner.nav-folder-title-content {
 	padding-left: 8px;
 	margin-left: -4px;
-	
+
 }
 
 .workspace-leaf.mod-active .tree-item-self.has-focus {
@@ -2159,7 +2160,7 @@ body:not(.is-grabbing) .nav-folder-title:hover,
 .nav-buttons-container {
 	justify-content: left;
 	margin-left: 0px;
-	
+
 	border-bottom: var(--divider-width) solid var(--divider-color);
 	margin-left: 12px;
 	margin-right: 12px;
@@ -2292,7 +2293,7 @@ body:not(.is-grabbing) .nav-folder-title:hover,
 
 .workspace-split.mod-vertical.mod-root .workspace-tabs .workspace-tab-header-container .workspace-tab-header-container-inner .workspace-tab-header-inner {
 	padding-left: 8px;
-	padding-right: 8px;	
+	padding-right: 8px;
 }
 
 .workspace-split.mod-vertical.mod-root .workspace-tabs .workspace-tab-header-container .workspace-tab-header-new-tab,
@@ -2376,7 +2377,7 @@ body:not(.is-grabbing) .nav-folder-title:hover,
 }
 
 /* show close button on tab hover */
-.workspace-tab-header.is-active .workspace-tab-header-inner:hover .workspace-tab-header-inner-close-button, 
+.workspace-tab-header.is-active .workspace-tab-header-inner:hover .workspace-tab-header-inner-close-button,
 .workspace-tab-header .workspace-tab-header-inner:hover .workspace-tab-header-inner-close-button {
 	visibility: visible;
 }
@@ -2621,7 +2622,7 @@ body:not(.is-grabbing) .nav-folder-title:hover,
 
 .workspace-tab-header:not(.is-active):hover {
 	background-color: var(--color-base-30);
-	
+
 }
 
 .workspace-tab-header:not(.is-active):hover .workspace-tab-header-inner-icon {
@@ -2754,7 +2755,7 @@ body:not(.is-grabbing) .nav-folder-title:hover,
 }
 
 
-/* ↑↑↑↑↑↑↑↑↑↑ Hierarchy Browsers: items [Colours Light] */	
+/* ↑↑↑↑↑↑↑↑↑↑ Hierarchy Browsers: items [Colours Light] */
 
 /* ↑↑↑↑↑↑↑↑↑↑ Hierarchy Browsers [Colours Light] */
 
@@ -2909,11 +2910,11 @@ body:not(.is-grabbing) .nav-folder-title:hover,
 }
 
 .image-embed img {
-	
-	
+
+
 	border: 0.5px solid var(--color-base-30);
 	border-radius: var(--radius-s);
-	
+
 }
 
 /* ↓↓↓↓↓↓↓↓↓↓ LINKS [Colours Light]] */
@@ -3184,7 +3185,7 @@ body:not(.is-grabbing) .nav-folder-title:hover,
 /* ↓↓↓↓↓↓↓↓↓↓ Settings [Folder Notes] */
 .modal-container.mod-dim .vertical-tab-content .setting-item .setting-item-info[style] {
 	color: var(--color-base-warn) !important;
-	font-size: var(--font-ui-smaller) !important; 
+	font-size: var(--font-ui-smaller) !important;
 }
 
 .modal-title {
@@ -3201,7 +3202,7 @@ body:not(.is-grabbing) .nav-folder-title:hover,
 	box-shadow: none;
 	border: 0px solid var(--color-base-50);
 	font-size: 12px;
-	
+
 }
 
 .setting-item-control .clickable-icon:hover {
@@ -3312,7 +3313,7 @@ body:not(.is-grabbing) .nav-folder-title:hover,
 @media (hover: hover){
 	select:hover, .dropdown:hover {
 		box-shadow: none;
-		
+
 	}
 }
 
@@ -3592,7 +3593,7 @@ body:not(.is-grabbing) .nav-folder-title:hover,
 .is-mobile .markdown-preview-view,
 .is-mobile .cm-line {
 	font-size: 1em;
-	
+
 }
 
 .is-mobile .markdown-rendered .heading-collapse-indicator {
@@ -3631,7 +3632,7 @@ body:not(.is-grabbing) .nav-folder-title:hover,
 
 .is-mobile .workspace-split.mod-vertical.mod-root .view-header-title-parent .view-header-breadcrumb:before {
 	margin-top: unset;
-	
+
 }
 .is-mobile .view-content:has(.advanced-tables-buttons) {
 	border-top: none;
@@ -3660,7 +3661,7 @@ body:not(.is-grabbing) .nav-folder-title:hover,
 .is-mobile .modal.mod-settings .vertical-tab-header,
 .is-mobile .modal.mod-settings {
 	background-color: var(--background-primary);
-	
+
 }
 
 .is-mobile .modal.mod-settings .vertical-tab-nav-item {
@@ -3679,7 +3680,7 @@ body:not(.is-grabbing) .nav-folder-title:hover,
 	top:67px;
 }
 
-.is-mobile .modal-container:has(.mod-community-theme) .modal-title, 
+.is-mobile .modal-container:has(.mod-community-theme) .modal-title,
 .is-mobile .modal-container:has(.mod-community-plugin) .modal-title {
 	border-top-left-radius: 15px;
 	border-top-right-radius: 15px;
@@ -3864,17 +3865,17 @@ body:not(.is-grabbing) .nav-folder-title:hover,
 }
 
 .is-mobile.theme-light .setting-item-control button.mod-cta {
-	color:var(--color-base-00);	
+	color:var(--color-base-00);
 }
 
 .is-mobile.theme-light .setting-item-control button {
-	background-color: var(--color-base-00);	
-	color:var(--color-base-100);	
+	background-color: var(--color-base-00);
+	color:var(--color-base-100);
 }
 
 .is-mobile.theme-dark .setting-item-control button {
 	background-color: #2c2c2e;
-	color:var(--color-base-100);	
+	color:var(--color-base-100);
 }
 
 .is-mobile .setting-item-control button.mod-cta {
@@ -3898,7 +3899,7 @@ body:not(.is-grabbing) .nav-folder-title:hover,
 
 .is-mobile.theme-dark .setting-item-control input {
 	background-color: #2c2c2e;
-	color:var(--color-base-100);	
+	color:var(--color-base-100);
 }
 
 .is-mobile .setting-item-control input[type="color"] {
@@ -3908,7 +3909,7 @@ body:not(.is-grabbing) .nav-folder-title:hover,
 
 .is-mobile.theme-light .setting-item-control input {
 	background-color: #ffffff;
-	color:var(--color-base-100);	
+	color:var(--color-base-100);
 }
 
 .is-mobile .setting-item-control button {
@@ -4016,7 +4017,7 @@ body:not(.is-grabbing) .nav-folder-title:hover,
 
 .is-mobile .graph-controls-button .svg-icon {
 	stroke-width: 2px;
-	
+
 }
 
 .is-mobile.theme-dark .nav-file-title.is-active .tree-item-inner.nav-file-title-content {
@@ -4085,7 +4086,7 @@ body:not(.is-grabbing) .nav-folder-title:hover,
 	height: calc(var(--toggle-thumb-height) + var(--toggle-border-width) * 2);
 	position: relative;
 	user-select: none;
-	width: var(--toggle-width);	
+	width: var(--toggle-width);
 }
 .is-mobile .checkbox-container.mod-small:after {
 	pointer-events: none;
@@ -4164,7 +4165,7 @@ body:not(.is-grabbing) .nav-folder-title:hover,
 
 .is-mobile .view-header-title-parent {
 	display: none;
-	
+
 }
 
 .is-mobile .workspace-split.mod-root .view-content {
