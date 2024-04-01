@@ -80,13 +80,13 @@ I've tried to Document the CSS but it's probably like 70% done and the really we
 
 ## …for Things Annoying Me
 
-- Sidebar toggle buttons look janky during animations
-- Add templates folder and file icons to Breadcrumbs
+- [x] ~~Sidebar toggle buttons look janky during animations~~
+- [x] ~~Add templates folder and file icons to Breadcrumbs~~
 
 ## …that I Aim to Fix but Aren't Like, Super High Importance for Me
 
-- Reader mode formatting is probably at like 95% where want it and it's unlikely to change unless I find problems 
-- Mobile has been tested on my iPhone 11, YMMV!
+- [x] ~~Reader mode formatting is probably at like 95% where want it and it's unlikely to change unless I find problems~~
+- Mobile has been tested on my iPhone ~~11~~ 13, YMMV!
 - I want to get support for Style Settings top allow people to undo some of my (what may be controversial) decisions (e.g. Ribbon and Status bar are hard-hidden), but also it's MacOS so you get what you get :)
 
 ## That I Am Not Going to Fix Because I Don't Think There is a Good Fix
@@ -98,13 +98,16 @@ I've tried to Document the CSS but it's probably like 70% done and the really we
 
 Supported here means that I've got it installed and made some specific tweaks to accomodate it - other plugins will probably also work ok but who knows
 
+- Quiet Outline (https://github.com/guopenghui/obsidian-quiet-outline)
+- Folder Notes (https://github.com/LostPaul/obsidian-folder-notes)
+
+Plugins I no longer use (i.e. accomodations may break)
+- Advanced Tables (https://github.com/tgrosinger/advanced-tables-obsidian)
 - Dataview (https://github.com/blacksmithgu/obsidian-dataview)
 - Templater (https://github.com/SilentVoid13/Templater)
-- Folder Notes (https://github.com/LostPaul/obsidian-folder-notes)
-- Advanced Tables (https://github.com/tgrosinger/advanced-tables-obsidian)
 
 # Other Notes
 
-I use Linter (https://github.com/platers/obsidian-linter) to put line breaks between things automatically, so some padding might be a bit tight if you are not in the habit of spacing things manually (the recently added post-heading spacer CSS variables have been zerod out)
+~~I use Linter (https://github.com/platers/obsidian-linter) to put line breaks between things automatically, so some padding might be a bit tight if you are not in the habit of spacing things manually (the recently added post-heading spacer CSS variables have been zerod out)~~ Slowly striking a good balance here
 
 Please raise issues or feel free to Fork and improve to your liking
