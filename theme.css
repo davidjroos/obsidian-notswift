@@ -537,7 +537,7 @@ body {
 /* 	Editor Frame - Breadcrumbs  - files */
 
 .view-header .view-header-title-container .view-header-title {
-	
+
 	background-color: var(--color-base-lowlight);
 	color: var(--color-base-00);
     padding-left: 8px;
@@ -1081,15 +1081,7 @@ input[type=checkbox]:checked {
 
 /* */
 
-.markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock-begin,
-.markdown-source-view.mod-cm6 .cm-callout {
-	margin-top: 10px !important;
-}
 
-.markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock-end,
-.markdown-source-view.mod-cm6 .cm-callout {
-	margin-bottom: 10px !important;
-}
 
 /* ---------------------------------------------------------------------------------- */
 /* 	Editor Content - Headings - Collapse */
@@ -1105,10 +1097,7 @@ input[type=checkbox]:checked {
 
 }
 
-.HyperMD-header:has(.cm-fold-indicator.is-collapsed) .cm-header {
-	text-decoration: underline;
-	text-decoration-color: var(--color-base-highlight);
-}
+
 
 /* ---------------------------------------------------------------------------------- */
 /* 	Editor Content - Headings - Specific Headings */
@@ -2594,7 +2583,7 @@ body:not(.is-grabbing) .nav-folder-title:hover,
 	padding: 0px;
 	margin-right: 3px;
 	margin-left: 3px;
-	
+
 }
 
 .workspace-split.mod-vertical.mod-root .workspace-tabs.mod-stacked .workspace-tab-header-container .sidebar-toggle-button.mod-left:hover,
@@ -2773,7 +2762,7 @@ body:not(.is-grabbing) .nav-folder-title:hover,
 }
 
 .markdown-rendered thead tr > th {
-	
+
 	border-bottom-style: solid;
 	border-bottom-width: 1px;
 	border-color: var(--color-base-verylowlight);
