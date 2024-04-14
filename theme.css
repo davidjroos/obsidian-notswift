@@ -849,6 +849,27 @@ body {
 	background-color: currentColor;
 }
 
+.callout[data-callout="question"],
+.callout[data-callout="help"],
+.callout[data-callout="faq"] {
+	--callout-color: var(--color-blue-rgb);
+	background-color: rgb(var(--color-blue-rgb-light));
+}
+
+.callout[data-callout="question"] .callout-content,
+.callout[data-callout="help"] .callout-content,
+.callout[data-callout="faq"] .callout-content {
+	color: rgb(var(--color-blue-rgb-dark));
+}
+
+.callout[data-callout="question"] > .callout-title > .callout-icon > svg,
+.callout[data-callout="help"] > .callout-title > .callout-icon > svg,
+.callout[data-callout="faq"] > .callout-title > .callout-icon > svg {
+	-webkit-mask-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgY2xhc3M9Imx1Y2lkZSBsdWNpZGUtY2lyY2xlLWhlbHAiPjxjaXJjbGUgY3g9IjEyIiBjeT0iMTIiIHI9IjEwIi8+PHBhdGggZD0iTTkuMDkgOWEzIDMgMCAwIDEgNS44MyAxYzAgMi0zIDMtMyAzIi8+PHBhdGggZD0iTTEyIDE3aC4wMSIvPjwvc3ZnPg==");
+	webkit-mask-repeat: no-repeat;
+	background-color: currentColor;
+}
+
 .callout[data-callout="abstract"],
 .callout[data-callout="summary"],
 .callout[data-callout="tldr"] {
